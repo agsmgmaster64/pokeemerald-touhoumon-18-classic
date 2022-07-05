@@ -131,7 +131,7 @@ static void Cmd_is_first_turn_for(void);
 static void Cmd_get_stockpile_count(void);
 static void Cmd_is_double_battle(void);
 static void Cmd_get_used_held_item(void);
-static void Cmd_get_move_type_from_result(void);
+static void Cmd_get_move_category_from_result(void);
 static void Cmd_get_move_power_from_result(void);
 static void Cmd_get_move_effect_from_result(void);
 static void Cmd_get_protect_count(void);
@@ -240,7 +240,7 @@ static const BattleAICmdFunc sBattleAICmdTable[] =
     Cmd_get_stockpile_count,                        // 0x4B
     Cmd_is_double_battle,                           // 0x4C
     Cmd_get_used_held_item,                         // 0x4D
-    Cmd_get_move_type_from_result,                  // 0x4E
+    Cmd_get_move_category_from_result,                  // 0x4E
     Cmd_get_move_power_from_result,                 // 0x4F
     Cmd_get_move_effect_from_result,                // 0x50
     Cmd_get_protect_count,                          // 0x51
@@ -277,6 +277,7 @@ static const u16 sIgnoredPowerfulMoveEffects[] =
     EFFECT_SOLAR_BEAM,
     EFFECT_SPIT_UP,
     EFFECT_FOCUS_PUNCH,
+    EFFECT_NEW_THRASH,
     EFFECT_SUPERPOWER,
     EFFECT_ERUPTION,
     EFFECT_OVERHEAT,
@@ -1370,9 +1371,9 @@ static void Cmd_get_ability(void)
         }
 
         // abilities that prevent fleeing.
-        if (gBattleMons[battlerId].ability == ABILITY_SHADOW_TAG
-        || gBattleMons[battlerId].ability == ABILITY_MAGNET_PULL
-        || gBattleMons[battlerId].ability == ABILITY_ARENA_TRAP)
+        if (gBattleMons[battlerId].ability == ABILITY_OLD_SHADOW_TAG
+        || gBattleMons[battlerId].ability == ABILITY_OLD_MAGNET_PULL
+        || gBattleMons[battlerId].ability == ABILITY_SHADOW_TAG)
         {
             AI_THINKING_STRUCT->funcResult = gBattleMons[battlerId].ability;
             gAIScriptPtr += 2;
@@ -1421,9 +1422,9 @@ static void Cmd_check_ability(void)
             AI_THINKING_STRUCT->funcResult = ability;
         }
         // Abilities that prevent fleeing.
-        else if (gBattleMons[battlerId].ability == ABILITY_SHADOW_TAG
-        || gBattleMons[battlerId].ability == ABILITY_MAGNET_PULL
-        || gBattleMons[battlerId].ability == ABILITY_ARENA_TRAP)
+        else if (gBattleMons[battlerId].ability == ABILITY_OLD_SHADOW_TAG
+        || gBattleMons[battlerId].ability == ABILITY_OLD_MAGNET_PULL
+        || gBattleMons[battlerId].ability == ABILITY_SHADOW_TAG)
         {
             ability = gBattleMons[battlerId].ability;
         }
@@ -2116,9 +2117,9 @@ static void Cmd_get_used_held_item(void)
     gAIScriptPtr += 2;
 }
 
-static void Cmd_get_move_type_from_result(void)
+static void Cmd_get_move_category_from_result(void)
 {
-    AI_THINKING_STRUCT->funcResult = gBattleMoves[AI_THINKING_STRUCT->funcResult].type;
+    AI_THINKING_STRUCT->funcResult = gBattleMoves[AI_THINKING_STRUCT->funcResult].category;
 
     gAIScriptPtr += 1;
 }

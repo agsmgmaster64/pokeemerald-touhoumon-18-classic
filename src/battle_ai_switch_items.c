@@ -48,7 +48,7 @@ static bool8 ShouldSwitchIfWonderGuard(void)
 
     opposingPosition = BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler));
 
-    if (gBattleMons[GetBattlerAtPosition(opposingPosition)].ability != ABILITY_WONDER_GUARD)
+    if (gBattleMons[GetBattlerAtPosition(opposingPosition)].ability != ABILITY_PLAY_GHOST)
         return FALSE;
 
     // Check if Pokemon has a super effective move.
@@ -152,7 +152,7 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
         absorbingTypeAbility = ABILITY_FLASH_FIRE;
     else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_WATER)
         absorbingTypeAbility = ABILITY_WATER_ABSORB;
-    else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_ELECTRIC)
+    else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_WIND)
         absorbingTypeAbility = ABILITY_VOLT_ABSORB;
     else
         return FALSE;
@@ -437,11 +437,11 @@ static bool8 ShouldSwitch(void)
         return FALSE;
     if (gStatuses3[gActiveBattler] & STATUS3_ROOTED)
         return FALSE;
-    if (ABILITY_ON_OPPOSING_FIELD(gActiveBattler, ABILITY_SHADOW_TAG))
+    if (ABILITY_ON_OPPOSING_FIELD(gActiveBattler, ABILITY_OLD_SHADOW_TAG))
         return FALSE;
-    if (ABILITY_ON_OPPOSING_FIELD(gActiveBattler, ABILITY_ARENA_TRAP)) // Misses the flying type and Levitate check.
+    if (ABILITY_ON_OPPOSING_FIELD(gActiveBattler, ABILITY_SHADOW_TAG)) // Misses the flying type and Levitate check.
         return FALSE;
-    if (ABILITY_ON_FIELD2(ABILITY_MAGNET_PULL))
+    if (ABILITY_ON_FIELD2(ABILITY_OLD_MAGNET_PULL))
     {
         if (gBattleMons[gActiveBattler].type1 == TYPE_STEEL)
             return FALSE;

@@ -258,7 +258,7 @@
 #define MOVE_EFFECT_RAGE                30
 #define MOVE_EFFECT_STEAL_ITEM          31
 #define MOVE_EFFECT_PREVENT_ESCAPE      32
-#define MOVE_EFFECT_NIGHTMARE           33
+#define MOVE_EFFECT_OLD_NIGHTMARE           33
 #define MOVE_EFFECT_ALL_STATS_UP        34
 #define MOVE_EFFECT_RAPIDSPIN           35
 #define MOVE_EFFECT_REMOVE_PARALYSIS    36

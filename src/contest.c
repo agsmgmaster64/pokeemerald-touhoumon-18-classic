@@ -5323,7 +5323,7 @@ static void SetMoveSpecificAnimData(u8 contestant)
             gAnimMoveTurn = 1;
         break;
     case MOVE_TRANSFORM:
-    case MOVE_ROLE_PLAY:
+    case MOVE_RECOLLECTION:
         targetContestant = eContestantStatus[contestant].contestantAnimTarget;
         gContestResources->moveAnim->targetSpecies = SanitizeSpecies(gContestMons[targetContestant].species);
         gContestResources->moveAnim->targetPersonality = gContestMons[targetContestant].personality;
@@ -5336,7 +5336,7 @@ static void SetMoveSpecificAnimData(u8 contestant)
         gAnimFriendship = 0;
         break;
     case MOVE_SOLAR_BEAM:
-    case MOVE_RAZOR_WIND:
+    case MOVE_GUST:
     case MOVE_SKULL_BASH:
     case MOVE_SKY_ATTACK:
         if (eContest.moveAnimTurnCount == 0)

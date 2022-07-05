@@ -49,7 +49,7 @@ gBattleAI_ScriptsTable::
 AI_CheckBadMove:
 	if_target_is_ally AI_Ret
 	if_move MOVE_FISSURE, AI_CBM_CheckIfNegatesType
-	if_move MOVE_HORN_DRILL, AI_CBM_CheckIfNegatesType
+	if_move MOVE_SCULPTURE, AI_CBM_CheckIfNegatesType
 	get_how_powerful_move_is
 	if_equal MOVE_POWER_OTHER, AI_CheckBadMove_CheckSoundproof
 AI_CBM_CheckIfNegatesType:
@@ -58,13 +58,13 @@ AI_CBM_CheckIfNegatesType:
 	if_equal ABILITY_VOLT_ABSORB, CheckIfVoltAbsorbCancelsElectric
 	if_equal ABILITY_WATER_ABSORB, CheckIfWaterAbsorbCancelsWater
 	if_equal ABILITY_FLASH_FIRE, CheckIfFlashFireCancelsFire
-	if_equal ABILITY_WONDER_GUARD, CheckIfWonderGuardCancelsMove
+	if_equal ABILITY_PLAY_GHOST, CheckIfWonderGuardCancelsMove
 	if_equal ABILITY_LEVITATE, CheckIfLevitateCancelsGroundMove
 	goto AI_CheckBadMove_CheckSoundproof_
 
 CheckIfVoltAbsorbCancelsElectric:
 	get_curr_move_type
-	if_equal_ TYPE_ELECTRIC, Score_Minus12
+	if_equal_ TYPE_WIND, Score_Minus12
 	goto AI_CheckBadMove_CheckSoundproof_
 
 CheckIfWaterAbsorbCancelsWater:
@@ -83,7 +83,7 @@ CheckIfWonderGuardCancelsMove:
 
 CheckIfLevitateCancelsGroundMove:
 	get_curr_move_type
-	if_equal_ TYPE_GROUND, Score_Minus10
+	if_equal_ TYPE_EARTH, Score_Minus10
 AI_CheckBadMove_CheckSoundproof_:
 	get_how_powerful_move_is
 	if_equal MOVE_POWER_OTHER, AI_CheckBadMove_CheckSoundproof  @ Pointless check
@@ -93,12 +93,12 @@ AI_CheckBadMove_CheckSoundproof:
 	if_move MOVE_GROWL, Score_Minus10
 	if_move MOVE_ROAR, Score_Minus10
 	if_move MOVE_SING, Score_Minus10
-	if_move MOVE_SUPERSONIC, Score_Minus10
+	if_move MOVE_JAMMING, Score_Minus10
 	if_move MOVE_SCREECH, Score_Minus10
 	if_move MOVE_SNORE, Score_Minus10
-	if_move MOVE_UPROAR, Score_Minus10
-	if_move MOVE_METAL_SOUND, Score_Minus10
-	if_move MOVE_GRASS_WHISTLE, Score_Minus10
+	if_move MOVE_PERFORMANCE, Score_Minus10
+	if_move MOVE_BINDING_VOICE, Score_Minus10
+	if_move MOVE_NATURE_SOUND, Score_Minus10
 AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_SLEEP, AI_CBM_Sleep
 	if_effect EFFECT_EXPLOSION, AI_CBM_Explosion
@@ -156,8 +156,8 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_SNORE, AI_CBM_DamageDuringSleep
 	if_effect EFFECT_SLEEP_TALK, AI_CBM_DamageDuringSleep
 	if_effect EFFECT_FLAIL, AI_CBM_HighRiskForDamage
-	if_effect EFFECT_MEAN_LOOK, AI_CBM_CantEscape
-	if_effect EFFECT_NIGHTMARE, AI_CBM_Nightmare
+	if_effect EFFECT_NO_SWITCH, AI_CBM_CantEscape
+	if_effect EFFECT_OLD_NIGHTMARE, AI_CBM_Nightmare
 	if_effect EFFECT_MINIMIZE, AI_CBM_EvasionUp
 	if_effect EFFECT_CURSE, AI_CBM_Curse
 	if_effect EFFECT_SPIKES, AI_CBM_Spikes
@@ -196,12 +196,13 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_TRICK, AI_CBM_TrickAndKnockOff
 	if_effect EFFECT_INGRAIN, AI_CBM_Ingrain
 	if_effect EFFECT_SUPERPOWER, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_NEW_THRASH, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_RECYCLE, AI_CBM_Recycle
 	if_effect EFFECT_KNOCK_OFF, AI_CBM_TrickAndKnockOff
 	if_effect EFFECT_ENDEAVOR, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_IMPRISON, AI_CBM_Imprison
 	if_effect EFFECT_REFRESH, AI_CBM_Refresh
-	if_effect EFFECT_LOW_KICK, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_COST_BASED, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_MUD_SPORT, AI_CBM_MudSport
 	if_effect EFFECT_TICKLE, AI_CBM_Tickle
 	if_effect EFFECT_COSMIC_POWER, AI_CBM_CosmicPower
@@ -275,7 +276,7 @@ AI_CBM_EvasionUp:
 AI_CBM_AttackDown:
 	if_stat_level_equal AI_TARGET, STAT_ATK, MIN_STAT_STAGE, Score_Minus10
 	get_ability AI_TARGET
-	if_equal ABILITY_HYPER_CUTTER, Score_Minus10
+	if_equal ABILITY_HIGH_STRENGTH, Score_Minus10
 	goto CheckIfAbilityBlocksStatChange
 
 AI_CBM_DefenseDown:
@@ -305,8 +306,8 @@ AI_CBM_EvasionDown:
 	if_stat_level_equal AI_TARGET, STAT_EVASION, MIN_STAT_STAGE, Score_Minus10
 CheckIfAbilityBlocksStatChange:
 	get_ability AI_TARGET
-	if_equal ABILITY_CLEAR_BODY, Score_Minus10
-	if_equal ABILITY_WHITE_SMOKE, Score_Minus10
+	if_equal ABILITY_HAKUREI_MIKO, Score_Minus10
+	if_equal ABILITY_MAGIC_BARRIER, Score_Minus10
 	end
 
 AI_CBM_Haze:
@@ -333,16 +334,16 @@ AI_CBM_Roar:
 	count_usable_party_mons AI_TARGET
 	if_equal 0, Score_Minus10
 	get_ability AI_TARGET
-	if_equal ABILITY_SUCTION_CUPS, Score_Minus10
+	if_equal ABILITY_GATE_KEEPER, Score_Minus10
 	end
 
 AI_CBM_Toxic:
 	get_target_type1
 	if_equal TYPE_STEEL, Score_Minus10
-	if_equal TYPE_POISON, Score_Minus10
+	if_equal TYPE_MIASMA, Score_Minus10
 	get_target_type2
 	if_equal TYPE_STEEL, Score_Minus10
-	if_equal TYPE_POISON, Score_Minus10
+	if_equal TYPE_MIASMA, Score_Minus10
 	get_ability AI_TARGET
 	if_equal ABILITY_IMMUNITY, Score_Minus10
 	if_status AI_TARGET, STATUS1_ANY, Score_Minus10
@@ -366,7 +367,7 @@ AI_CBM_Magnitude:
 AI_CBM_HighRiskForDamage:
 	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus10
 	get_ability AI_TARGET
-	if_not_equal ABILITY_WONDER_GUARD, AI_CBM_HighRiskForDamage_End
+	if_not_equal ABILITY_PLAY_GHOST, AI_CBM_HighRiskForDamage_End
 	if_type_effectiveness AI_EFFECTIVENESS_x2, AI_CBM_HighRiskForDamage_End
 	goto Score_Minus10
 
@@ -408,9 +409,9 @@ AI_CBM_Substitute:
 AI_CBM_LeechSeed:
 	if_status3 AI_TARGET, STATUS3_LEECHSEED, Score_Minus10
 	get_target_type1
-	if_equal TYPE_GRASS, Score_Minus10
+	if_equal TYPE_NATURE, Score_Minus10
 	get_target_type2
-	if_equal TYPE_GRASS, Score_Minus10
+	if_equal TYPE_NATURE, Score_Minus10
 	end
 
 AI_CBM_Disable:
@@ -542,7 +543,7 @@ AI_CBM_HelpingHand:
 
 AI_CBM_TrickAndKnockOff:
 	get_ability AI_TARGET
-	if_equal ABILITY_STICKY_HOLD, Score_Minus10
+	if_equal ABILITY_COLLECTOR, Score_Minus10
 	end
 
 AI_CBM_Ingrain:
@@ -718,7 +719,7 @@ AI_CheckViability:
 	if_effect EFFECT_FLAIL, AI_CV_Flail
 	if_effect EFFECT_HEAL_BELL, AI_CV_HealBell
 	if_effect EFFECT_THIEF, AI_CV_Thief
-	if_effect EFFECT_MEAN_LOOK, AI_CV_Trap
+	if_effect EFFECT_NO_SWITCH, AI_CV_Trap
 	if_effect EFFECT_MINIMIZE, AI_CV_EvasionUp
 	if_effect EFFECT_CURSE, AI_CV_Curse
 	if_effect EFFECT_PROTECT, AI_CV_Protect
@@ -750,6 +751,7 @@ AI_CheckViability:
 	if_effect EFFECT_TRICK, AI_CV_Trick
 	if_effect EFFECT_ROLE_PLAY, AI_CV_ChangeSelfAbility
 	if_effect EFFECT_SUPERPOWER, AI_CV_Superpower
+	if_effect EFFECT_NEW_THRASH, AI_CV_New_Thrash
 	if_effect EFFECT_MAGIC_COAT, AI_CV_MagicCoat
 	if_effect EFFECT_RECYCLE, AI_CV_Recycle
 	if_effect EFFECT_REVENGE, AI_CV_Revenge
@@ -775,7 +777,7 @@ AI_CheckViability:
 
 AI_CV_Sleep:
 	if_has_move_with_effect AI_TARGET, EFFECT_DREAM_EATER, AI_CV_SleepEncourageSlpDamage
-	if_has_move_with_effect AI_TARGET, EFFECT_NIGHTMARE, AI_CV_SleepEncourageSlpDamage
+	if_has_move_with_effect AI_TARGET, EFFECT_OLD_NIGHTMARE, AI_CV_SleepEncourageSlpDamage
 	goto AI_CV_Sleep_End
 
 AI_CV_SleepEncourageSlpDamage:
@@ -852,16 +854,16 @@ AI_CV_MirrorMove_End:
 AI_CV_MirrorMove_EncouragedMovesToMirror:
     .2byte MOVE_SLEEP_POWDER
     .2byte MOVE_LOVELY_KISS
-    .2byte MOVE_SPORE
+    .2byte MOVE_BURN_POWDER
     .2byte MOVE_HYPNOSIS
     .2byte MOVE_SING
-    .2byte MOVE_GRASS_WHISTLE
+    .2byte MOVE_NATURE_SOUND
     .2byte MOVE_SHADOW_PUNCH
     .2byte MOVE_SAND_ATTACK
     .2byte MOVE_SMOKESCREEN
     .2byte MOVE_TOXIC
-    .2byte MOVE_GUILLOTINE
-    .2byte MOVE_HORN_DRILL
+    .2byte MOVE_JUDGEMENT
+    .2byte MOVE_SCULPTURE
     .2byte MOVE_FISSURE
     .2byte MOVE_SHEER_COLD
     .2byte MOVE_CROSS_CHOP
@@ -872,20 +874,20 @@ AI_CV_MirrorMove_EncouragedMovesToMirror:
     .2byte MOVE_COTTON_SPORE
     .2byte MOVE_SCARY_FACE
     .2byte MOVE_FAKE_TEARS
-    .2byte MOVE_METAL_SOUND
+    .2byte MOVE_BINDING_VOICE
     .2byte MOVE_THUNDER_WAVE
-    .2byte MOVE_GLARE
+    .2byte MOVE_COERCE
     .2byte MOVE_POISON_POWDER
     .2byte MOVE_SHADOW_BALL
     .2byte MOVE_DYNAMIC_PUNCH
     .2byte MOVE_HYPER_BEAM
     .2byte MOVE_EXTREME_SPEED
     .2byte MOVE_THIEF
-    .2byte MOVE_COVET
+    .2byte MOVE_WANTING
     .2byte MOVE_ATTRACT
     .2byte MOVE_SWAGGER
     .2byte MOVE_TORMENT
-    .2byte MOVE_FLATTER
+    .2byte MOVE_LUCKY_CHANT
     .2byte MOVE_TRICK
     .2byte MOVE_SUPERPOWER
     .2byte MOVE_SKILL_SWAP
@@ -929,8 +931,8 @@ AI_CV_DefenseUp4:
 	get_move_power_from_result
 	if_equal 0, AI_CV_DefenseUp5
 	get_last_used_bank_move AI_TARGET
-	get_move_type_from_result
-	if_not_in_bytes AI_CV_DefenseUp_PhysicalTypes, AI_CV_DefenseUp_ScoreDown2
+	get_move_category_from_result
+	if_not_in_bytes AI_CV_DefenseUp_Physical, AI_CV_DefenseUp_ScoreDown2
 	if_random_less_than 60, AI_CV_DefenseUp_End
 AI_CV_DefenseUp5:
 	if_random_less_than 60, AI_CV_DefenseUp_End
@@ -939,16 +941,8 @@ AI_CV_DefenseUp_ScoreDown2:
 AI_CV_DefenseUp_End:
 	end
 
-AI_CV_DefenseUp_PhysicalTypes:
-    .byte TYPE_NORMAL
-    .byte TYPE_FIGHTING
-    .byte TYPE_POISON
-    .byte TYPE_GROUND
-    .byte TYPE_FLYING
-    .byte TYPE_ROCK
-    .byte TYPE_BUG
-    .byte TYPE_GHOST
-    .byte TYPE_STEEL
+AI_CV_DefenseUp_Physical:
+    .byte MOVE_CATEGORY_PHYSICAL
     .byte -1
 
 AI_CV_SpeedUp:
@@ -1000,8 +994,8 @@ AI_CV_SpDefUp4:
 	get_move_power_from_result
 	if_equal 0, AI_CV_SpDefUp5
 	get_last_used_bank_move AI_TARGET
-	get_move_type_from_result
-	if_in_bytes AI_CV_SpDefUp_PhysicalTypes, AI_CV_SpDefUp_ScoreDown2
+	get_move_category_from_result
+	if_in_bytes AI_CV_SpDefUp_Physical, AI_CV_SpDefUp_ScoreDown2
 	if_random_less_than 60, AI_CV_SpDefUp_End
 AI_CV_SpDefUp5:
 	if_random_less_than 60, AI_CV_SpDefUp_End
@@ -1010,16 +1004,8 @@ AI_CV_SpDefUp_ScoreDown2:
 AI_CV_SpDefUp_End:
 	end
 
-AI_CV_SpDefUp_PhysicalTypes:
-    .byte TYPE_NORMAL
-    .byte TYPE_FIGHTING
-    .byte TYPE_POISON
-    .byte TYPE_GROUND
-    .byte TYPE_FLYING
-    .byte TYPE_ROCK
-    .byte TYPE_BUG
-    .byte TYPE_GHOST
-    .byte TYPE_STEEL
+AI_CV_SpDefUp_Physical:
+    .byte MOVE_CATEGORY_PHYSICAL
     .byte -1
 
 AI_CV_AccuracyUp:
@@ -1098,23 +1084,10 @@ AI_CV_AttackDown3:
 	if_hp_more_than AI_TARGET, 70, AI_CV_AttackDown4
 	score -2
 AI_CV_AttackDown4:
-	get_target_type1
-	if_in_bytes AI_CV_AttackDown_UnknownTypeList, AI_CV_AttackDown_End
-	get_target_type2
-	if_in_bytes AI_CV_AttackDown_UnknownTypeList, AI_CV_AttackDown_End
 	if_random_less_than 50, AI_CV_AttackDown_End
 	score -2
 AI_CV_AttackDown_End:
 	end
-
-AI_CV_AttackDown_UnknownTypeList:
-    .byte TYPE_NORMAL
-    .byte TYPE_FIGHTING
-    .byte TYPE_GROUND
-    .byte TYPE_ROCK
-    .byte TYPE_BUG
-    .byte TYPE_STEEL
-    .byte -1
 
 AI_CV_DefenseDown:
 	if_hp_less_than AI_USER, 70, AI_CV_DefenseDown2
@@ -1131,7 +1104,7 @@ AI_CV_DefenseDown_End:
 AI_CV_SpeedDownFromChance:
 	if_move MOVE_ICY_WIND, AI_CV_SpeedDown
 	if_move MOVE_ROCK_TOMB, AI_CV_SpeedDown
-	if_move MOVE_MUD_SHOT, AI_CV_SpeedDown
+	if_move MOVE_EARTH_POWER, AI_CV_SpeedDown
 	end
 
 AI_CV_SpeedDown:
@@ -1158,25 +1131,10 @@ AI_CV_SpAtkDown3:
 	if_hp_more_than AI_TARGET, 70, AI_CV_SpAtkDown4
 	score -2
 AI_CV_SpAtkDown4:
-	get_target_type1
-	if_in_bytes AI_CV_SpAtkDown_SpecialTypeList, AI_CV_SpAtkDown_End
-	get_target_type2
-	if_in_bytes AI_CV_SpAtkDown_SpecialTypeList, AI_CV_SpAtkDown_End
 	if_random_less_than 50, AI_CV_SpAtkDown_End
 	score -2
 AI_CV_SpAtkDown_End:
 	end
-
-AI_CV_SpAtkDown_SpecialTypeList:
-    .byte TYPE_FIRE
-    .byte TYPE_WATER
-    .byte TYPE_GRASS
-    .byte TYPE_ELECTRIC
-    .byte TYPE_PSYCHIC
-    .byte TYPE_ICE
-    .byte TYPE_DRAGON
-    .byte TYPE_DARK
-    .byte -1
 
 AI_CV_SpDefDown:
 	if_hp_less_than AI_USER, 70, AI_CV_SpDefDown2
@@ -1367,26 +1325,11 @@ AI_CV_Toxic_End:
 
 AI_CV_LightScreen:
 	if_hp_less_than AI_USER, 50, AI_CV_LightScreen_ScoreDown2
-	get_target_type1
-	if_in_bytes AI_CV_LightScreen_SpecialTypeList, AI_CV_LightScreen_End
-	get_target_type2
-	if_in_bytes AI_CV_LightScreen_SpecialTypeList, AI_CV_LightScreen_End
 	if_random_less_than 50, AI_CV_LightScreen_End
 AI_CV_LightScreen_ScoreDown2:
 	score -2
 AI_CV_LightScreen_End:
 	end
-
-AI_CV_LightScreen_SpecialTypeList:
-    .byte TYPE_FIRE
-    .byte TYPE_WATER
-    .byte TYPE_GRASS
-    .byte TYPE_ELECTRIC
-    .byte TYPE_PSYCHIC
-    .byte TYPE_ICE
-    .byte TYPE_DRAGON
-    .byte TYPE_DARK
-    .byte -1
 
 AI_CV_Rest:
 	if_target_faster AI_CV_Rest4
@@ -1486,27 +1429,11 @@ AI_CV_SwaggerHasPsychUp_End:
 
 AI_CV_Reflect:
 	if_hp_less_than AI_USER, 50, AI_CV_Reflect_ScoreDown2
-	get_target_type1
-	if_in_bytes AI_CV_Reflect_PhysicalTypeList, AI_CV_Reflect_End
-	get_target_type2
-	if_in_bytes AI_CV_Reflect_PhysicalTypeList, AI_CV_Reflect_End
 	if_random_less_than 50, AI_CV_Reflect_End
 AI_CV_Reflect_ScoreDown2:
 	score -2
 AI_CV_Reflect_End:
 	end
-
-AI_CV_Reflect_PhysicalTypeList:
-    .byte TYPE_NORMAL
-    .byte TYPE_FIGHTING
-    .byte TYPE_FLYING
-    .byte TYPE_POISON
-    .byte TYPE_GROUND
-    .byte TYPE_ROCK
-    .byte TYPE_BUG
-    .byte TYPE_GHOST
-    .byte TYPE_STEEL
-    .byte -1
 
 AI_CV_Poison:
 	if_hp_less_than AI_USER, 50, AI_CV_Poison_ScoreDown1
@@ -1629,8 +1556,8 @@ AI_CV_Counter3:
 	score +1
 AI_CV_Counter4:
 	get_last_used_bank_move AI_TARGET
-	get_move_type_from_result
-	if_not_in_bytes AI_CV_Counter_PhysicalTypeList, AI_CV_Counter_ScoreDown1
+	get_move_category_from_result
+	if_not_in_bytes AI_CV_Counter_Physical, AI_CV_Counter_ScoreDown1
 	if_random_less_than 100, AI_CV_Counter_End
 	score +1
 	goto AI_CV_Counter_End
@@ -1640,10 +1567,6 @@ AI_CV_Counter5:
 	if_random_less_than 100, AI_CV_Counter6
 	score +1
 AI_CV_Counter6:
-	get_target_type1
-	if_in_bytes AI_CV_Counter_PhysicalTypeList, AI_CV_Counter_End
-	get_target_type2
-	if_in_bytes AI_CV_Counter_PhysicalTypeList, AI_CV_Counter_End
 	if_random_less_than 50, AI_CV_Counter_End
 AI_CV_Counter7:
 	if_random_less_than 100, AI_CV_Counter8
@@ -1656,16 +1579,8 @@ AI_CV_Counter_ScoreDown1:
 AI_CV_Counter_End:
 	end
 
-AI_CV_Counter_PhysicalTypeList:
-    .byte TYPE_NORMAL
-    .byte TYPE_FIGHTING
-    .byte TYPE_FLYING
-    .byte TYPE_POISON
-    .byte TYPE_GROUND
-    .byte TYPE_ROCK
-    .byte TYPE_BUG
-    .byte TYPE_GHOST
-    .byte TYPE_STEEL
+AI_CV_Counter_Physical:
+    .byte MOVE_CATEGORY_PHYSICAL
     .byte -1
 
 AI_CV_Encore:
@@ -1708,8 +1623,8 @@ AI_CV_Encore_EncouragedMovesToEncore:
     .byte EFFECT_CONVERSION_2
     .byte EFFECT_LOCK_ON
     .byte EFFECT_HEAL_BELL
-    .byte EFFECT_MEAN_LOOK
-    .byte EFFECT_NIGHTMARE
+    .byte EFFECT_NO_SWITCH
+    .byte EFFECT_OLD_NIGHTMARE
     .byte EFFECT_PROTECT
     .byte EFFECT_SKILL_SWAP
     .byte EFFECT_FORESIGHT
@@ -2005,11 +1920,11 @@ AI_CV_Pursuit:
 	get_target_type1
 	if_equal TYPE_GHOST, AI_CV_Pursuit2
 	get_target_type1
-	if_equal TYPE_PSYCHIC, AI_CV_Pursuit2
+	if_equal TYPE_REASON, AI_CV_Pursuit2
 	get_target_type2
 	if_equal TYPE_GHOST, AI_CV_Pursuit2
 	get_target_type2
-	if_equal TYPE_PSYCHIC, AI_CV_Pursuit2
+	if_equal TYPE_REASON, AI_CV_Pursuit2
 	goto AI_CV_Pursuit_End
 
 AI_CV_Pursuit2:
@@ -2116,8 +2031,8 @@ AI_CV_MirrorCoat3:
 	score +1
 AI_CV_MirrorCoat4:
 	get_last_used_bank_move AI_TARGET
-	get_move_type_from_result
-	if_not_in_bytes AI_CV_MirrorCoat_SpecialTypeList, AI_CV_MirrorCoat_ScoreDown1
+	get_move_category_from_result
+	if_not_in_bytes AI_CV_MirrorCoat_Special, AI_CV_MirrorCoat_ScoreDown1
 	if_random_less_than 100, AI_CV_MirrorCoat_End
 	score +1
 	goto AI_CV_MirrorCoat_End
@@ -2127,10 +2042,6 @@ AI_CV_MirrorCoat5:
 	if_random_less_than 100, AI_CV_MirrorCoat6
 	score +1
 AI_CV_MirrorCoat6:
-	get_target_type1
-	if_in_bytes AI_CV_MirrorCoat_SpecialTypeList, AI_CV_MirrorCoat_End
-	get_target_type2
-	if_in_bytes AI_CV_MirrorCoat_SpecialTypeList, AI_CV_MirrorCoat_End
 	if_random_less_than 50, AI_CV_MirrorCoat_End
 AI_CV_MirrorCoat_ScoreUp4:
 	if_random_less_than 100, AI_CV_MirrorCoat_ScoreUp4_End
@@ -2143,15 +2054,8 @@ AI_CV_MirrorCoat_ScoreDown1:
 AI_CV_MirrorCoat_End:
 	end
 
-AI_CV_MirrorCoat_SpecialTypeList:
-    .byte TYPE_FIRE
-    .byte TYPE_WATER
-    .byte TYPE_GRASS
-    .byte TYPE_ELECTRIC
-    .byte TYPE_PSYCHIC
-    .byte TYPE_ICE
-    .byte TYPE_DRAGON
-    .byte TYPE_DARK
+AI_CV_MirrorCoat_Special:
+    .byte MOVE_CATEGORY_SPECIAL
     .byte -1
 
 AI_CV_ChargeUpMove:
@@ -2214,8 +2118,8 @@ AI_CV_SemiInvulnerable_End:
 	end
 
 AI_CV_SandstormResistantTypes:
-    .byte TYPE_GROUND
-    .byte TYPE_ROCK
+    .byte TYPE_EARTH
+    .byte TYPE_BEAST
     .byte TYPE_STEEL
     .byte -1
 
@@ -2345,27 +2249,34 @@ AI_CV_ChangeSelfAbility_End:
 
 AI_CV_ChangeSelfAbility_AbilitiesToEncourage:
     .byte ABILITY_SPEED_BOOST
-    .byte ABILITY_BATTLE_ARMOR
+    .byte ABILITY_GUARD_ARMOR
     .byte ABILITY_SAND_VEIL
     .byte ABILITY_STATIC
     .byte ABILITY_FLASH_FIRE
-    .byte ABILITY_WONDER_GUARD
-    .byte ABILITY_EFFECT_SPORE
+    .byte ABILITY_PLAY_GHOST
+    .byte ABILITY_INFECTIOUS
     .byte ABILITY_SWIFT_SWIM
-    .byte ABILITY_HUGE_POWER
+    .byte ABILITY_UNZAN
     .byte ABILITY_RAIN_DISH
     .byte ABILITY_CUTE_CHARM
-    .byte ABILITY_SHED_SKIN
-    .byte ABILITY_MARVEL_SCALE
+    .byte ABILITY_MAINTENANCE
+    .byte ABILITY_SPRING_CHARM
     .byte ABILITY_PURE_POWER
     .byte ABILITY_CHLOROPHYLL
-    .byte ABILITY_SHIELD_DUST
+    .byte ABILITY_ADVENT
     .byte -1
 
 AI_CV_Superpower:
 	if_type_effectiveness AI_EFFECTIVENESS_x0_25, AI_CV_Superpower_ScoreDown1
 	if_type_effectiveness AI_EFFECTIVENESS_x0_5, AI_CV_Superpower_ScoreDown1
 	if_stat_level_less_than AI_USER, STAT_ATK, DEFAULT_STAT_STAGE, AI_CV_Superpower_ScoreDown1
+	if_target_faster AI_CV_Superpower2
+	if_hp_more_than AI_USER, 40, AI_CV_Superpower_ScoreDown1
+	goto AI_CV_Superpower_End
+
+AI_CV_New_Thrash:
+	if_type_effectiveness AI_EFFECTIVENESS_x0_25, AI_CV_Superpower_ScoreDown1
+	if_type_effectiveness AI_EFFECTIVENESS_x0_5, AI_CV_Superpower_ScoreDown1
 	if_target_faster AI_CV_Superpower2
 	if_hp_more_than AI_USER, 40, AI_CV_Superpower_ScoreDown1
 	goto AI_CV_Superpower_End
@@ -2528,9 +2439,9 @@ AI_CV_Snatch_End:
 AI_CV_MudSport:
 	if_hp_less_than AI_USER, 50, AI_CV_MudSport_ScoreDown1
 	get_target_type1
-	if_equal TYPE_ELECTRIC, AI_CV_MudSport2
+	if_equal TYPE_WIND, AI_CV_MudSport2
 	get_target_type2
-	if_equal TYPE_ELECTRIC, AI_CV_MudSport2
+	if_equal TYPE_WIND, AI_CV_MudSport2
 	goto AI_CV_MudSport_ScoreDown1
 
 AI_CV_MudSport2:
@@ -2601,7 +2512,7 @@ AI_TryToFaint_DoubleSuperEffective:
 
 AI_TryToFaint_TryToEncourageQuickAttack:
 	if_effect EFFECT_EXPLOSION, AI_TryToFaint_End
-	if_not_effect EFFECT_QUICK_ATTACK, AI_TryToFaint_ScoreUp4
+	if_not_effect EFFECT_PRIORITY_HIT, AI_TryToFaint_ScoreUp4
 	score +2
 AI_TryToFaint_ScoreUp4:
 	score +4
@@ -2772,7 +2683,7 @@ AI_DoubleBattle:
 	get_curr_move_type
 	if_move MOVE_EARTHQUAKE, AI_DoubleBattleAllHittingGroundMove
 	if_move MOVE_MAGNITUDE, AI_DoubleBattleAllHittingGroundMove
-	if_equal TYPE_ELECTRIC, AI_DoubleBattleElectricMove
+	if_equal TYPE_WIND, AI_DoubleBattleElectricMove
 	if_equal TYPE_FIRE, AI_DoubleBattleFireMove
 	get_ability AI_USER
 	if_not_equal ABILITY_GUTS, AI_DoubleBattleCheckUserStatus
@@ -2799,23 +2710,23 @@ AI_DoubleBattleAllHittingGroundMove:
 	if_ability AI_USER_PARTNER, ABILITY_LEVITATE, Score_Plus2
 	if_type AI_USER_PARTNER, TYPE_FLYING, Score_Plus2
 	if_type AI_USER_PARTNER, TYPE_FIRE, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_ELECTRIC, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_POISON, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_ROCK, Score_Minus10
+	if_type AI_USER_PARTNER, TYPE_WIND, Score_Minus10
+	if_type AI_USER_PARTNER, TYPE_MIASMA, Score_Minus10
+	if_type AI_USER_PARTNER, TYPE_BEAST, Score_Minus10
 	goto Score_Minus3
 
 AI_DoubleBattleSkillSwap:
 	get_ability AI_USER
-	if_equal ABILITY_TRUANT, Score_Plus5
+	if_equal ABILITY_FRETFUL, Score_Plus5
 	get_ability AI_TARGET
-	if_equal ABILITY_SHADOW_TAG, Score_Plus2
+	if_equal ABILITY_OLD_SHADOW_TAG, Score_Plus2
 	if_equal ABILITY_PURE_POWER, Score_Plus2
 	end
 
 AI_DoubleBattleElectricMove:
 	if_no_ability AI_TARGET_PARTNER, ABILITY_LIGHTNING_ROD, AI_DoubleBattleElectricMoveEnd
 	score -2
-	if_no_type AI_TARGET_PARTNER, TYPE_GROUND, AI_DoubleBattleElectricMoveEnd
+	if_no_type AI_TARGET_PARTNER, TYPE_EARTH, AI_DoubleBattleElectricMoveEnd
 	score -8
 AI_DoubleBattleElectricMoveEnd:
 	end
@@ -2853,28 +2764,28 @@ AI_TryStatusMoveOnAlly:
 
 AI_TrySkillSwapOnAlly:
 	get_ability AI_TARGET
-	if_equal ABILITY_TRUANT, Score_Plus10
+	if_equal ABILITY_FRETFUL, Score_Plus10
 	get_ability AI_USER
 	if_not_equal ABILITY_LEVITATE, AI_TrySkillSwapOnAlly2
 	get_ability AI_TARGET
 	if_equal ABILITY_LEVITATE, Score_Minus30_
 	get_target_type1
-	if_not_equal TYPE_ELECTRIC, AI_TrySkillSwapOnAlly2
+	if_not_equal TYPE_WIND, AI_TrySkillSwapOnAlly2
 	score +1
 	get_target_type2
-	if_not_equal TYPE_ELECTRIC, AI_TrySkillSwapOnAlly2
+	if_not_equal TYPE_WIND, AI_TrySkillSwapOnAlly2
 	score +1
 	end
 
 AI_TrySkillSwapOnAlly2:
-	if_not_equal ABILITY_COMPOUND_EYES, Score_Minus30_
+	if_not_equal ABILITY_FOCUS, Score_Minus30_
 	if_has_move AI_USER_PARTNER, MOVE_FIRE_BLAST, AI_TrySkillSwapOnAllyPlus3
 	if_has_move AI_USER_PARTNER, MOVE_THUNDER, AI_TrySkillSwapOnAllyPlus3
 	if_has_move AI_USER_PARTNER, MOVE_CROSS_CHOP, AI_TrySkillSwapOnAllyPlus3
 	if_has_move AI_USER_PARTNER, MOVE_HYDRO_PUMP, AI_TrySkillSwapOnAllyPlus3
 	if_has_move AI_USER_PARTNER, MOVE_DYNAMIC_PUNCH, AI_TrySkillSwapOnAllyPlus3
 	if_has_move AI_USER_PARTNER, MOVE_BLIZZARD, AI_TrySkillSwapOnAllyPlus3
-	if_has_move AI_USER_PARTNER, MOVE_MEGAHORN, AI_TrySkillSwapOnAllyPlus3
+	if_has_move AI_USER_PARTNER, MOVE_BRAVE_BIRD, AI_TrySkillSwapOnAllyPlus3
 	goto Score_Minus30_
 
 AI_TrySkillSwapOnAllyPlus3:
@@ -3185,11 +3096,11 @@ AI_Roaming:
 	if_status2 AI_USER, STATUS2_WRAPPED, AI_Roaming_End
 	if_status2 AI_USER, STATUS2_ESCAPE_PREVENTION, AI_Roaming_End
 	get_ability AI_TARGET
-	if_equal ABILITY_SHADOW_TAG, AI_Roaming_End
+	if_equal ABILITY_OLD_SHADOW_TAG, AI_Roaming_End
 	get_ability AI_USER
 	if_equal ABILITY_LEVITATE, AI_Roaming_Flee
 	get_ability AI_TARGET
-	if_equal ABILITY_ARENA_TRAP, AI_Roaming_End
+	if_equal ABILITY_SHADOW_TAG, AI_Roaming_End
 AI_Roaming_Flee:
 	flee
 

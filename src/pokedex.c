@@ -1376,23 +1376,23 @@ static const struct SearchOptionText sDexSearchColorOptions[] =
 static const struct SearchOptionText sDexSearchTypeOptions[NUMBER_OF_MON_TYPES + 1] = // + 2 for "None" and terminator, - 1 for Mystery
 {
     {gText_DexEmptyString, gText_DexSearchTypeNone},
-    {gText_DexEmptyString, gTypeNames[TYPE_NORMAL]},
-    {gText_DexEmptyString, gTypeNames[TYPE_FIGHTING]},
+    {gText_DexEmptyString, gTypeNames[TYPE_ILLUSION]},
+    {gText_DexEmptyString, gTypeNames[TYPE_DARK]},
     {gText_DexEmptyString, gTypeNames[TYPE_FLYING]},
-    {gText_DexEmptyString, gTypeNames[TYPE_POISON]},
-    {gText_DexEmptyString, gTypeNames[TYPE_GROUND]},
-    {gText_DexEmptyString, gTypeNames[TYPE_ROCK]},
-    {gText_DexEmptyString, gTypeNames[TYPE_BUG]},
+    {gText_DexEmptyString, gTypeNames[TYPE_MIASMA]},
+    {gText_DexEmptyString, gTypeNames[TYPE_EARTH]},
+    {gText_DexEmptyString, gTypeNames[TYPE_BEAST]},
+    {gText_DexEmptyString, gTypeNames[TYPE_DREAM]},
     {gText_DexEmptyString, gTypeNames[TYPE_GHOST]},
     {gText_DexEmptyString, gTypeNames[TYPE_STEEL]},
     {gText_DexEmptyString, gTypeNames[TYPE_FIRE]},
     {gText_DexEmptyString, gTypeNames[TYPE_WATER]},
-    {gText_DexEmptyString, gTypeNames[TYPE_GRASS]},
-    {gText_DexEmptyString, gTypeNames[TYPE_ELECTRIC]},
-    {gText_DexEmptyString, gTypeNames[TYPE_PSYCHIC]},
+    {gText_DexEmptyString, gTypeNames[TYPE_NATURE]},
+    {gText_DexEmptyString, gTypeNames[TYPE_WIND]},
+    {gText_DexEmptyString, gTypeNames[TYPE_REASON]},
     {gText_DexEmptyString, gTypeNames[TYPE_ICE]},
-    {gText_DexEmptyString, gTypeNames[TYPE_DRAGON]},
-    {gText_DexEmptyString, gTypeNames[TYPE_DARK]},
+    {gText_DexEmptyString, gTypeNames[TYPE_FAITH]},
+    {gText_DexEmptyString, gTypeNames[TYPE_HEART]},
     {},
 };
 
@@ -1410,23 +1410,23 @@ static const u8 sOrderOptions[] =
 static const u8 sDexSearchTypeIds[NUMBER_OF_MON_TYPES] =
 {
     TYPE_NONE,
-    TYPE_NORMAL,
-    TYPE_FIGHTING,
+    TYPE_ILLUSION,
+    TYPE_DARK,
     TYPE_FLYING,
-    TYPE_POISON,
-    TYPE_GROUND,
-    TYPE_ROCK,
-    TYPE_BUG,
+    TYPE_MIASMA,
+    TYPE_EARTH,
+    TYPE_BEAST,
+    TYPE_DREAM,
     TYPE_GHOST,
     TYPE_STEEL,
     TYPE_FIRE,
     TYPE_WATER,
-    TYPE_GRASS,
-    TYPE_ELECTRIC,
-    TYPE_PSYCHIC,
+    TYPE_NATURE,
+    TYPE_WIND,
+    TYPE_REASON,
     TYPE_ICE,
-    TYPE_DRAGON,
-    TYPE_DARK,
+    TYPE_FAITH,
+    TYPE_HEART,
 };
 
 // Number pairs are the task data for tracking the cursor pos and scroll offset of each option list
@@ -4145,32 +4145,40 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
 static void PrintMonHeight(u16 height, u8 left, u8 top)
 {
     u8 buffer[16];
-    u32 inches, feet;
+    bool8 output;
     u8 i = 0;
+    u32 meters = height;
 
-    inches = (height * 10000) / 254;
-    if (inches % 10 >= 5)
-        inches += 10;
-    feet = inches / 120;
-    inches = (inches - (feet * 120)) / 10;
+    output = FALSE;
 
-    buffer[i++] = EXT_CTRL_CODE_BEGIN;
-    buffer[i++] = EXT_CTRL_CODE_CLEAR_TO;
-    if (feet / 10 == 0)
+    if ((buffer[i] = (meters / 1000) + CHAR_0) == CHAR_0 && !output)
     {
-        buffer[i++] = 18;
-        buffer[i++] = feet + CHAR_0;
+        buffer[i++] = CHAR_SPACER;
     }
     else
     {
-        buffer[i++] = 12;
-        buffer[i++] = feet / 10 + CHAR_0;
-        buffer[i++] = (feet % 10) + CHAR_0;
+        output = TRUE;
+        i++;
     }
-    buffer[i++] = CHAR_SGL_QUOTE_RIGHT;
-    buffer[i++] = (inches / 10) + CHAR_0;
-    buffer[i++] = (inches % 10) + CHAR_0;
-    buffer[i++] = CHAR_DBL_QUOTE_RIGHT;
+
+    meters %= 1000;
+    if ((buffer[i] = (meters / 100) + CHAR_0) == CHAR_0 && !output)
+    {
+        buffer[i++] = CHAR_SPACER;
+    }
+    else
+    {
+        output = TRUE;
+        i++;
+    }
+
+    kg %= 100;
+    buffer[i++] = (kg / 10) + CHAR_0;
+    kg %= 10;
+    buffer[i++] = CHAR_PERIOD;
+    buffer[i++] = kg + CHAR_0;
+    buffer[i++] = CHAR_SPACE;
+    buffer[i++] = CHAR_m;
     buffer[i++] = EOS;
     PrintInfoScreenText(buffer, left, top);
 }
@@ -4179,15 +4187,12 @@ static void PrintMonWeight(u16 weight, u8 left, u8 top)
 {
     u8 buffer[16];
     bool8 output;
-    u8 i;
-    u32 lbs = (weight * 100000) / 4536;
+    u8 i = 0;
+    u32 kg = weight;
 
-    if (lbs % 10u >= 5)
-        lbs += 10;
-    i = 0;
     output = FALSE;
 
-    if ((buffer[i] = (lbs / 100000) + CHAR_0) == CHAR_0 && !output)
+    if ((buffer[i] = (kg / 1000) + CHAR_0) == CHAR_0 && !output)
     {
         buffer[i++] = CHAR_SPACER;
     }
@@ -4197,8 +4202,8 @@ static void PrintMonWeight(u16 weight, u8 left, u8 top)
         i++;
     }
 
-    lbs %= 100000;
-    if ((buffer[i] = (lbs / 10000) + CHAR_0) == CHAR_0 && !output)
+    kg %= 1000;
+    if ((buffer[i] = (kg / 100) + CHAR_0) == CHAR_0 && !output)
     {
         buffer[i++] = CHAR_SPACER;
     }
@@ -4208,27 +4213,11 @@ static void PrintMonWeight(u16 weight, u8 left, u8 top)
         i++;
     }
 
-    lbs %= 10000;
-    if ((buffer[i] = (lbs / 1000) + CHAR_0) == CHAR_0 && !output)
-    {
-        buffer[i++] = CHAR_SPACER;
-    }
-    else
-    {
-        output = TRUE;
-        i++;
-    }
-
-    lbs %= 1000;
-    buffer[i++] = (lbs / 100) + CHAR_0;
-    lbs %= 100;
+    kg %= 100;
+    buffer[i++] = (kg / 10) + CHAR_0;
+    kg %= 10;
     buffer[i++] = CHAR_PERIOD;
-    buffer[i++] = (lbs / 10) + CHAR_0;
-    buffer[i++] = CHAR_SPACE;
-    buffer[i++] = CHAR_l;
-    buffer[i++] = CHAR_b;
-    buffer[i++] = CHAR_s;
-    buffer[i++] = CHAR_PERIOD;
+    buffer[i++] = kg + CHAR_0;
     buffer[i++] = EOS;
     PrintInfoScreenText(buffer, left, top);
 }

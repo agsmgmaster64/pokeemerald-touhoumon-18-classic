@@ -73,13 +73,13 @@ enum {
 // const rom data
 static const u16 sVariableDmgMoves[] =
 {
-    MOVE_COUNTER, MOVE_FISSURE, MOVE_BIDE, MOVE_MIRROR_COAT,
-    MOVE_HORN_DRILL, MOVE_FLAIL, MOVE_REVERSAL, MOVE_HIDDEN_POWER,
+    MOVE_COUNTER, MOVE_FISSURE, MOVE_GUARD, MOVE_MIRROR_COAT,
+    MOVE_SCULPTURE, MOVE_FLAIL, MOVE_REVERSAL, MOVE_CHARGE_BEAM,
     MOVE_SHEER_COLD, MOVE_FOCUS_PUNCH, MOVE_ERUPTION,
-    MOVE_WATER_SPOUT, MOVE_DREAM_EATER, MOVE_WEATHER_BALL,
-    MOVE_SNORE, MOVE_PAIN_SPLIT, MOVE_GUILLOTINE,
+    MOVE_AQUA_SHOWER, MOVE_DREAM_EATER, MOVE_WEATHER_BALL,
+    MOVE_SNORE, MOVE_PAIN_SPLIT, MOVE_JUDGEMENT,
     MOVE_FRUSTRATION, MOVE_RETURN, MOVE_ENDEAVOR,
-    MOVE_PRESENT, MOVE_REVENGE, TABLE_END,
+    MOVE_PRANK, MOVE_REVENGE, TABLE_END,
     // those are handled by the function itself
     MOVE_MAGNITUDE, MOVE_PSYWAVE, TABLE_END
 };
@@ -163,7 +163,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_EVASION_DOWN_HIT] = 1,
     [EFFECT_SKY_ATTACK] = 4,
     [EFFECT_CONFUSE_HIT] = 1,
-    [EFFECT_TWINEEDLE] = 1,
+    [EFFECT_SLEEP_HIT] = 1,
     [EFFECT_VITAL_THROW] = 1,
     [EFFECT_SUBSTITUTE] = 4,
     [EFFECT_RECHARGE] = 5,
@@ -189,11 +189,11 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_SPITE] = 4,
     [EFFECT_FALSE_SWIPE] = 1,
     [EFFECT_HEAL_BELL] = 5,
-    [EFFECT_QUICK_ATTACK] = 1,
+    [EFFECT_PRIORITY_HIT] = 1,
     [EFFECT_TRIPLE_KICK] = 1,
     [EFFECT_THIEF] = 4,
-    [EFFECT_MEAN_LOOK] = 5,
-    [EFFECT_NIGHTMARE] = 3,
+    [EFFECT_NO_SWITCH] = 5,
+    [EFFECT_OLD_NIGHTMARE] = 3,
     [EFFECT_MINIMIZE] = 1,
     [EFFECT_CURSE] = 2,
     [EFFECT_UNUSED_6E] = 1,
@@ -249,7 +249,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_STOCKPILE] = 3,
     [EFFECT_SPIT_UP] = 3,
     [EFFECT_SWALLOW] = 3,
-    [EFFECT_UNUSED_A3] = 1,
+    [EFFECT_NEW_THRASH] = 1,
     [EFFECT_HAIL] = 4,
     [EFFECT_TORMENT] = 7,
     [EFFECT_FLATTER] = 7,
@@ -282,9 +282,9 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_REFRESH] = 6,
     [EFFECT_GRUDGE] = 1,
     [EFFECT_SNATCH] = 1,
-    [EFFECT_LOW_KICK] = 1,
+    [EFFECT_COST_BASED] = 1,
     [EFFECT_SECRET_POWER] = 1,
-    [EFFECT_DOUBLE_EDGE] = 2,
+    [EFFECT_RECOIL_THIRD] = 2,
     [EFFECT_TEETER_DANCE] = 6,
     [EFFECT_BLAZE_KICK] = 1,
     [EFFECT_MUD_SPORT] = 4,
@@ -322,19 +322,19 @@ static const u16 sPoints_RainMoves[] =
 {
     MOVE_BUBBLE, 3,
     MOVE_WHIRLPOOL, 3,
-    MOVE_OCTAZOOKA, 3,
-    MOVE_CLAMP, 3,
+    MOVE_BLACK_RIPPLE, 3,
+    MOVE_MANA_SHIELD, 3,
     MOVE_WITHDRAW, 3,
-    MOVE_CRABHAMMER, 3,
-    MOVE_WATER_SPOUT, 3,
-    MOVE_DIVE, 3,
+    MOVE_AQUA_JET, 3,
+    MOVE_AQUA_SHOWER, 3,
+    MOVE_SHADOW_DIVE, 3,
     MOVE_WATERFALL, 3,
     MOVE_MUDDY_WATER, 3,
     MOVE_SURF, 3,
     MOVE_HYDRO_CANNON, 3,
     MOVE_HYDRO_PUMP, 3,
     MOVE_BUBBLE_BEAM, 3,
-    MOVE_WATER_SPORT, 0, // Unnecessary, unlisted moves are already given 0 points
+    MOVE_SPLASHING, 0, // Unnecessary, unlisted moves are already given 0 points
     MOVE_WATER_GUN, 3,
     MOVE_WATER_PULSE, 3,
     MOVE_WEATHER_BALL, 3,
@@ -371,8 +371,8 @@ static const u16 sPoints_SunMoves[] =
     MOVE_FIRE_PUNCH, 3,
     MOVE_SOLAR_BEAM, 5,
     MOVE_SYNTHESIS, 3,
-    MOVE_MORNING_SUN, 3,
-    MOVE_MOONLIGHT, 3,
+    MOVE_ENERGY_LIGHT, 3,
+    MOVE_LUNATIC, 3,
     MOVE_WEATHER_BALL, 3,
     TABLE_END, 0
 };
@@ -392,9 +392,9 @@ static const u16 sPoints_ElectricMoves[] =
 {
     MOVE_THUNDERBOLT, 3,
     MOVE_THUNDER_PUNCH, 3,
-    MOVE_SPARK, 3,
+    MOVE_DISCHARGE, 3,
     MOVE_THUNDER_SHOCK, 3,
-    MOVE_ZAP_CANNON, 3,
+    MOVE_FOCUS_BLAST, 3,
     MOVE_SHOCK_WAVE, 3,
     MOVE_THUNDER_WAVE, 0, // Unnecessary, unlisted moves are already given 0 points
     MOVE_THUNDER, 3,
@@ -1230,7 +1230,7 @@ static void AddMovePoints(u8 caseId, u16 arg1, u8 arg2, u8 arg3)
         break;
     case PTS_MUD_SPORT:
         // If used Electric move during Mud Sport
-        if (tvPtr->pos[defSide][0].mudSportMonId != -(tvPtr->pos[defSide][1].mudSportMonId) && type == TYPE_ELECTRIC)
+        if (tvPtr->pos[defSide][0].mudSportMonId != -(tvPtr->pos[defSide][1].mudSportMonId) && type == TYPE_WIND)
         {
             if (tvPtr->pos[defSide][0].mudSportMonId != 0)
             {
@@ -1246,7 +1246,7 @@ static void AddMovePoints(u8 caseId, u16 arg1, u8 arg2, u8 arg3)
         break;
     case PTS_REFLECT:
         // If hit Reflect with damaging physical move
-        if (IS_TYPE_PHYSICAL(type) && power != 0 && tvPtr->side[defSide].reflectMonId != 0)
+        if (IS_MOVE_PHYSICAL(gCurrentMove) && power != 0 && tvPtr->side[defSide].reflectMonId != 0)
         {
             u32 id = (tvPtr->side[defSide].reflectMonId - 1) * 4;
             movePoints->points[defSide][id + tvPtr->side[defSide].reflectMoveSlot] += sPointsArray[caseId][0];
@@ -1254,7 +1254,7 @@ static void AddMovePoints(u8 caseId, u16 arg1, u8 arg2, u8 arg3)
         break;
     case PTS_LIGHT_SCREEN:
         // If hit Light Screen with damaging special move
-        if (!IS_TYPE_PHYSICAL(type) && power != 0 && tvPtr->side[defSide].lightScreenMonId != 0)
+        if (!IS_MOVE_PHYSICAL(gCurrentMove) && power != 0 && tvPtr->side[defSide].lightScreenMonId != 0)
         {
             u32 id = (tvPtr->side[defSide].lightScreenMonId - 1) * 4;
             movePoints->points[defSide][id + tvPtr->side[defSide].lightScreenMoveSlot] += sPointsArray[caseId][0];
@@ -1431,7 +1431,7 @@ static void TrySetBattleSeminarShow(void)
         return;
     else if (gBattleMons[gBattlerTarget].statStages[STAT_EVASION] > DEFAULT_STAT_STAGE)
         return;
-    else if (gCurrentMove == MOVE_HIDDEN_POWER || gCurrentMove == MOVE_WEATHER_BALL)
+    else if (gCurrentMove == MOVE_CHARGE_BEAM || gCurrentMove == MOVE_WEATHER_BALL)
         return;
     else if (gBattleTypeFlags & (BATTLE_TYPE_PALACE | BATTLE_TYPE_PIKE | BATTLE_TYPE_PYRAMID))
         return;
@@ -1464,7 +1464,7 @@ static void TrySetBattleSeminarShow(void)
                                                     sideStatus, powerOverride,
                                                     0, gBattlerAttacker, gBattlerTarget);
 
-            if (gStatuses3[gBattlerAttacker] & STATUS3_CHARGED_UP && gBattleMoves[gCurrentMove].type == TYPE_ELECTRIC)
+            if (gStatuses3[gBattlerAttacker] & STATUS3_CHARGED_UP && gBattleMoves[gCurrentMove].type == TYPE_WIND)
                 gBattleMoveDamage *= 2;
             if (gProtectStructs[gBattlerAttacker].helpingHand)
                 gBattleMoveDamage = gBattleMoveDamage * 15 / 10;

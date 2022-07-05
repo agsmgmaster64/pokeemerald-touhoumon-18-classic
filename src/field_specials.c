@@ -1196,7 +1196,7 @@ void IsGrassTypeInParty(void)
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
-            if (gBaseStats[species].type1 == TYPE_GRASS || gBaseStats[species].type2 == TYPE_GRASS)
+            if (gBaseStats[species].type1 == TYPE_NATURE || gBaseStats[species].type2 == TYPE_NATURE)
             {
                 gSpecialVar_Result = TRUE;
                 return;
@@ -2991,10 +2991,10 @@ static const u16 sBattleFrontier_TutorMoves1[] =
     MOVE_SOFT_BOILED,
     MOVE_SEISMIC_TOSS,
     MOVE_DREAM_EATER,
-    MOVE_MEGA_PUNCH,
-    MOVE_MEGA_KICK,
+    MOVE_DRAIN_PUNCH,
+    MOVE_GIGA_IMPACT,
     MOVE_BODY_SLAM,
-    MOVE_ROCK_SLIDE,
+    MOVE_ROCK_WRECKER,
     MOVE_COUNTER,
     MOVE_THUNDER_WAVE,
     MOVE_SWORDS_DANCE
@@ -3004,7 +3004,7 @@ static const u16 sBattleFrontier_TutorMoves2[] =
 {
     MOVE_DEFENSE_CURL,
     MOVE_SNORE,
-    MOVE_MUD_SLAP,
+    MOVE_MUD_SHOT,
     MOVE_SWIFT,
     MOVE_ICY_WIND,
     MOVE_ENDURE,

@@ -450,7 +450,7 @@
 	.byte \battler
 	.endm
 
-	.macro get_move_type_from_result
+	.macro get_move_category_from_result
 	.byte 0x4e
 	.endm
 

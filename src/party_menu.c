@@ -401,7 +401,7 @@ static void CursorCb_FieldMove(u8);
 static bool8 SetUpFieldMove_Surf(void);
 static bool8 SetUpFieldMove_Fly(void);
 static bool8 SetUpFieldMove_Waterfall(void);
-static bool8 SetUpFieldMove_Dive(void);
+static bool8 SetUpFieldMOVE_SHADOW_DIVE(void);
 
 // static const data
 #include "data/pokemon/tutor_learnsets.h"
@@ -3835,7 +3835,7 @@ static void FieldCallback_Dive(void)
     FieldEffectStart(FLDEFF_USE_DIVE);
 }
 
-static bool8 SetUpFieldMove_Dive(void)
+static bool8 SetUpFieldMOVE_SHADOW_DIVE(void)
 {
     gFieldEffectArguments[1] = TrySetDiveWarp();
     if (gFieldEffectArguments[1] != 0)

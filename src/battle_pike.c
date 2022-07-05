@@ -95,7 +95,7 @@ static const struct PikeWildMon sLvl50_Mons1[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TOXIC, MOVE_COERCE, MOVE_BODY_SLAM, MOVE_GUNK_SHOT}
     },
     {
         .species = SPECIES_MILOTIC,
@@ -105,7 +105,7 @@ static const struct PikeWildMon sLvl50_Mons1[] =
     {
         .species = SPECIES_DUSCLOPS,
         .levelDelta = 5,
-        .moves = {MOVE_WILL_O_WISP, MOVE_MEAN_LOOK, MOVE_TOXIC, MOVE_SHADOW_PUNCH}
+        .moves = {MOVE_WILL_O_WISP, MOVE_CHARMING_LOOK, MOVE_TOXIC, MOVE_SHADOW_PUNCH}
     }
 };
 
@@ -114,7 +114,7 @@ static const struct PikeWildMon sLvl50_Mons2[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TOXIC, MOVE_COERCE, MOVE_BODY_SLAM, MOVE_GUNK_SHOT}
     },
     {
         .species = SPECIES_MILOTIC,
@@ -133,7 +133,7 @@ static const struct PikeWildMon sLvl50_Mons3[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TOXIC, MOVE_COERCE, MOVE_BODY_SLAM, MOVE_GUNK_SHOT}
     },
     {
         .species = SPECIES_MILOTIC,
@@ -143,7 +143,7 @@ static const struct PikeWildMon sLvl50_Mons3[] =
     {
         .species = SPECIES_BRELOOM,
         .levelDelta = 5,
-        .moves = {MOVE_SPORE, MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_HIDDEN_POWER}
+        .moves = {MOVE_BURN_POWDER, MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_CHARGE_BEAM}
     }
 };
 
@@ -152,7 +152,7 @@ static const struct PikeWildMon sLvl50_Mons4[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TOXIC, MOVE_COERCE, MOVE_BODY_SLAM, MOVE_GUNK_SHOT}
     },
     {
         .species = SPECIES_MILOTIC,
@@ -179,7 +179,7 @@ static const struct PikeWildMon sLvlOpen_Mons1[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TOXIC, MOVE_COERCE, MOVE_CROSS_POISON, MOVE_GUNK_SHOT}
     },
     {
         .species = SPECIES_MILOTIC,
@@ -189,7 +189,7 @@ static const struct PikeWildMon sLvlOpen_Mons1[] =
     {
         .species = SPECIES_DUSCLOPS,
         .levelDelta = 5,
-        .moves = {MOVE_WILL_O_WISP, MOVE_MEAN_LOOK, MOVE_TOXIC, MOVE_ICE_BEAM}
+        .moves = {MOVE_WILL_O_WISP, MOVE_CHARMING_LOOK, MOVE_TOXIC, MOVE_ICE_BEAM}
     }
 };
 
@@ -198,7 +198,7 @@ static const struct PikeWildMon sLvlOpen_Mons2[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TOXIC, MOVE_COERCE, MOVE_CROSS_POISON, MOVE_GUNK_SHOT}
     },
     {
         .species = SPECIES_MILOTIC,
@@ -217,7 +217,7 @@ static const struct PikeWildMon sLvlOpen_Mons3[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TOXIC, MOVE_COERCE, MOVE_CROSS_POISON, MOVE_GUNK_SHOT}
     },
     {
         .species = SPECIES_MILOTIC,
@@ -227,7 +227,7 @@ static const struct PikeWildMon sLvlOpen_Mons3[] =
     {
         .species = SPECIES_BRELOOM,
         .levelDelta = 5,
-        .moves = {MOVE_SPORE, MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_HIDDEN_POWER}
+        .moves = {MOVE_BURN_POWDER, MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_CHARGE_BEAM}
     }
 };
 
@@ -236,7 +236,7 @@ static const struct PikeWildMon sLvlOpen_Mons4[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TOXIC, MOVE_COERCE, MOVE_CROSS_POISON, MOVE_GUNK_SHOT}
     },
     {
         .species = SPECIES_MILOTIC,
@@ -815,7 +815,7 @@ static bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
     switch (status)
     {
     case STATUS1_FREEZE:
-        if (ability == ABILITY_MAGMA_ARMOR)
+        if (ability == ABILITY_FIRE_VEIL)
             ret = TRUE;
         break;
     case STATUS1_BURN:
@@ -845,8 +845,8 @@ static bool8 DoesTypePreventStatus(u16 species, u32 status)
     switch (status)
     {
     case STATUS1_TOXIC_POISON:
-        if (gBaseStats[species].type1 == TYPE_STEEL || gBaseStats[species].type1 == TYPE_POISON
-            || gBaseStats[species].type2 == TYPE_STEEL || gBaseStats[species].type2 == TYPE_POISON)
+        if (gBaseStats[species].type1 == TYPE_STEEL || gBaseStats[species].type1 == TYPE_MIASMA
+            || gBaseStats[species].type2 == TYPE_STEEL || gBaseStats[species].type2 == TYPE_MIASMA)
             ret = TRUE;
         break;
     case STATUS1_FREEZE:
@@ -854,8 +854,8 @@ static bool8 DoesTypePreventStatus(u16 species, u32 status)
             ret = TRUE;
         break;
     case STATUS1_PARALYSIS:
-        if (gBaseStats[species].type1 == TYPE_GROUND || gBaseStats[species].type1 == TYPE_ELECTRIC
-            || gBaseStats[species].type2 == TYPE_GROUND || gBaseStats[species].type2 == TYPE_ELECTRIC)
+        if (gBaseStats[species].type1 == TYPE_EARTH || gBaseStats[species].type1 == TYPE_WIND
+            || gBaseStats[species].type2 == TYPE_EARTH || gBaseStats[species].type2 == TYPE_WIND)
             ret = TRUE;
         break;
     case STATUS1_BURN:
