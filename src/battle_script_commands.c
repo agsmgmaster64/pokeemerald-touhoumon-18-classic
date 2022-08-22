@@ -6459,6 +6459,7 @@ static void Cmd_setprotectlike(void) // protect and endure
     bool8 notLastTurn = TRUE;
     u16 lastMove = gLastResultingMoves[gBattlerAttacker];
 
+// Remove the Protect mention here later
     if (lastMove != MOVE_PROTECT && lastMove != MOVE_DETECT && lastMove != MOVE_ENDURE)
         gDisableStructs[gBattlerAttacker].protectUses = 0;
 
