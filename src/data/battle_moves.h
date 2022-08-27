@@ -506,7 +506,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_TAKE_DOWN] =
     {
-        .effect = EFFECT_DOUBLE_EDGE,
+        .effect = EFFECT_RECOIL_33,
         .power = 120,
         .type = TYPE_GROUND,
         .accuracy = 90,
@@ -534,7 +534,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_DOUBLE_EDGE] =
     {
-        .effect = EFFECT_DOUBLE_EDGE,
+        .effect = EFFECT_RECOIL_33,
         .power = 120,
         .type = TYPE_ROCK,
         .accuracy = 90,
@@ -674,7 +674,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SUPERSONIC] =
     {
-        .effect = EFFECT_MEAN_LOOK,
+        .effect = EFFECT_BLOCK,
         .power = 0,
         .type = TYPE_BUG,
         .accuracy = 100,
@@ -1696,7 +1696,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_EGG_BOMB] =
     {
-        .effect = EFFECT_LOW_KICK,
+        .effect = EFFECT_COST_BASED,
         .power = 1,
         .type = TYPE_BUG,
         .accuracy = 100,
@@ -2060,7 +2060,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SPORE] =
     {
-        .effect = EFFECT_WILL_O_WISP,
+        .effect = EFFECT_BURN,
         .power = 0,
         .type = TYPE_GRASS,
         .accuracy = 75,
@@ -2270,7 +2270,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SUPER_FANG] =
     {
-        .effect = EFFECT_LOW_KICK,
+        .effect = EFFECT_COST_BASED,
         .power = 1,
         .type = TYPE_ROCK,
         .accuracy = 100,
@@ -2396,7 +2396,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_NIGHTMARE] =
     {
-        .effect = EFFECT_TWINEEDLE,
+        .effect = EFFECT_SLEEP_HIT,
         .power = 70,
         .type = TYPE_GHOST,
         .accuracy = 100,
@@ -2550,7 +2550,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_PROTECT] =
     {
-        .effect = EFFECT_COSMIC_POWER,
+        .effect = EFFECT_PROTECT,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,
@@ -2760,7 +2760,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_DETECT] =
     {
-        .effect = EFFECT_PROTECT,
+        .effect = EFFECT_DETECT,
         .power = 0,
         .type = TYPE_FIGHTING,
         .accuracy = 0,
@@ -3040,7 +3040,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_PRESENT] =
     {
-        .effect = EFFECT_SUPER_FANG,
+        .effect = EFFECT_HALF_HP,
         .power = 1,
         .type = TYPE_DARK,
         .accuracy = 90,
@@ -3138,7 +3138,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_MEGAHORN] =
     {
-        .effect = EFFECT_DOUBLE_EDGE,
+        .effect = EFFECT_RECOIL_33,
         .power = 120,
         .type = TYPE_FLYING,
         .accuracy = 90,
@@ -3222,7 +3222,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SWEET_SCENT] =
     {
-        .effect = EFFECT_LOW_KICK,
+        .effect = EFFECT_COST_BASED,
         .power = 1,
         .type = TYPE_GRASS,
         .accuracy = 100,
@@ -3656,7 +3656,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_WILL_O_WISP] =
     {
-        .effect = EFFECT_WILL_O_WISP,
+        .effect = EFFECT_BURN,
         .power = 0,
         .type = TYPE_FIRE,
         .accuracy = 75,
@@ -4412,7 +4412,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_OVERHEAT] =
     {
-        .effect = EFFECT_DOUBLE_EDGE,
+        .effect = EFFECT_RECOIL_33,
         .power = 120,
         .type = TYPE_FIRE,
         .accuracy = 90,
@@ -4512,7 +4512,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_OVERHEAT,
         .power = 140,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_NORMAL,
         .accuracy = 90,
         .pp = 5,
         .secondaryEffectChance = 100,
@@ -4692,7 +4692,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_BLOCK] =
     {
-        .effect = EFFECT_MEAN_LOOK,
+        .effect = EFFECT_BLOCK,
         .power = 0,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
@@ -4818,7 +4818,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_VOLT_TACKLE] =
     {
-        .effect = EFFECT_DOUBLE_EDGE,
+        .effect = EFFECT_RECOIL_33,
         .power = 120,
         .type = TYPE_ELECTRIC,
         .accuracy = 90,
@@ -4888,7 +4888,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_DRAGON_DANCE] =
     {
-        .effect = EFFECT_DRAGON_DANCE,
+        .effect = EFFECT_TAILWIND,
         .power = 0,
         .type = TYPE_ELECTRIC,
         .accuracy = 0,

@@ -124,7 +124,7 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_LIGHT_SCREEN, AI_CBM_LightScreen
 	if_effect EFFECT_OHKO, AI_CBM_OneHitKO
 	if_effect EFFECT_RAZOR_WIND, AI_CBM_HighRiskForDamage
-	if_effect EFFECT_SUPER_FANG, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_HALF_HP, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_MIST, AI_CBM_Mist
 	if_effect EFFECT_FOCUS_ENERGY, AI_CBM_FocusEnergy
 	if_effect EFFECT_CONFUSE, AI_CBM_Confuse
@@ -156,7 +156,7 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_SNORE, AI_CBM_DamageDuringSleep
 	if_effect EFFECT_SLEEP_TALK, AI_CBM_DamageDuringSleep
 	if_effect EFFECT_FLAIL, AI_CBM_HighRiskForDamage
-	if_effect EFFECT_MEAN_LOOK, AI_CBM_CantEscape
+	if_effect EFFECT_BLOCK, AI_CBM_CantEscape
 	if_effect EFFECT_NIGHTMARE, AI_CBM_Nightmare
 	if_effect EFFECT_MINIMIZE, AI_CBM_EvasionUp
 	if_effect EFFECT_CURSE, AI_CBM_Curse
@@ -189,7 +189,7 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_HAIL, AI_CBM_Hail
 	if_effect EFFECT_TORMENT, AI_CBM_Torment
 	if_effect EFFECT_FLATTER, AI_CBM_Confuse
-	if_effect EFFECT_WILL_O_WISP, AI_CBM_WillOWisp
+	if_effect EFFECT_BURN, AI_CBM_WillOWisp
 	if_effect EFFECT_MEMENTO, AI_CBM_Memento
 	if_effect EFFECT_FOCUS_PUNCH, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_HELPING_HAND, AI_CBM_HelpingHand
@@ -201,14 +201,14 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_ENDEAVOR, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_IMPRISON, AI_CBM_Imprison
 	if_effect EFFECT_REFRESH, AI_CBM_Refresh
-	if_effect EFFECT_LOW_KICK, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_COST_BASED, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_MUD_SPORT, AI_CBM_MudSport
 	if_effect EFFECT_TICKLE, AI_CBM_Tickle
-	if_effect EFFECT_COSMIC_POWER, AI_CBM_CosmicPower
+	if_effect EFFECT_PROTECT, AI_CBM_CosmicPower
 	if_effect EFFECT_BULK_UP, AI_CBM_BulkUp
 	if_effect EFFECT_WATER_SPORT, AI_CBM_WaterSport
 	if_effect EFFECT_CALM_MIND, AI_CBM_CalmMind
-	if_effect EFFECT_DRAGON_DANCE, AI_CBM_DragonDance
+	if_effect EFFECT_TAILWIND, AI_CBM_DragonDance
 	end
 
 AI_CBM_Sleep:
@@ -679,7 +679,7 @@ AI_CheckViability:
 	if_effect EFFECT_REST, AI_CV_Rest
 	if_effect EFFECT_OHKO, AI_CV_OneHitKO
 	if_effect EFFECT_RAZOR_WIND, AI_CV_ChargeUpMove
-	if_effect EFFECT_SUPER_FANG, AI_CV_SuperFang
+	if_effect EFFECT_HALF_HP, AI_CV_SuperFang
 	if_effect EFFECT_TRAP, AI_CV_Trap
 	if_effect EFFECT_HIGH_CRITICAL, AI_CV_HighCrit
 	if_effect EFFECT_CONFUSE, AI_CV_Confuse
@@ -718,10 +718,10 @@ AI_CheckViability:
 	if_effect EFFECT_FLAIL, AI_CV_Flail
 	if_effect EFFECT_HEAL_BELL, AI_CV_HealBell
 	if_effect EFFECT_THIEF, AI_CV_Thief
-	if_effect EFFECT_MEAN_LOOK, AI_CV_Trap
+	if_effect EFFECT_BLOCK, AI_CV_Trap
 	if_effect EFFECT_MINIMIZE, AI_CV_EvasionUp
 	if_effect EFFECT_CURSE, AI_CV_Curse
-	if_effect EFFECT_PROTECT, AI_CV_Protect
+	if_effect EFFECT_DETECT, AI_CV_Protect
 	if_effect EFFECT_FORESIGHT, AI_CV_Foresight
 	if_effect EFFECT_ENDURE, AI_CV_Endure
 	if_effect EFFECT_BATON_PASS, AI_CV_BatonPass
@@ -765,12 +765,12 @@ AI_CheckViability:
 	if_effect EFFECT_MUD_SPORT, AI_CV_MudSport
 	if_effect EFFECT_OVERHEAT, AI_CV_Overheat
 	if_effect EFFECT_TICKLE, AI_CV_DefenseDown
-	if_effect EFFECT_COSMIC_POWER, AI_CV_SpDefUp
+	if_effect EFFECT_PROTECT, AI_CV_SpDefUp
 	if_effect EFFECT_BULK_UP, AI_CV_DefenseUp
 	if_effect EFFECT_POISON_TAIL, AI_CV_HighCrit
 	if_effect EFFECT_WATER_SPORT, AI_CV_WaterSport
 	if_effect EFFECT_CALM_MIND, AI_CV_SpDefUp
-	if_effect EFFECT_DRAGON_DANCE, AI_CV_DragonDance
+	if_effect EFFECT_TAILWIND, AI_CV_DragonDance
 	end
 
 AI_CV_Sleep:
@@ -1356,7 +1356,7 @@ AI_CV_Toxic2:
 	score -3
 AI_CV_Toxic3:
 	if_has_move_with_effect AI_USER, EFFECT_SPECIAL_DEFENSE_UP, AI_CV_Toxic4
-	if_has_move_with_effect AI_USER, EFFECT_PROTECT, AI_CV_Toxic4
+	if_has_move_with_effect AI_USER, EFFECT_DETECT, AI_CV_Toxic4
 	goto AI_CV_Toxic_End
 
 AI_CV_Toxic4:
@@ -1559,7 +1559,7 @@ AI_CV_Substitute4:
 	if_equal EFFECT_TOXIC, AI_CV_Substitute5
 	if_equal EFFECT_POISON, AI_CV_Substitute5
 	if_equal EFFECT_PARALYZE, AI_CV_Substitute5
-	if_equal EFFECT_WILL_O_WISP, AI_CV_Substitute5
+	if_equal EFFECT_BURN, AI_CV_Substitute5
 	if_equal EFFECT_CONFUSE, AI_CV_Substitute6
 	if_equal EFFECT_LEECH_SEED, AI_CV_Substitute7
 	goto AI_CV_Substitute_End
@@ -1696,7 +1696,7 @@ AI_CV_Encore_EncouragedMovesToEncore:
     .byte EFFECT_TOXIC
     .byte EFFECT_LIGHT_SCREEN
     .byte EFFECT_REST
-    .byte EFFECT_SUPER_FANG
+    .byte EFFECT_HALF_HP
     .byte EFFECT_SPECIAL_DEFENSE_UP_2
     .byte EFFECT_CONFUSE
     .byte EFFECT_POISON
@@ -1708,9 +1708,9 @@ AI_CV_Encore_EncouragedMovesToEncore:
     .byte EFFECT_CONVERSION_2
     .byte EFFECT_LOCK_ON
     .byte EFFECT_HEAL_BELL
-    .byte EFFECT_MEAN_LOOK
+    .byte EFFECT_BLOCK
     .byte EFFECT_NIGHTMARE
-    .byte EFFECT_PROTECT
+    .byte EFFECT_DETECT
     .byte EFFECT_SKILL_SWAP
     .byte EFFECT_FORESIGHT
     .byte EFFECT_PERISH_SONG
@@ -1730,7 +1730,7 @@ AI_CV_Encore_EncouragedMovesToEncore:
     .byte EFFECT_SWALLOW
     .byte EFFECT_HAIL
     .byte EFFECT_TORMENT
-    .byte EFFECT_WILL_O_WISP
+    .byte EFFECT_BURN
     .byte EFFECT_FOLLOW_ME
     .byte EFFECT_CHARGE
     .byte EFFECT_TRICK
@@ -1745,7 +1745,7 @@ AI_CV_Encore_EncouragedMovesToEncore:
     .byte EFFECT_TEETER_DANCE
     .byte EFFECT_MUD_SPORT
     .byte EFFECT_WATER_SPORT
-    .byte EFFECT_DRAGON_DANCE
+    .byte EFFECT_TAILWIND
     .byte EFFECT_CAMOUFLAGE
     .byte -1
 
@@ -2157,7 +2157,7 @@ AI_CV_MirrorCoat_SpecialTypeList:
 AI_CV_ChargeUpMove:
 	if_type_effectiveness AI_EFFECTIVENESS_x0_25, AI_CV_ChargeUpMove_ScoreDown2
 	if_type_effectiveness AI_EFFECTIVENESS_x0_5, AI_CV_ChargeUpMove_ScoreDown2
-	if_has_move_with_effect AI_TARGET, EFFECT_PROTECT, AI_CV_ChargeUpMove_ScoreDown2
+	if_has_move_with_effect AI_TARGET, EFFECT_DETECT, AI_CV_ChargeUpMove_ScoreDown2
 	if_hp_more_than AI_USER, 38, AI_CV_ChargeUpMove_End
 	score -1
 	goto AI_CV_ChargeUpMove_End
@@ -2168,7 +2168,7 @@ AI_CV_ChargeUpMove_End:
 	end
 
 AI_CV_SemiInvulnerable:
-	if_doesnt_have_move_with_effect AI_TARGET, EFFECT_PROTECT, AI_CV_SemiInvulnerable2
+	if_doesnt_have_move_with_effect AI_TARGET, EFFECT_DETECT, AI_CV_SemiInvulnerable2
 	score -1
 	goto AI_CV_SemiInvulnerable_End
 
@@ -2666,12 +2666,12 @@ AI_SetupFirstTurn_SetupEffectsToEncourage:
     .byte EFFECT_DEFENSE_CURL
     .byte EFFECT_TORMENT
     .byte EFFECT_FLATTER
-    .byte EFFECT_WILL_O_WISP
+    .byte EFFECT_BURN
     .byte EFFECT_INGRAIN
     .byte EFFECT_IMPRISON
     .byte EFFECT_TEETER_DANCE
     .byte EFFECT_TICKLE
-    .byte EFFECT_COSMIC_POWER
+    .byte EFFECT_PROTECT
     .byte EFFECT_BULK_UP
     .byte EFFECT_CALM_MIND
     .byte EFFECT_CAMOUFLAGE
@@ -2731,7 +2731,7 @@ AI_PreferBatonPass_GoForBatonPass:
 	if_move MOVE_SWORDS_DANCE, AI_PreferBatonPass2
 	if_move MOVE_DRAGON_DANCE, AI_PreferBatonPass2
 	if_move MOVE_CALM_MIND, AI_PreferBatonPass2
-	if_effect EFFECT_PROTECT, AI_PreferBatonPass_End
+	if_effect EFFECT_DETECT, AI_PreferBatonPass_End
 	if_move MOVE_BATON_PASS, AI_PreferBatonPass_EncourageIfHighStats
 	if_random_less_than 20, AI_Risky_End
 	score +3
@@ -3004,10 +3004,10 @@ AI_HPAware_DiscouragedEffectsWhenMediumHP:
     .byte EFFECT_SAFEGUARD
     .byte EFFECT_BELLY_DRUM
     .byte EFFECT_TICKLE
-    .byte EFFECT_COSMIC_POWER
+    .byte EFFECT_PROTECT
     .byte EFFECT_BULK_UP
     .byte EFFECT_CALM_MIND
-    .byte EFFECT_DRAGON_DANCE
+    .byte EFFECT_TAILWIND
     .byte -1
 
 AI_HPAware_DiscouragedEffectsWhenLowHP:
@@ -3054,10 +3054,10 @@ AI_HPAware_DiscouragedEffectsWhenLowHP:
     .byte EFFECT_SOLAR_BEAM
     .byte EFFECT_ERUPTION
     .byte EFFECT_TICKLE
-    .byte EFFECT_COSMIC_POWER
+    .byte EFFECT_PROTECT
     .byte EFFECT_BULK_UP
     .byte EFFECT_CALM_MIND
-    .byte EFFECT_DRAGON_DANCE
+    .byte EFFECT_TAILWIND
     .byte -1
 
 AI_HPAware_DiscouragedEffectsWhenTargetHighHP:
@@ -3099,10 +3099,10 @@ AI_HPAware_DiscouragedEffectsWhenTargetMediumHP:
     .byte EFFECT_PERISH_SONG
     .byte EFFECT_SAFEGUARD
     .byte EFFECT_TICKLE
-    .byte EFFECT_COSMIC_POWER
+    .byte EFFECT_PROTECT
     .byte EFFECT_BULK_UP
     .byte EFFECT_CALM_MIND
-    .byte EFFECT_DRAGON_DANCE
+    .byte EFFECT_TAILWIND
     .byte -1
 
 AI_HPAware_DiscouragedEffectsWhenTargetLowHP:
@@ -3127,8 +3127,8 @@ AI_HPAware_DiscouragedEffectsWhenTargetLowHP:
     .byte EFFECT_TOXIC
     .byte EFFECT_LIGHT_SCREEN
     .byte EFFECT_OHKO
-    .byte EFFECT_SUPER_FANG //Maybe supposed to be EFFECT_RAZOR_WIND
-    .byte EFFECT_SUPER_FANG
+    .byte EFFECT_HALF_HP //Maybe supposed to be EFFECT_RAZOR_WIND
+    .byte EFFECT_HALF_HP
     .byte EFFECT_MIST
     .byte EFFECT_FOCUS_ENERGY
     .byte EFFECT_CONFUSE
@@ -3159,12 +3159,12 @@ AI_HPAware_DiscouragedEffectsWhenTargetLowHP:
     .byte EFFECT_SAFEGUARD
     .byte EFFECT_PSYCH_UP
     .byte EFFECT_MIRROR_COAT
-    .byte EFFECT_WILL_O_WISP
+    .byte EFFECT_BURN
     .byte EFFECT_TICKLE
-    .byte EFFECT_COSMIC_POWER
+    .byte EFFECT_PROTECT
     .byte EFFECT_BULK_UP
     .byte EFFECT_CALM_MIND
-    .byte EFFECT_DRAGON_DANCE
+    .byte EFFECT_TAILWIND
     .byte -1
 
 @ Given the AI_TryOnAlly at the beginning it's possible that this was the start of a more
