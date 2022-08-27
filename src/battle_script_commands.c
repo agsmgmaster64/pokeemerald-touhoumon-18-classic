@@ -730,13 +730,12 @@ static const u16 sMovesForbiddenToCopy[] =
     MIMIC_FORBIDDEN_END,
     MOVE_COUNTER,
     MOVE_MIRROR_COAT,
-    MOVE_PROTECT,
     MOVE_DETECT,
     MOVE_ENDURE,
     MOVE_DESTINY_BOND,
     MOVE_SLEEP_TALK,
     MOVE_THIEF,
-    MOVE_FOLLOW_ME,
+    MOVE_BIDE,
     MOVE_SNATCH,
     MOVE_HELPING_HAND,
     MOVE_COVET,
@@ -776,7 +775,7 @@ static const u16 sWeightToDamageTable[] =
     250, 40,
     500, 60,
     1000, 80,
-    2000, 100,
+    1500, 100,
     0xFFFF, 0xFFFF
 };
 
@@ -6459,8 +6458,7 @@ static void Cmd_setprotectlike(void) // protect and endure
     bool8 notLastTurn = TRUE;
     u16 lastMove = gLastResultingMoves[gBattlerAttacker];
 
-// Remove the Protect mention here later
-    if (lastMove != MOVE_PROTECT && lastMove != MOVE_DETECT && lastMove != MOVE_ENDURE)
+    if (lastMove != MOVE_DETECT && lastMove != MOVE_ENDURE)
         gDisableStructs[gBattlerAttacker].protectUses = 0;
 
     if (gCurrentTurnActionNumber == (gBattlersCount - 1))
@@ -7928,8 +7926,7 @@ static void Cmd_trysetencore(void)
     }
 
     if (gLastMoves[gBattlerTarget] == MOVE_STRUGGLE
-        || gLastMoves[gBattlerTarget] == MOVE_ENCORE
-        || gLastMoves[gBattlerTarget] == MOVE_MIRROR_MOVE)
+        || gLastMoves[gBattlerTarget] == MOVE_ENCORE)
     {
         i = 4;
     }
@@ -8110,7 +8107,7 @@ static bool8 IsTwoTurnsMove(u16 move)
 static bool8 IsInvalidForSleepTalkOrAssist(u16 move)
 {
     if (move == 0 || move == MOVE_SLEEP_TALK || move == MOVE_ASSIST
-        || move == MOVE_MIRROR_MOVE || move == MOVE_METRONOME)
+        || move == MOVE_METRONOME)
         return TRUE;
     else
         return FALSE;
@@ -9342,7 +9339,7 @@ static void Cmd_weightdamagecalculation(void)
     s32 i;
     for (i = 0; sWeightToDamageTable[i] != 0xFFFF; i += 2)
     {
-        if (sWeightToDamageTable[i] > GetPokedexHeightWeight(SpeciesToNationalPokedexNum(gBattleMons[gBattlerTarget].species), 1))
+        if (sWeightToDamageTable[i] >= GetPokedexHeightWeight(SpeciesToNationalPokedexNum(gBattleMons[gBattlerTarget].species), 1))
             break;
     }
 

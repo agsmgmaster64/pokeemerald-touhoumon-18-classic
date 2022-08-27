@@ -520,7 +520,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_THRASH] =
     {
-        .effect = EFFECT_RAMPAGE,
+        .effect = EFFECT_THRASH,
         .power = 100,
         .type = TYPE_DARK,
         .accuracy = 100,
@@ -1388,7 +1388,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_RAGE] =
     {
-        .effect = EFFECT_RAGE,
+        .effect = EFFECT_BURN_SELF_HIT,
         .power = 60,
         .type = TYPE_DARK,
         .accuracy = 100,
@@ -1798,8 +1798,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 100,
+        .pp = 40,
+        .secondaryEffectChance = 0,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .flags = FLAG_SNATCH_AFFECTED,
@@ -2396,7 +2396,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_NIGHTMARE] =
     {
-        .effect = EFFECT_NIGHTMARE,
+        .effect = EFFECT_TWINEEDLE,
         .power = 70,
         .type = TYPE_GHOST,
         .accuracy = 100,
@@ -2788,7 +2788,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_LOCK_ON] =
     {
-        .effect = EFFECT_ACCURACY_DOWN_2,
+        .effect = EFFECT_ACCURACY_UP_2,
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
@@ -3320,7 +3320,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_HIDDEN_POWER] =
     {
-        .effect = EFFECT_CHARGE,
+        .effect = EFFECT_SPECIAL_ATTACK_UP_HIT,
         .power = 50,
         .type = TYPE_BUG,
         .accuracy = 90,
