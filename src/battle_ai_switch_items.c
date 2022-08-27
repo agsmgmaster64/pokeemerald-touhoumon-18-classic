@@ -48,7 +48,7 @@ static bool8 ShouldSwitchIfWonderGuard(void)
 
     opposingPosition = BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler));
 
-    if (gBattleMons[GetBattlerAtPosition(opposingPosition)].ability != ABILITY_WONDER_GUARD)
+    if (gBattleMons[GetBattlerAtPosition(opposingPosition)].ability != ABILITY_PLAY_GHOST)
         return FALSE;
 
     // Check if Pokemon has a super effective move.
