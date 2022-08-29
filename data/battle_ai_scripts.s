@@ -1172,7 +1172,7 @@ AI_CV_SpAtkDown_SpecialTypeList:
     .byte TYPE_WATER
     .byte TYPE_NATURE
     .byte TYPE_WIND
-    .byte TYPE_PSYCHIC
+    .byte TYPE_REASON
     .byte TYPE_ICE
     .byte TYPE_FAITH
     .byte TYPE_DARK
@@ -1367,26 +1367,11 @@ AI_CV_Toxic_End:
 
 AI_CV_LightScreen:
 	if_hp_less_than AI_USER, 50, AI_CV_LightScreen_ScoreDown2
-	get_target_type1
-	if_in_bytes AI_CV_LightScreen_SpecialTypeList, AI_CV_LightScreen_End
-	get_target_type2
-	if_in_bytes AI_CV_LightScreen_SpecialTypeList, AI_CV_LightScreen_End
 	if_random_less_than 50, AI_CV_LightScreen_End
 AI_CV_LightScreen_ScoreDown2:
 	score -2
 AI_CV_LightScreen_End:
 	end
-
-AI_CV_LightScreen_SpecialTypeList:
-    .byte TYPE_FIRE
-    .byte TYPE_WATER
-    .byte TYPE_NATURE
-    .byte TYPE_WIND
-    .byte TYPE_PSYCHIC
-    .byte TYPE_ICE
-    .byte TYPE_FAITH
-    .byte TYPE_DARK
-    .byte -1
 
 AI_CV_Rest:
 	if_target_faster AI_CV_Rest4
@@ -1486,27 +1471,11 @@ AI_CV_SwaggerHasPsychUp_End:
 
 AI_CV_Reflect:
 	if_hp_less_than AI_USER, 50, AI_CV_Reflect_ScoreDown2
-	get_target_type1
-	if_in_bytes AI_CV_Reflect_PhysicalTypeList, AI_CV_Reflect_End
-	get_target_type2
-	if_in_bytes AI_CV_Reflect_PhysicalTypeList, AI_CV_Reflect_End
 	if_random_less_than 50, AI_CV_Reflect_End
 AI_CV_Reflect_ScoreDown2:
 	score -2
 AI_CV_Reflect_End:
 	end
-
-AI_CV_Reflect_PhysicalTypeList:
-    .byte TYPE_ILLUSION
-    .byte TYPE_DREAM
-    .byte TYPE_FLYING
-    .byte TYPE_MIASMA
-    .byte TYPE_EARTH
-    .byte TYPE_BEAST
-    .byte TYPE_HEART
-    .byte TYPE_GHOST
-    .byte TYPE_STEEL
-    .byte -1
 
 AI_CV_Poison:
 	if_hp_less_than AI_USER, 50, AI_CV_Poison_ScoreDown1
@@ -1640,10 +1609,6 @@ AI_CV_Counter5:
 	if_random_less_than 100, AI_CV_Counter6
 	score +1
 AI_CV_Counter6:
-	get_target_type1
-	if_in_bytes AI_CV_Counter_PhysicalTypeList, AI_CV_Counter_End
-	get_target_type2
-	if_in_bytes AI_CV_Counter_PhysicalTypeList, AI_CV_Counter_End
 	if_random_less_than 50, AI_CV_Counter_End
 AI_CV_Counter7:
 	if_random_less_than 100, AI_CV_Counter8
@@ -1919,22 +1884,12 @@ AI_CV_Protect_ScoreDown2:
 AI_CV_Protect_End:
 	end
 
-@ BUG: Foresight is only encouraged if the user is Ghost type or
-@      has high evasion, but should check target instead
 AI_CV_Foresight:
-.ifdef BUGFIX
 	get_target_type1
 	if_equal TYPE_GHOST, AI_CV_Foresight2
 	get_target_type2
 	if_equal TYPE_GHOST, AI_CV_Foresight2
 	if_stat_level_more_than AI_TARGET, STAT_EVASION, 8, AI_CV_Foresight3
-.else
-	get_user_type1
-	if_equal TYPE_GHOST, AI_CV_Foresight2
-	get_user_type2
-	if_equal TYPE_GHOST, AI_CV_Foresight2
-	if_stat_level_more_than AI_USER, STAT_EVASION, 8, AI_CV_Foresight3
-.endif
 	score -2
 	goto AI_CV_Foresight_End
 
@@ -2005,11 +1960,11 @@ AI_CV_Pursuit:
 	get_target_type1
 	if_equal TYPE_GHOST, AI_CV_Pursuit2
 	get_target_type1
-	if_equal TYPE_PSYCHIC, AI_CV_Pursuit2
+	if_equal TYPE_REASON, AI_CV_Pursuit2
 	get_target_type2
 	if_equal TYPE_GHOST, AI_CV_Pursuit2
 	get_target_type2
-	if_equal TYPE_PSYCHIC, AI_CV_Pursuit2
+	if_equal TYPE_REASON, AI_CV_Pursuit2
 	goto AI_CV_Pursuit_End
 
 AI_CV_Pursuit2:
@@ -2148,7 +2103,7 @@ AI_CV_MirrorCoat_SpecialTypeList:
     .byte TYPE_WATER
     .byte TYPE_NATURE
     .byte TYPE_WIND
-    .byte TYPE_PSYCHIC
+    .byte TYPE_REASON
     .byte TYPE_ICE
     .byte TYPE_FAITH
     .byte TYPE_DARK
@@ -2250,11 +2205,7 @@ AI_CV_Hail_End:
 
 @ BUG: Facade score is increased if the target is statused, but should be if the user is
 AI_CV_Facade:
-.ifdef BUGFIX
 	if_not_status AI_USER, STATUS1_POISON | STATUS1_BURN | STATUS1_PARALYSIS | STATUS1_TOXIC_POISON, AI_CV_Facade_End
-.else
-	if_not_status AI_TARGET, STATUS1_POISON | STATUS1_BURN | STATUS1_PARALYSIS | STATUS1_TOXIC_POISON, AI_CV_Facade_End
-.endif
 	score +1
 AI_CV_Facade_End:
 	end

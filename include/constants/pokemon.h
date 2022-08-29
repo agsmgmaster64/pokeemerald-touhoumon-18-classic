@@ -17,7 +17,7 @@
 #define TYPE_WATER            11
 #define TYPE_NATURE            12
 #define TYPE_WIND         13
-#define TYPE_PSYCHIC          14
+#define TYPE_REASON          14
 #define TYPE_ICE              15
 #define TYPE_FAITH           16
 #define TYPE_DARK             17

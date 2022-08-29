@@ -438,7 +438,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_MULTI_HIT,
         .power = 25,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 95,
         .pp = 15,
         .secondaryEffectChance = 0,
@@ -844,7 +844,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_CONFUSE_HIT,
         .power = 60,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 100,
         .pp = 20,
         .secondaryEffectChance = 30,
@@ -1306,7 +1306,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_CONFUSE_HIT,
         .power = 40,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 100,
         .pp = 25,
         .secondaryEffectChance = 10,
@@ -1320,7 +1320,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
         .power = 90,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 10,
@@ -1334,7 +1334,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_SLEEP,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 60,
         .pp = 20,
         .secondaryEffectChance = 0,
@@ -1348,7 +1348,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_FLINCH_HIT,
         .power = 80,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 90,
         .pp = 15,
         .secondaryEffectChance = 20,
@@ -1404,7 +1404,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_TELEPORT,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 0,
         .pp = 20,
         .secondaryEffectChance = 0,
@@ -1572,7 +1572,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_DEFENSE_UP_2,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 0,
         .pp = 30,
         .secondaryEffectChance = 0,
@@ -1796,7 +1796,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_UP,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 0,
         .pp = 40,
         .secondaryEffectChance = 0,
@@ -1866,7 +1866,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_UP_2,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 0,
         .pp = 20,
         .secondaryEffectChance = 0,
@@ -2090,7 +2090,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_PSYWAVE,
         .power = 1,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 90,
         .pp = 15,
         .secondaryEffectChance = 0,
@@ -2706,7 +2706,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_FORESIGHT,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 100,
         .pp = 40,
         .secondaryEffectChance = 0,
@@ -2790,7 +2790,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_ACCURACY_UP_2,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 100,
         .pp = 15,
         .secondaryEffectChance = 0,
@@ -3476,7 +3476,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_HIGH_CRITICAL,
         .power = 70,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 100,
         .pp = 20,
         .secondaryEffectChance = 0,
@@ -3798,7 +3798,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_TRICK,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -3882,7 +3882,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_MAGIC_COAT,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 100,
         .pp = 15,
         .secondaryEffectChance = 0,
@@ -3994,7 +3994,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_SKILL_SWAP,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -4120,7 +4120,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_CALM_MIND,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 0,
         .pp = 20,
         .secondaryEffectChance = 0,
@@ -4134,7 +4134,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
         .power = 120,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 80,
         .pp = 5,
         .secondaryEffectChance = 20,
@@ -4960,7 +4960,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_OVERHEAT,
         .power = 140,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 90,
         .pp = 5,
         .secondaryEffectChance = 100,

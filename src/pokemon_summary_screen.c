@@ -804,7 +804,7 @@ static const union AnimCmd sSpriteAnim_TypeElectric[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypePsychic[] = {
-    ANIMCMD_FRAME(TYPE_PSYCHIC * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_REASON * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeIce[] = {
@@ -897,7 +897,7 @@ static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIE
     [TYPE_WATER] = 14,
     [TYPE_NATURE] = 15,
     [TYPE_WIND] = 13,
-    [TYPE_PSYCHIC] = 14,
+    [TYPE_REASON] = 14,
     [TYPE_ICE] = 14,
     [TYPE_FAITH] = 15,
     [TYPE_DARK] = 13,
