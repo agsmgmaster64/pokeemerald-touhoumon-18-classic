@@ -4,7 +4,7 @@
 // These constants are used in gItems
 #define POCKET_NONE        0
 #define POCKET_ITEMS       1
-#define POCKET_POKE_BALLS  2
+#define POCKET_TOHO_ORB  2
 #define POCKET_TM_HM       3
 #define POCKET_BERRIES     4
 #define POCKET_KEY_ITEMS   5

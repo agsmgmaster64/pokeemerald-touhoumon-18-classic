@@ -378,7 +378,7 @@
       "x": 33,
       "y": 5,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
+      "item": "ITEM_BLUE_UFO",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1"
     },
     {
@@ -386,7 +386,7 @@
       "x": 9,
       "y": 10,
       "elevation": 3,
-      "item": "ITEM_GREAT_BALL",
+      "item": "ITEM_GREAT_ORB",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_GREAT_BALL"
     },
     {
@@ -402,7 +402,7 @@
       "x": 13,
       "y": 16,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
+      "item": "ITEM_BLUE_UFO",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_2"
     },
     {
@@ -410,7 +410,7 @@
       "x": 8,
       "y": 42,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
+      "item": "ITEM_BLUE_UFO",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_3"
     }
   ]

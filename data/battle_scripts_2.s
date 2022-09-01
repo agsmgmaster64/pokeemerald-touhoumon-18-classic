@@ -14,18 +14,18 @@
 	.align 2
 gBattlescriptsForBallThrow::
 	.4byte BattleScript_BallThrow        @ ITEM_NONE
-	.4byte BattleScript_BallThrow        @ ITEM_MASTER_BALL
-	.4byte BattleScript_BallThrow        @ ITEM_ULTRA_BALL
-	.4byte BattleScript_BallThrow        @ ITEM_GREAT_BALL
-	.4byte BattleScript_BallThrow        @ ITEM_POKE_BALL
-	.4byte BattleScript_SafariBallThrow  @ ITEM_SAFARI_BALL
-	.4byte BattleScript_BallThrow        @ ITEM_NET_BALL
-	.4byte BattleScript_BallThrow        @ ITEM_DIVE_BALL
-	.4byte BattleScript_BallThrow        @ ITEM_NEST_BALL
-	.4byte BattleScript_BallThrow        @ ITEM_REPEAT_BALL
-	.4byte BattleScript_BallThrow        @ ITEM_TIMER_BALL
-	.4byte BattleScript_BallThrow        @ ITEM_LUXURY_BALL
-	.4byte BattleScript_BallThrow        @ ITEM_PREMIER_BALL
+	.4byte BattleScript_BallThrow        @ ITEM_MASTER_ORB
+	.4byte BattleScript_BallThrow        @ ITEM_ULTRA_ORB
+	.4byte BattleScript_BallThrow        @ ITEM_GREAT_ORB
+	.4byte BattleScript_BallThrow        @ ITEM_TOHO_ORB
+	.4byte BattleScript_SafariBallThrow  @ ITEM_SAFARI_ORB
+	.4byte BattleScript_BallThrow        @ ITEM_NET_ORB
+	.4byte BattleScript_BallThrow        @ ITEM_DIVE_ORB
+	.4byte BattleScript_BallThrow        @ ITEM_NEST_ORB
+	.4byte BattleScript_BallThrow        @ ITEM_REPEAT_ORB
+	.4byte BattleScript_BallThrow        @ ITEM_TIMER_ORB
+	.4byte BattleScript_BallThrow        @ ITEM_LUXURY_ORB
+	.4byte BattleScript_BallThrow        @ ITEM_PREMIER_ORB
 
 	.align 2
 gBattlescriptsForUsingItem::
@@ -62,7 +62,7 @@ BattleScript_SafariBallThrow::
 	handleballthrow
 
 BattleScript_SuccessBallThrow::
-	jumpifhalfword CMP_EQUAL, gLastUsedItem, ITEM_SAFARI_BALL, BattleScript_PrintCaughtMonInfo
+	jumpifhalfword CMP_EQUAL, gLastUsedItem, ITEM_SAFARI_ORB, BattleScript_PrintCaughtMonInfo
 	incrementgamestat GAME_STAT_POKEMON_CAPTURES
 BattleScript_PrintCaughtMonInfo::
 	printstring STRINGID_GOTCHAPKMNCAUGHT

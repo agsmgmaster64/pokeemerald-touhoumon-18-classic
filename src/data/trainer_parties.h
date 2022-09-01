@@ -2264,7 +2264,7 @@ static const struct TrainerMonItemDefaultMoves sParty_Nob5[] = {
     .iv = 140,
     .lvl = 33,
     .species = SPECIES_MACHAMP,
-    .heldItem = ITEM_BLACK_BELT
+    .heldItem = ITEM_MISTRESS
     }
 };
 
@@ -2861,7 +2861,7 @@ static const struct TrainerMonItemDefaultMoves sParty_Jeffrey5[] = {
     .iv = 40,
     .lvl = 38,
     .species = SPECIES_MASQUERAIN,
-    .heldItem = ITEM_SILVER_POWDER
+    .heldItem = ITEM_CHINA_DRESS
     },
     {
     .iv = 40,
@@ -5178,7 +5178,7 @@ static const struct TrainerMonItemDefaultMoves sParty_Nicolas5[] = {
     .iv = 140,
     .lvl = 49,
     .species = SPECIES_SHELGON,
-    .heldItem = ITEM_DRAGON_FANG
+    .heldItem = ITEM_PRIESTESS
     }
 };
 

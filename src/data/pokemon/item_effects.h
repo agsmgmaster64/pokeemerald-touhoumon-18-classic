@@ -272,6 +272,10 @@ const u8 gItemEffect_XSpecial[8] = {
     STAT_BOOST_FRIENDSHIP_CHANGE,
 };
 
+const u8 gItemEffect_ChromeShard[6] = {
+    [4] = ITEM4_EVO_STONE,
+};
+
 const u8 gItemEffect_SunStone[6] = {
     [4] = ITEM4_EVO_STONE,
 };
@@ -431,12 +435,13 @@ const u8 *const gItemEffectTable[] =
     [ITEM_X_SPEED - ITEM_POTION]       = gItemEffect_XSpeed,
     [ITEM_X_ACCURACY - ITEM_POTION]    = gItemEffect_XAccuracy,
     [ITEM_X_SPECIAL - ITEM_POTION]     = gItemEffect_XSpecial,
-    [ITEM_SUN_STONE - ITEM_POTION]     = gItemEffect_SunStone,
-    [ITEM_MOON_STONE - ITEM_POTION]    = gItemEffect_MoonStone,
-    [ITEM_FIRE_STONE - ITEM_POTION]    = gItemEffect_FireStone,
-    [ITEM_THUNDER_STONE - ITEM_POTION] = gItemEffect_ThunderStone,
-    [ITEM_WATER_STONE - ITEM_POTION]   = gItemEffect_WaterStone,
-    [ITEM_LEAF_STONE - ITEM_POTION]    = gItemEffect_LeafStone,
+    [ITEM_CHROME_SHARD - ITEM_POTION]  = gItemEffect_ChromeShard,
+    [ITEM_SOLAR_SHARD - ITEM_POTION]   = gItemEffect_SunStone,
+    [ITEM_POWER_SHARD - ITEM_POTION]   = gItemEffect_MoonStone,
+    [ITEM_DEFENSE_SHARD - ITEM_POTION] = gItemEffect_FireStone,
+    [ITEM_SWIFT_SHARD - ITEM_POTION]   = gItemEffect_ThunderStone,
+    [ITEM_TECH_SHARD - ITEM_POTION]    = gItemEffect_WaterStone,
+    [ITEM_HELPER_SHARD - ITEM_POTION]  = gItemEffect_LeafStone,
     [ITEM_CHERI_BERRY - ITEM_POTION]   = gItemEffect_CheriBerry,
     [ITEM_CHESTO_BERRY - ITEM_POTION]  = gItemEffect_ChestoBerry,
     [ITEM_PECHA_BERRY - ITEM_POTION]   = gItemEffect_PechaBerry,

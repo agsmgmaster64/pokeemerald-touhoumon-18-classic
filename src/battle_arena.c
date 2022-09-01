@@ -494,9 +494,9 @@ static const u16 sLongStreakPrizeItems[] =
     ITEM_LEFTOVERS,
     ITEM_MENTAL_HERB,
     ITEM_KINGS_ROCK,
-    ITEM_FOCUS_BAND,
+    ITEM_FOCUS_RIBBON,
     ITEM_SCOPE_LENS,
-    ITEM_CHOICE_BAND,
+    ITEM_CHOICE_BOW,
 };
 
 void CallBattleArenaFunction(void)

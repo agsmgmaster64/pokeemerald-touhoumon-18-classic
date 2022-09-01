@@ -729,29 +729,29 @@ u8 ItemIdToBallId(u16 ballItem)
 {
     switch (ballItem)
     {
-    case ITEM_MASTER_BALL:
+    case ITEM_MASTER_ORB:
         return BALL_MASTER;
-    case ITEM_ULTRA_BALL:
+    case ITEM_ULTRA_ORB:
         return BALL_ULTRA;
-    case ITEM_GREAT_BALL:
+    case ITEM_GREAT_ORB:
         return BALL_GREAT;
-    case ITEM_SAFARI_BALL:
+    case ITEM_SAFARI_ORB:
         return BALL_SAFARI;
-    case ITEM_NET_BALL:
+    case ITEM_NET_ORB:
         return BALL_NET;
-    case ITEM_DIVE_BALL:
+    case ITEM_DIVE_ORB:
         return BALL_DIVE;
-    case ITEM_NEST_BALL:
+    case ITEM_NEST_ORB:
         return BALL_NEST;
-    case ITEM_REPEAT_BALL:
+    case ITEM_REPEAT_ORB:
         return BALL_REPEAT;
-    case ITEM_TIMER_BALL:
+    case ITEM_TIMER_ORB:
         return BALL_TIMER;
-    case ITEM_LUXURY_BALL:
+    case ITEM_LUXURY_ORB:
         return BALL_LUXURY;
-    case ITEM_PREMIER_BALL:
+    case ITEM_PREMIER_ORB:
         return BALL_PREMIER;
-    case ITEM_POKE_BALL:
+    case ITEM_TOHO_ORB:
     default:
         return BALL_POKE;
     }

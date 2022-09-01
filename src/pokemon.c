@@ -1908,23 +1908,23 @@ const u16 gLinkPlayerFacilityClasses[NUM_MALE_LINK_FACILITY_CLASSES + NUM_FEMALE
 
 static const u8 sHoldEffectToType[][2] =
 {
-    {HOLD_EFFECT_BUG_POWER, TYPE_HEART},
+    {HOLD_EFFECT_HEART_POWER, TYPE_HEART},
     {HOLD_EFFECT_STEEL_POWER, TYPE_STEEL},
-    {HOLD_EFFECT_GROUND_POWER, TYPE_EARTH},
-    {HOLD_EFFECT_ROCK_POWER, TYPE_BEAST},
-    {HOLD_EFFECT_GRASS_POWER, TYPE_NATURE},
+    {HOLD_EFFECT_EARTH_POWER, TYPE_EARTH},
+    {HOLD_EFFECT_BEAST_POWER, TYPE_BEAST},
+    {HOLD_EFFECT_NATURE_POWER, TYPE_NATURE},
     {HOLD_EFFECT_DARK_POWER, TYPE_DARK},
-    {HOLD_EFFECT_FIGHTING_POWER, TYPE_DREAM},
-    {HOLD_EFFECT_ELECTRIC_POWER, TYPE_WIND},
+    {HOLD_EFFECT_DREAM_POWER, TYPE_DREAM},
+    {HOLD_EFFECT_WIND_POWER, TYPE_WIND},
     {HOLD_EFFECT_WATER_POWER, TYPE_WATER},
     {HOLD_EFFECT_FLYING_POWER, TYPE_FLYING},
-    {HOLD_EFFECT_POISON_POWER, TYPE_MIASMA},
+    {HOLD_EFFECT_MIASMA_POWER, TYPE_MIASMA},
     {HOLD_EFFECT_ICE_POWER, TYPE_ICE},
     {HOLD_EFFECT_GHOST_POWER, TYPE_GHOST},
-    {HOLD_EFFECT_PSYCHIC_POWER, TYPE_REASON},
+    {HOLD_EFFECT_REASON_POWER, TYPE_REASON},
     {HOLD_EFFECT_FIRE_POWER, TYPE_FIRE},
-    {HOLD_EFFECT_DRAGON_POWER, TYPE_FAITH},
-    {HOLD_EFFECT_NORMAL_POWER, TYPE_ILLUSION},
+    {HOLD_EFFECT_FAITH_POWER, TYPE_FAITH},
+    {HOLD_EFFECT_ILLUSION_POWER, TYPE_ILLUSION},
 };
 
 const struct SpriteTemplate gBattlerSpriteTemplates[MAX_BATTLERS_COUNT] =
@@ -2104,7 +2104,7 @@ static const struct SpeciesItem sAlteringCaveWildMonHeldItems[] =
     {SPECIES_NONE,      ITEM_NONE},
     {SPECIES_MAREEP,    ITEM_GANLON_BERRY},
     {SPECIES_PINECO,    ITEM_APICOT_BERRY},
-    {SPECIES_HOUNDOUR,  ITEM_BIG_MUSHROOM},
+    {SPECIES_HOUNDOUR,  ITEM_RED_UFO},
     {SPECIES_TEDDIURSA, ITEM_PETAYA_BERRY},
     {SPECIES_AIPOM,     ITEM_BERRY_JUICE},
     {SPECIES_SHUCKLE,   ITEM_BERRY_JUICE},
@@ -2246,7 +2246,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
     SetBoxMonData(boxMon, MON_DATA_MET_LEVEL, &level);
     SetBoxMonData(boxMon, MON_DATA_MET_GAME, &gGameVersion);
-    value = ITEM_POKE_BALL;
+    value = ITEM_TOHO_ORB;
     SetBoxMonData(boxMon, MON_DATA_POKEBALL, &value);
     SetBoxMonData(boxMon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
 
@@ -3169,10 +3169,10 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         spAttack = (150 * spAttack) / 100;
     if (defenderHoldEffect == HOLD_EFFECT_SOUL_DEW && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER)) && (defender->species == SPECIES_LATIAS || defender->species == SPECIES_LATIOS))
         spDefense = (150 * spDefense) / 100;
-    if (attackerHoldEffect == HOLD_EFFECT_DEEP_SEA_TOOTH && attacker->species == SPECIES_CLAMPERL)
-        spAttack *= 2;
-    if (defenderHoldEffect == HOLD_EFFECT_DEEP_SEA_SCALE && defender->species == SPECIES_CLAMPERL)
-        spDefense *= 2;
+    if (attackerHoldEffect == HOLD_EFFECT_KUSANAGI && attacker->species == SPECIES_CLAMPERL)
+        attack *= 2;
+    if (defenderHoldEffect == HOLD_EFFECT_YATA_MIRROR && defender->species == SPECIES_CLAMPERL)
+        defense *= 2;
     if (attackerHoldEffect == HOLD_EFFECT_LIGHT_BALL && attacker->species == SPECIES_PIKACHU)
         spAttack *= 2;
     if (defenderHoldEffect == HOLD_EFFECT_METAL_POWDER && defender->species == SPECIES_DITTO)
@@ -4679,7 +4679,7 @@ bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, u16 item, u8 partyIndex, 
             friendship += friendshipChange;                                                             \
         if (friendshipChange > 0)                                                                       \
         {                                                                                               \
-            if (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_LUXURY_BALL)                           \
+            if (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_LUXURY_ORB)                           \
                 friendship++;                                                                           \
             if (GetMonData(mon, MON_DATA_MET_LOCATION, NULL) == GetCurrentRegionMapSectionId())         \
                 friendship++;                                                                           \
@@ -5899,7 +5899,7 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
             friendship += mod;
             if (mod > 0)
             {
-                if (GetMonData(mon, MON_DATA_POKEBALL, 0) == ITEM_LUXURY_BALL)
+                if (GetMonData(mon, MON_DATA_POKEBALL, 0) == ITEM_LUXURY_ORB)
                     friendship++;
                 if (GetMonData(mon, MON_DATA_MET_LOCATION, 0) == GetCurrentRegionMapSectionId())
                     friendship++;

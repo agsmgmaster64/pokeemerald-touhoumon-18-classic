@@ -89,10 +89,10 @@ void CopyItemName(u16 itemId, u8 *dst)
 
 void CopyItemNameHandlePlural(u16 itemId, u8 *dst, u32 quantity)
 {
-    if (itemId == ITEM_POKE_BALL)
+    if (itemId == ITEM_TOHO_ORB)
     {
         if (quantity < 2)
-            StringCopy(dst, ItemId_GetName(ITEM_POKE_BALL));
+            StringCopy(dst, ItemId_GetName(ITEM_TOHO_ORB));
         else
             StringCopy(dst, gText_PokeBalls);
     }
