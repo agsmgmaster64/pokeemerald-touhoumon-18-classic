@@ -6276,6 +6276,9 @@ static void Cmd_various(void)
 {
     u8 side;
     s32 i;
+    u32 monToCheck, status;
+    u16 species;
+    u8 abilityNum;
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
 
@@ -6447,6 +6450,62 @@ static void Cmd_various(void)
     case VARIOUS_PLAY_TRAINER_DEFEATED_MUSIC:
         BtlController_EmitPlayFanfareOrBGM(BUFFER_A, MUS_VICTORY_TRAINER, TRUE);
         MarkBattlerForControllerExec(gActiveBattler);
+        break;
+    case VARIOUS_CHECK_POKEFLUTE:
+        gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+        monToCheck = 0;
+        for (i = 0; i < gBattlersCount; ++i)
+        {
+            if (gBattleMons[i].ability != ABILITY_SOUNDPROOF)
+            {
+                gBattleMons[i].status1 &= ~STATUS1_SLEEP;
+                gBattleMons[i].status2 &= ~STATUS2_NIGHTMARE;
+            }
+        }
+        for (i = 0; i < PARTY_SIZE; ++i)
+        {
+            species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2);
+            abilityNum = GetMonData(&gPlayerParty[i], MON_DATA_ABILITY_NUM);
+            status = GetMonData(&gPlayerParty[i], MON_DATA_STATUS);
+            if (species != SPECIES_NONE
+             && species != SPECIES_EGG
+             && status & AILMENT_FNT
+             && GetAbilityBySpecies(species, abilityNum) != ABILITY_SOUNDPROOF)
+                monToCheck |= (1 << i);
+        }
+        if (monToCheck)
+        {
+            gActiveBattler = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
+            status = 0;
+            BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, monToCheck, 4, &status);
+            MarkBattlerForControllerExec(gActiveBattler);
+            gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+        }
+        monToCheck = 0;
+        for (i = 0; i < PARTY_SIZE; ++i)
+        {
+            species = GetMonData(&gEnemyParty[i], MON_DATA_SPECIES2);
+            abilityNum = GetMonData(&gEnemyParty[i], MON_DATA_ABILITY_NUM);
+            status = GetMonData(&gEnemyParty[i], MON_DATA_STATUS);
+
+            if (species != SPECIES_NONE
+             && species != SPECIES_EGG
+             && status & AILMENT_FNT
+             && GetAbilityBySpecies(species, abilityNum) != ABILITY_SOUNDPROOF)
+                monToCheck |= (1 << i);
+        }
+        if (monToCheck)
+        {
+            gActiveBattler = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+            status = 0;
+            BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, monToCheck, 4, &status);
+            MarkBattlerForControllerExec(gActiveBattler);
+            gBattleCommunication[5] = 1;
+        }
+        break;
+    case VARIOUS_WAIT_FANFARE:
+        if (!IsFanfareTaskInactive())
+            return;
         break;
     }
 
@@ -7611,7 +7670,19 @@ static void Cmd_updatestatusicon(void)
     if (gBattleControllerExecFlags)
         return;
 
-    if (gBattlescriptCurrInstr[1] != BS_ATTACKER_WITH_PARTNER)
+    if (gBattlescriptCurrInstr[1] == BS_PLAYER2)
+    {
+        for (gActiveBattler = gBattleControllerExecFlags; gActiveBattler < gBattlersCount; ++gActiveBattler)
+        {
+            if (!(gAbsentBattlerFlags & gBitTable[gActiveBattler]))
+            {
+                    BtlController_EmitStatusIconUpdate(0, gBattleMons[gActiveBattler].status1, gBattleMons[gActiveBattler].status2);
+                    MarkBattlerForControllerExec(gActiveBattler);
+                }
+        }
+        gBattlescriptCurrInstr += 2;
+    }
+    else if (gBattlescriptCurrInstr[1] != BS_ATTACKER_WITH_PARTNER)
     {
         gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
         BtlController_EmitStatusIconUpdate(BUFFER_A, gBattleMons[gActiveBattler].status1, gBattleMons[gActiveBattler].status2);

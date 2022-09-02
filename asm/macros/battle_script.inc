@@ -1337,7 +1337,7 @@
 	.macro returnopponentmon2toball battler:req
 	various \battler, VARIOUS_RETURN_OPPONENT_MON2
 	.endm
-	
+
 	.macro volumedown
 	various BS_ATTACKER, VARIOUS_VOLUME_DOWN
 	.endm
@@ -1360,6 +1360,14 @@
 	
 	.macro playtrainerdefeatbgm battler:req
 	various \battler, VARIOUS_PLAY_TRAINER_DEFEATED_MUSIC
+	.endm
+	
+	.macro checkpokeflute battler:req
+	various \battler, VARIOUS_CHECK_POKEFLUTE
+	.endm
+
+	.macro waitfanfare battler:req
+	various \battler, VARIOUS_WAIT_FANFARE
 	.endm
 	
 @ helpful macros

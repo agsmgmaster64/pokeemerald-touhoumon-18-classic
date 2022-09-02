@@ -39,8 +39,8 @@ gBattlescriptsForUsingItem::
 	.align 2
 gBattlescriptsForRunningByItem::
 	.4byte BattleScript_RunByUsingItem
+	.4byte BattleScript_UsePokeFlute
 
-	.align 2
 gBattlescriptsForSafariActions::
 	.4byte BattleScript_ActionWatchesCarefully
 	.4byte BattleScript_ActionGetNear
@@ -171,6 +171,25 @@ BattleScript_RunByUsingItem::
 	playse SE_FLEE
 	setbyte gBattleOutcome, B_OUTCOME_RAN
 	finishturn
+
+BattleScript_UsePokeFlute::
+	checkpokeflute BS_ATTACKER
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 1, BattleScript_PokeFluteWakeUp
+	printstring STRINGID_POKEFLUTECATCHY
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_PokeFluteEnd
+
+BattleScript_PokeFluteWakeUp::
+	printstring STRINGID_POKEFLUTE
+	waitmessage B_WAIT_TIME_LONG
+	fanfare MUS_RG_POKE_FLUTE
+	waitfanfare BS_ATTACKER
+	printstring STRINGID_MONHEARINGFLUTEAWOKE
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_PLAYER2
+	waitstate
+BattleScript_PokeFluteEnd::
+	finishaction
 
 BattleScript_ActionWatchesCarefully:
 	printstring STRINGID_PKMNWATCHINGCAREFULLY

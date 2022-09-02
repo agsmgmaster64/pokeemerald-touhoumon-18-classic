@@ -1151,7 +1151,7 @@ const struct Item gItems[] =
         .name = _("Chrome Shard"),
         .itemId = ITEM_CHROME_SHARD,
         .price = 0,
-        .description = sDummyDesc,
+        .description = sChromeShardDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
@@ -4204,7 +4204,9 @@ const struct Item gItems[] =
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeFlute,
+        .battleUsage = ITEM_B_USE_OTHER,
+        .battleUseFunc = ItemUseInBattle_PokeFlute,
     },
 
     [ITEM_SECRET_KEY] =
