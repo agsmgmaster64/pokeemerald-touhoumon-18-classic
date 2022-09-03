@@ -1117,7 +1117,7 @@ static const u8 sClawFossilDesc[] = _(
     "dwelling POKéMON.");
 
 static const u8 sDevonScopeDesc[] = _(
-    "A device by DEVON\n"
+    "A device by Devon\n"
     "that signals any\n"
     "unseeable Puppets.");
 

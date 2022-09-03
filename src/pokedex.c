@@ -4177,6 +4177,7 @@ static void PrintMonHeight(u16 height, u8 left, u8 top)
     meters %= 10;
     buffer[i++] = CHAR_PERIOD;
     buffer[i++] = meters + CHAR_0;
+    buffer[i++] = CHAR_SPACE;
     buffer[i++] = CHAR_m;
     buffer[i++] = EOS;
     PrintInfoScreenText(buffer, left, top);
