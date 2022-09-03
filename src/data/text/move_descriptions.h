@@ -678,8 +678,8 @@ static const u8 sSpiderWebDescription[] = _(
     "May also paralyze.");
 
 static const u8 sMindReaderDescription[] = _(
-    "Senses the foe's action to\n"
-    "ensure the next move's hit.");
+    "Senses with their inner eye\n"
+    "to harshly lower Sp. Def.");
 
 static const u8 sNightmareDescription[] = _(
     "A nightmare attack that\n"
@@ -798,8 +798,8 @@ static const u8 sLockOnDescription[] = _(
     "sharply raise accuracy.");
 
 static const u8 sOutrageDescription[] = _(
-    "A rampage of 2 to 3 turns\n"
-    "that confuses the user.");
+    "A rampage that may cause\n"
+    "the foe to flinch.");
 
 static const u8 sSandstormDescription[] = _(
     "Causes a sandstorm that\n"
@@ -866,8 +866,8 @@ static const u8 sReturnDescription[] = _(
     "in power with friendship.");
 
 static const u8 sPresentDescription[] = _(
-    "A gift in the form of a\n"
-    "bomb. May restore HP.");
+    "A prank as a gift that cuts\n"
+    "half the foe's HP.");
 
 static const u8 sFrustrationDescription[] = _(
     "An attack that is stronger\n"
@@ -1410,8 +1410,8 @@ static const u8 sWaterPulseDescription[] = _(
     "waves. May confuse the foe.");
 
 static const u8 sDoomDesireDescription[] = _(
-    "Summons strong sunlight to\n"
-    "attack 2 turns later.");
+    "A divine attack that will\n"
+    "never miss.");
 
 static const u8 sPsychoBoostDescription[] = _(
     "Allows a full-power attack,\n"
