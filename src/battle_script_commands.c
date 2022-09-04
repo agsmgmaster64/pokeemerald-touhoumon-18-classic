@@ -735,7 +735,7 @@ static const u16 sMovesForbiddenToCopy[] =
     MOVE_DESTINY_BOND,
     MOVE_SLEEP_TALK,
     MOVE_THIEF,
-    MOVE_BIDE,
+    MOVE_GUARD,
     MOVE_SNATCH,
     MOVE_HELPING_HAND,
     MOVE_COVET,
@@ -8213,7 +8213,7 @@ static void Cmd_trychoosesleeptalkmove(void)
     {
         if (IsInvalidForSleepTalkOrAssist(gBattleMons[gBattlerAttacker].moves[i])
             || gBattleMons[gBattlerAttacker].moves[i] == MOVE_FOCUS_PUNCH
-            || gBattleMons[gBattlerAttacker].moves[i] == MOVE_UPROAR
+            || gBattleMons[gBattlerAttacker].moves[i] == MOVE_PERFORMANCE
             || IsTwoTurnsMove(gBattleMons[gBattlerAttacker].moves[i]))
         {
             unusableMovesBits |= gBitTable[i];
@@ -8900,7 +8900,7 @@ static void Cmd_trysetfutureattack(void)
         if (gProtectStructs[gBattlerAttacker].helpingHand)
             gWishFutureKnock.futureSightDmg[gBattlerTarget] = gWishFutureKnock.futureSightDmg[gBattlerTarget] * 15 / 10;
 
-        if (gCurrentMove == MOVE_DOOM_DESIRE)
+        if (gCurrentMove == MOVE_DECISION)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
         else
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FUTURE_SIGHT;
@@ -8967,7 +8967,7 @@ static void Cmd_setsemiinvulnerablebit(void)
     case MOVE_DIG:
         gStatuses3[gBattlerAttacker] |= STATUS3_UNDERGROUND;
         break;
-    case MOVE_DIVE:
+    case MOVE_SHADOW_DIVE:
         gStatuses3[gBattlerAttacker] |= STATUS3_UNDERWATER;
         break;
     }
@@ -8986,7 +8986,7 @@ static void Cmd_clearsemiinvulnerablebit(void)
     case MOVE_DIG:
         gStatuses3[gBattlerAttacker] &= ~STATUS3_UNDERGROUND;
         break;
-    case MOVE_DIVE:
+    case MOVE_SHADOW_DIVE:
         gStatuses3[gBattlerAttacker] &= ~STATUS3_UNDERWATER;
         break;
     }

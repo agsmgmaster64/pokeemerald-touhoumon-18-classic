@@ -5323,7 +5323,7 @@ static void SetMoveSpecificAnimData(u8 contestant)
             gAnimMoveTurn = 1;
         break;
     case MOVE_TRANSFORM:
-    case MOVE_ROLE_PLAY:
+    case MOVE_RECOLLECTION:
         targetContestant = eContestantStatus[contestant].contestantAnimTarget;
         gContestResources->moveAnim->targetSpecies = SanitizeSpecies(gContestMons[targetContestant].species);
         gContestResources->moveAnim->targetPersonality = gContestMons[targetContestant].personality;

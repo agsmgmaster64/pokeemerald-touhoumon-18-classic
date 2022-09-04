@@ -1435,7 +1435,7 @@ static void AnimTask_Withdraw_Step(u8 taskId)
     }
 }
 
-// Animates a "zap of energy" used in KINESIS.
+// Animates a "zap of energy" used in LUNA_DIAL.
 // arg 0: x pixel offset
 // arg 1: y pixel offset
 // arg 2: vertical flip
@@ -3407,7 +3407,7 @@ static void AnimTask_ScaryFace_Step(u8 taskId)
 }
 
 // Orbits a sphere in an ellipse around the mon.
-// Used by MOVE_HIDDEN_POWER
+// Used by MOVE_CHARGE_BEAM
 // arg 0: duration
 // arg 1: initial wave offset
 static void AnimOrbitFast(struct Sprite *sprite)
@@ -3459,7 +3459,7 @@ static void AnimOrbitFast_Step(struct Sprite *sprite)
 }
 
 // Moves orbs away from the mon, based on where they are in their orbit.
-// Used in MOVE_HIDDEN_POWER.
+// Used in MOVE_CHARGE_BEAM.
 // arg 0: initial wave offset
 static void AnimOrbitScatter(struct Sprite *sprite)
 {

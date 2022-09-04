@@ -42,7 +42,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_DOUBLE_SLAP] =
+    [MOVE_BRAVER] =
     {
         .effect = EFFECT_DEFENSE_DOWN_HIT,
         .power = 120,
@@ -70,7 +70,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_MEGA_PUNCH] =
+    [MOVE_DRAIN_PUNCH] =
     {
         .effect = EFFECT_ABSORB,
         .power = 75,
@@ -154,7 +154,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_VICE_GRIP] =
+    [MOVE_NIGHT_SLASH] =
     {
         .effect = EFFECT_HIGH_CRITICAL,
         .power = 70,
@@ -168,7 +168,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_GUILLOTINE] =
+    [MOVE_JUDGEMENT] =
     {
         .effect = EFFECT_OHKO,
         .power = 1,
@@ -294,7 +294,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_SLAM] =
+    [MOVE_POWER_WHIP] =
     {
         .effect = EFFECT_HIT,
         .power = 120,
@@ -350,7 +350,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_MEGA_KICK] =
+    [MOVE_GIGA_IMPACT] =
     {
         .effect = EFFECT_RECOIL_IF_MISS,
         .power = 130,
@@ -420,7 +420,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_HORN_ATTACK] =
+    [MOVE_KNIFE_THROW] =
     {
         .effect = EFFECT_HIGH_CRITICAL,
         .power = 50,
@@ -434,7 +434,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_FURY_ATTACK] =
+    [MOVE_MAGIC_KNIFE] =
     {
         .effect = EFFECT_MULTI_HIT,
         .power = 25,
@@ -448,7 +448,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_HORN_DRILL] =
+    [MOVE_SCULPTURE] =
     {
         .effect = EFFECT_ALWAYS_HIT,
         .power = 95,
@@ -504,7 +504,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_TAKE_DOWN] =
+    [MOVE_HEAD_SMASH] =
     {
         .effect = EFFECT_RECOIL_33,
         .power = 120,
@@ -672,7 +672,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_SUPERSONIC] =
+    [MOVE_JAMMING] =
     {
         .effect = EFFECT_BLOCK,
         .power = 0,
@@ -714,7 +714,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_ACID] =
+    [MOVE_POISON_TEARS] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
         .power = 40,
@@ -910,7 +910,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_DRILL_PECK] =
+    [MOVE_GALE] =
     {
         .effect = EFFECT_QUICK_ATTACK,
         .power = 40,
@@ -1120,7 +1120,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_PETAL_DANCE] =
+    [MOVE_BATTLE_CHANT] =
     {
         .effect = EFFECT_ATTACK_UP_HIT,
         .power = 100,
@@ -1134,7 +1134,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_STRING_SHOT] =
+    [MOVE_WIRE_WEB] =
     {
         .effect = EFFECT_SPEED_DOWN_2,
         .power = 0,
@@ -1148,7 +1148,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_DRAGON_RAGE] =
+    [MOVE_DARK_PULSE] =
     {
         .effect = EFFECT_FLINCH_HIT,
         .power = 80,
@@ -1232,7 +1232,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_ROCK_THROW] =
+    [MOVE_ROCK_WRECKER] =
     {
         .effect = EFFECT_DEFENSE_UP_HIT,
         .power = 120,
@@ -1302,7 +1302,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_CONFUSION] =
+    [MOVE_PSYSHOT] =
     {
         .effect = EFFECT_CONFUSE_HIT,
         .power = 40,
@@ -1316,7 +1316,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_PSYCHIC] =
+    [MOVE_MANA_BURST] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
         .power = 90,
@@ -1344,7 +1344,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_MEDITATE] =
+    [MOVE_ZEN_HEADBUTT] =
     {
         .effect = EFFECT_FLINCH_HIT,
         .power = 80,
@@ -1638,7 +1638,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_BIDE] =
+    [MOVE_GUARD] =
     {
         .effect = EFFECT_FOLLOW_ME,
         .power = 0,
@@ -1666,7 +1666,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_MIRROR_MOVE] =
+    [MOVE_DRAWN_LINE] =
     {
         .effect = EFFECT_HIGH_CRITICAL,
         .power = 80,
@@ -1694,7 +1694,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_EGG_BOMB] =
+    [MOVE_MIND_BOMB] =
     {
         .effect = EFFECT_COST_BASED,
         .power = 1,
@@ -1722,7 +1722,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_SMOG] =
+    [MOVE_TOXIC_GAS] =
     {
         .effect = EFFECT_POISON_HIT,
         .power = 65,
@@ -1736,7 +1736,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_SLUDGE] =
+    [MOVE_GUNK_SHOT] =
     {
         .effect = EFFECT_POISON_HIT,
         .power = 120,
@@ -1792,7 +1792,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_CLAMP] =
+    [MOVE_MANA_SHIELD] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_UP,
         .power = 0,
@@ -1834,7 +1834,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_SPIKE_CANNON] =
+    [MOVE_FEINT] =
     {
         .effect = EFFECT_QUICK_ATTACK,
         .power = 30,
@@ -1876,7 +1876,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_KINESIS] =
+    [MOVE_LUNA_DIAL] =
     {
         .effect = EFFECT_FREEZE_HIT,
         .power = 40,
@@ -1918,7 +1918,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_GLARE] =
+    [MOVE_COERCE] =
     {
         .effect = EFFECT_SPITE,
         .power = 0,
@@ -1946,7 +1946,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_POISON_GAS] =
+    [MOVE_OMINOUS_WIND] =
     {
         .effect = EFFECT_ALL_STATS_UP_HIT,
         .power = 70,
@@ -2058,7 +2058,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_SPORE] =
+    [MOVE_BURN_POWDER] =
     {
         .effect = EFFECT_BURN,
         .power = 0,
@@ -2114,7 +2114,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_ACID_ARMOR] =
+    [MOVE_DISPERSE] =
     {
         .effect = EFFECT_DEFENSE_UP_2,
         .power = 0,
@@ -2128,7 +2128,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_CRABHAMMER] =
+    [MOVE_AQUA_JET] =
     {
         .effect = EFFECT_QUICK_ATTACK,
         .power = 40,
@@ -2212,7 +2212,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_HYPER_FANG] =
+    [MOVE_KILLING_BITE] =
     {
         .effect = EFFECT_FLINCH_HIT,
         .power = 100,
@@ -2268,7 +2268,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_SUPER_FANG] =
+    [MOVE_HEAT_CLAW] =
     {
         .effect = EFFECT_COST_BASED,
         .power = 1,
@@ -2380,7 +2380,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_MIND_READER] =
+    [MOVE_HEARTS_EYE] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_2,
         .power = 0,
@@ -2632,7 +2632,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_SLUDGE_BOMB] =
+    [MOVE_POISON_BOMB] =
     {
         .effect = EFFECT_POISON_HIT,
         .power = 95,
@@ -2660,7 +2660,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_OCTAZOOKA] =
+    [MOVE_BLACK_RIPPLE] =
     {
         .effect = EFFECT_PARALYZE_HIT,
         .power = 60,
@@ -2688,7 +2688,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_ZAP_CANNON] =
+    [MOVE_FOCUS_BLAST] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
         .power = 120,
@@ -2870,7 +2870,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_ROLLOUT] =
+    [MOVE_TREMORS] =
     {
         .effect = EFFECT_ROLLOUT,
         .power = 40,
@@ -2926,7 +2926,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_SPARK] =
+    [MOVE_DISCHARGE] =
     {
         .effect = EFFECT_PARALYZE_HIT,
         .power = 80,
@@ -2968,7 +2968,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_MEAN_LOOK] =
+    [MOVE_CHARMING_LOOK] =
     {
         .effect = EFFECT_TAUNT,
         .power = 0,
@@ -3038,7 +3038,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_PRESENT] =
+    [MOVE_PRANK] =
     {
         .effect = EFFECT_HALF_HP,
         .power = 1,
@@ -3136,7 +3136,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_MEGAHORN] =
+    [MOVE_BRAVE_BIRD] =
     {
         .effect = EFFECT_RECOIL_33,
         .power = 120,
@@ -3150,7 +3150,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_DRAGON_BREATH] =
+    [MOVE_LAVA_PLUME] =
     {
         .effect = EFFECT_BURN_HIT,
         .power = 80,
@@ -3220,7 +3220,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_SWEET_SCENT] =
+    [MOVE_NATURE_POWER] =
     {
         .effect = EFFECT_COST_BASED,
         .power = 1,
@@ -3234,7 +3234,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_IRON_TAIL] =
+    [MOVE_STEEL_FIST] =
     {
         .effect = EFFECT_DEFENSE_DOWN_HIT,
         .power = 100,
@@ -3276,7 +3276,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_MORNING_SUN] =
+    [MOVE_ENERGY_LIGHT] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
         .power = 80,
@@ -3304,7 +3304,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_MOONLIGHT] =
+    [MOVE_LUNATIC] =
     {
         .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
         .power = 120,
@@ -3318,7 +3318,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_HIDDEN_POWER] =
+    [MOVE_CHARGE_BEAM] =
     {
         .effect = EFFECT_SPECIAL_ATTACK_UP_HIT,
         .power = 50,
@@ -3472,7 +3472,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_FUTURE_SIGHT] =
+    [MOVE_PSYCHO_CUT] =
     {
         .effect = EFFECT_HIGH_CRITICAL,
         .power = 70,
@@ -3542,7 +3542,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_UPROAR] =
+    [MOVE_PERFORMANCE] =
     {
         .effect = EFFECT_UPROAR,
         .power = 100,
@@ -3556,7 +3556,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_STOCKPILE] =
+    [MOVE_NASTY_PLOT] =
     {
         .effect = EFFECT_SPECIAL_ATTACK_UP_2,
         .power = 0,
@@ -3570,7 +3570,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_SPIT_UP] =
+    [MOVE_MIRROR_SHOT] =
     {
         .effect = EFFECT_ACCURACY_DOWN_HIT,
         .power = 65,
@@ -3584,7 +3584,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_SWALLOW] =
+    [MOVE_MYSTIC_WATER] =
     {
         .effect = EFFECT_INGRAIN,
         .power = 0,
@@ -3640,7 +3640,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_FLATTER] =
+    [MOVE_LUCKY_CHANT] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_UP_2,
         .power = 0,
@@ -3724,7 +3724,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_FOLLOW_ME] =
+    [MOVE_DISTURBANCE] =
     {
         .effect = EFFECT_ACCURACY_DOWN,
         .power = 0,
@@ -3738,7 +3738,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_NATURE_POWER] =
+    [MOVE_ROCK_BULLET] =
     {
         .effect = EFFECT_QUICK_ATTACK,
         .power = 40,
@@ -3752,7 +3752,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_CHARGE] =
+    [MOVE_BATT_CHARGE] =
     {
         .effect = EFFECT_SPECIAL_ATTACK_UP,
         .power = 0,
@@ -3808,7 +3808,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_ROLE_PLAY] =
+    [MOVE_RECOLLECTION] =
     {
         .effect = EFFECT_TRANSFORM,
         .power = 0,
@@ -4032,7 +4032,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_GRUDGE] =
+    [MOVE_SHADOW_DANCE] =
     {
         .effect = EFFECT_RAMPAGE,
         .power = 120,
@@ -4074,7 +4074,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_DIVE] =
+    [MOVE_SHADOW_DIVE] =
     {
         .effect = EFFECT_SEMI_INVULNERABLE,
         .power = 140,
@@ -4088,7 +4088,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_ARM_THRUST] =
+    [MOVE_FORCE_PALM] =
     {
         .effect = EFFECT_PARALYZE_HIT,
         .power = 80,
@@ -4116,7 +4116,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_TAIL_GLOW] =
+    [MOVE_MANA_CHARGE] =
     {
         .effect = EFFECT_CALM_MIND,
         .power = 0,
@@ -4158,7 +4158,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_FEATHER_DANCE] =
+    [MOVE_ROOST] =
     {
         .effect = EFFECT_RESTORE_HP,
         .power = 0,
@@ -4200,7 +4200,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_MUD_SPORT] =
+    [MOVE_EARTH_POWER] =
     {
         .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
         .power = 90,
@@ -4270,7 +4270,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_POISON_FANG] =
+    [MOVE_CROSS_POISON] =
     {
         .effect = EFFECT_POISON_TAIL,
         .power = 70,
@@ -4396,7 +4396,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_AIR_CUTTER] =
+    [MOVE_AIR_SLASH] =
     {
         .effect = EFFECT_FLINCH_HIT,
         .power = 75,
@@ -4410,7 +4410,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_OVERHEAT] =
+    [MOVE_FLARE_BLITZ] =
     {
         .effect = EFFECT_RECOIL_33,
         .power = 120,
@@ -4424,7 +4424,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_ODOR_SLEUTH] =
+    [MOVE_SHADOW_HIT] =
     {
         .effect = EFFECT_HIGH_CRITICAL,
         .power = 70,
@@ -4466,7 +4466,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_METAL_SOUND] =
+    [MOVE_BINDING_VOICE] =
     {
         .effect = EFFECT_FLINCH_HIT,
         .power = 80,
@@ -4480,7 +4480,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_GRASS_WHISTLE] =
+    [MOVE_NATURE_SOUND] =
     {
         .effect = EFFECT_HIT,
         .power = 95,
@@ -4508,7 +4508,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_COSMIC_POWER] =
+    [MOVE_DRACO_METEOR] =
     {
         .effect = EFFECT_OVERHEAT,
         .power = 140,
@@ -4522,7 +4522,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_WATER_SPOUT] =
+    [MOVE_AQUA_SHOWER] =
     {
         .effect = EFFECT_ERUPTION,
         .power = 150,
@@ -4578,7 +4578,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_SKY_UPPERCUT] =
+    [MOVE_SOAR] =
     {
         .effect = EFFECT_SKY_UPPERCUT,
         .power = 90,
@@ -4648,7 +4648,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_AERIAL_ACE] =
+    [MOVE_BLADE_FLASH] =
     {
         .effect = EFFECT_QUICK_ATTACK,
         .power = 40,
@@ -4662,7 +4662,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_ICICLE_SPEAR] =
+    [MOVE_ICE_SHARD] =
     {
         .effect = EFFECT_QUICK_ATTACK,
         .power = 40,
@@ -4718,7 +4718,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_STATUS,
     },
 
-    [MOVE_DRAGON_CLAW] =
+    [MOVE_HEART_BREAK] =
     {
         .effect = EFFECT_HIT,
         .power = 80,
@@ -4788,7 +4788,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_POISON_TAIL] =
+    [MOVE_POISON_JAB] =
     {
         .effect = EFFECT_POISON_HIT,
         .power = 80,
@@ -4844,7 +4844,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_WATER_SPORT] =
+    [MOVE_SPLASHING] =
     {
         .effect = EFFECT_REVENGE,
         .power = 60,
@@ -4886,7 +4886,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_PHYSICAL,
     },
 
-    [MOVE_DRAGON_DANCE] =
+    [MOVE_TAILWIND] =
     {
         .effect = EFFECT_TAILWIND,
         .power = 0,
@@ -4942,7 +4942,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 	    .category = MOVE_CATEGORY_SPECIAL,
     },
 
-    [MOVE_DOOM_DESIRE] =
+    [MOVE_DECISION] =
     {
         .effect = EFFECT_ALWAYS_HIT,
         .power = 60,

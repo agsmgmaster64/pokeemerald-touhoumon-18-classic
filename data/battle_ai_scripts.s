@@ -49,7 +49,7 @@ gBattleAI_ScriptsTable::
 AI_CheckBadMove:
 	if_target_is_ally AI_Ret
 	if_move MOVE_FISSURE, AI_CBM_CheckIfNegatesType
-	if_move MOVE_HORN_DRILL, AI_CBM_CheckIfNegatesType
+	if_move MOVE_SCULPTURE, AI_CBM_CheckIfNegatesType
 	get_how_powerful_move_is
 	if_equal MOVE_POWER_OTHER, AI_CheckBadMove_CheckSoundproof
 AI_CBM_CheckIfNegatesType:
@@ -93,12 +93,12 @@ AI_CheckBadMove_CheckSoundproof:
 	if_move MOVE_GROWL, Score_Minus10
 	if_move MOVE_ROAR, Score_Minus10
 	if_move MOVE_SING, Score_Minus10
-	if_move MOVE_SUPERSONIC, Score_Minus10
+	if_move MOVE_JAMMING, Score_Minus10
 	if_move MOVE_SCREECH, Score_Minus10
 	if_move MOVE_SNORE, Score_Minus10
-	if_move MOVE_UPROAR, Score_Minus10
-	if_move MOVE_METAL_SOUND, Score_Minus10
-	if_move MOVE_GRASS_WHISTLE, Score_Minus10
+	if_move MOVE_PERFORMANCE, Score_Minus10
+	if_move MOVE_BINDING_VOICE, Score_Minus10
+	if_move MOVE_NATURE_SOUND, Score_Minus10
 AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_SLEEP, AI_CBM_Sleep
 	if_effect EFFECT_EXPLOSION, AI_CBM_Explosion
@@ -852,16 +852,16 @@ AI_CV_MirrorMove_End:
 AI_CV_MirrorMove_EncouragedMovesToMirror:
     .2byte MOVE_SLEEP_POWDER
     .2byte MOVE_LOVELY_KISS
-    .2byte MOVE_SPORE
+    .2byte MOVE_BURN_POWDER
     .2byte MOVE_HYPNOSIS
     .2byte MOVE_SING
-    .2byte MOVE_GRASS_WHISTLE
+    .2byte MOVE_NATURE_SOUND
     .2byte MOVE_SHADOW_PUNCH
     .2byte MOVE_SAND_ATTACK
     .2byte MOVE_SMOKESCREEN
     .2byte MOVE_TOXIC
-    .2byte MOVE_GUILLOTINE
-    .2byte MOVE_HORN_DRILL
+    .2byte MOVE_JUDGEMENT
+    .2byte MOVE_SCULPTURE
     .2byte MOVE_FISSURE
     .2byte MOVE_SHEER_COLD
     .2byte MOVE_CROSS_CHOP
@@ -872,9 +872,9 @@ AI_CV_MirrorMove_EncouragedMovesToMirror:
     .2byte MOVE_COTTON_SPORE
     .2byte MOVE_SCARY_FACE
     .2byte MOVE_FAKE_TEARS
-    .2byte MOVE_METAL_SOUND
+    .2byte MOVE_BINDING_VOICE
     .2byte MOVE_THUNDER_WAVE
-    .2byte MOVE_GLARE
+    .2byte MOVE_COERCE
     .2byte MOVE_POISON_POWDER
     .2byte MOVE_SHADOW_BALL
     .2byte MOVE_DYNAMIC_PUNCH
@@ -885,7 +885,7 @@ AI_CV_MirrorMove_EncouragedMovesToMirror:
     .2byte MOVE_ATTRACT
     .2byte MOVE_SWAGGER
     .2byte MOVE_TORMENT
-    .2byte MOVE_FLATTER
+    .2byte MOVE_LUCKY_CHANT
     .2byte MOVE_TRICK
     .2byte MOVE_SUPERPOWER
     .2byte MOVE_SKILL_SWAP
@@ -2680,7 +2680,7 @@ AI_PreferBatonPass:
 	if_random_less_than 80, AI_Risky_End
 AI_PreferBatonPass_GoForBatonPass:
 	if_move MOVE_SWORDS_DANCE, AI_PreferBatonPass2
-	if_move MOVE_DRAGON_DANCE, AI_PreferBatonPass2
+	if_move MOVE_TAILWIND, AI_PreferBatonPass2
 	if_move MOVE_CALM_MIND, AI_PreferBatonPass2
 	if_effect EFFECT_DETECT, AI_PreferBatonPass_End
 	if_move MOVE_BATON_PASS, AI_PreferBatonPass_EncourageIfHighStats
@@ -2825,7 +2825,7 @@ AI_TrySkillSwapOnAlly2:
 	if_has_move AI_USER_PARTNER, MOVE_HYDRO_PUMP, AI_TrySkillSwapOnAllyPlus3
 	if_has_move AI_USER_PARTNER, MOVE_DYNAMIC_PUNCH, AI_TrySkillSwapOnAllyPlus3
 	if_has_move AI_USER_PARTNER, MOVE_BLIZZARD, AI_TrySkillSwapOnAllyPlus3
-	if_has_move AI_USER_PARTNER, MOVE_MEGAHORN, AI_TrySkillSwapOnAllyPlus3
+	if_has_move AI_USER_PARTNER, MOVE_BRAVE_BIRD, AI_TrySkillSwapOnAllyPlus3
 	goto Score_Minus30_
 
 AI_TrySkillSwapOnAllyPlus3:

@@ -12,23 +12,23 @@
 
 	.align 2
 gMovesWithQuietBGM::
-	.2byte MOVE_SING, MOVE_PERISH_SONG, MOVE_GRASS_WHISTLE, 0xFFFF
+	.2byte MOVE_SING, MOVE_PERISH_SONG, MOVE_NATURE_SOUND, 0xFFFF
 
 	.align 2
 gBattleAnims_Moves::
 	.4byte Move_NONE
 	.4byte Move_POUND
 	.4byte Move_KARATE_CHOP
-	.4byte Move_DOUBLE_SLAP
+	.4byte Move_BRAVER
 	.4byte Move_COMET_PUNCH
-	.4byte Move_MEGA_PUNCH
+	.4byte Move_DRAIN_PUNCH
 	.4byte Move_PAY_DAY
 	.4byte Move_FIRE_PUNCH
 	.4byte Move_ICE_PUNCH
 	.4byte Move_THUNDER_PUNCH
 	.4byte Move_SCRATCH
-	.4byte Move_VICE_GRIP
-	.4byte Move_GUILLOTINE
+	.4byte Move_NIGHT_SLASH
+	.4byte Move_JUDGEMENT
 	.4byte Move_RAZOR_WIND
 	.4byte Move_SWORDS_DANCE
 	.4byte Move_CUT
@@ -37,22 +37,22 @@ gBattleAnims_Moves::
 	.4byte Move_WHIRLWIND
 	.4byte Move_FLY
 	.4byte Move_BIND
-	.4byte Move_SLAM
+	.4byte Move_POWER_WHIP
 	.4byte Move_VINE_WHIP
 	.4byte Move_STOMP
 	.4byte Move_DOUBLE_KICK
-	.4byte Move_MEGA_KICK
+	.4byte Move_GIGA_IMPACT
 	.4byte Move_JUMP_KICK
 	.4byte Move_ROLLING_KICK
 	.4byte Move_SAND_ATTACK
 	.4byte Move_HEADBUTT
-	.4byte Move_HORN_ATTACK
-	.4byte Move_FURY_ATTACK
-	.4byte Move_HORN_DRILL
+	.4byte Move_KNIFE_THROW
+	.4byte Move_MAGIC_KNIFE
+	.4byte Move_SCULPTURE
 	.4byte Move_TACKLE
 	.4byte Move_BODY_SLAM
 	.4byte Move_WRAP
-	.4byte Move_TAKE_DOWN
+	.4byte Move_HEAD_SMASH
 	.4byte Move_THRASH
 	.4byte Move_DOUBLE_EDGE
 	.4byte Move_TAIL_WHIP
@@ -64,10 +64,10 @@ gBattleAnims_Moves::
 	.4byte Move_GROWL
 	.4byte Move_ROAR
 	.4byte Move_SING
-	.4byte Move_SUPERSONIC
+	.4byte Move_JAMMING
 	.4byte Move_SONIC_BOOM
 	.4byte Move_DISABLE
-	.4byte Move_ACID
+	.4byte Move_POISON_TEARS
 	.4byte Move_EMBER
 	.4byte Move_FLAMETHROWER
 	.4byte Move_MIST
@@ -81,7 +81,7 @@ gBattleAnims_Moves::
 	.4byte Move_AURORA_BEAM
 	.4byte Move_HYPER_BEAM
 	.4byte Move_PECK
-	.4byte Move_DRILL_PECK
+	.4byte Move_GALE
 	.4byte Move_SUBMISSION
 	.4byte Move_LOW_KICK
 	.4byte Move_COUNTER
@@ -96,23 +96,23 @@ gBattleAnims_Moves::
 	.4byte Move_POISON_POWDER
 	.4byte Move_STUN_SPORE
 	.4byte Move_SLEEP_POWDER
-	.4byte Move_PETAL_DANCE
-	.4byte Move_STRING_SHOT
-	.4byte Move_DRAGON_RAGE
+	.4byte Move_BATTLE_CHANT
+	.4byte Move_WIRE_WEB
+	.4byte Move_DARK_PULSE
 	.4byte Move_FIRE_SPIN
 	.4byte Move_THUNDER_SHOCK
 	.4byte Move_THUNDERBOLT
 	.4byte Move_THUNDER_WAVE
 	.4byte Move_THUNDER
-	.4byte Move_ROCK_THROW
+	.4byte Move_ROCK_WRECKER
 	.4byte Move_EARTHQUAKE
 	.4byte Move_FISSURE
 	.4byte Move_DIG
 	.4byte Move_TOXIC
-	.4byte Move_CONFUSION
-	.4byte Move_PSYCHIC
+	.4byte Move_PSYSHOT
+	.4byte Move_MANA_BURST
 	.4byte Move_HYPNOSIS
-	.4byte Move_MEDITATE
+	.4byte Move_ZEN_HEADBUTT
 	.4byte Move_AGILITY
 	.4byte Move_QUICK_ATTACK
 	.4byte Move_RAGE
@@ -133,29 +133,29 @@ gBattleAnims_Moves::
 	.4byte Move_HAZE
 	.4byte Move_REFLECT
 	.4byte Move_FOCUS_ENERGY
-	.4byte Move_BIDE
+	.4byte Move_GUARD
 	.4byte Move_METRONOME
-	.4byte Move_MIRROR_MOVE @ doesnt have an actual animation
+	.4byte Move_DRAWN_LINE
 	.4byte Move_SELF_DESTRUCT
-	.4byte Move_EGG_BOMB
+	.4byte Move_MIND_BOMB
 	.4byte Move_LICK
-	.4byte Move_SMOG
-	.4byte Move_SLUDGE
+	.4byte Move_TOXIC_GAS
+	.4byte Move_GUNK_SHOT
 	.4byte Move_BONE_CLUB
 	.4byte Move_FIRE_BLAST
 	.4byte Move_WATERFALL
-	.4byte Move_CLAMP
+	.4byte Move_MANA_SHIELD
 	.4byte Move_SWIFT
 	.4byte Move_SKULL_BASH
-	.4byte Move_SPIKE_CANNON
+	.4byte Move_FEINT
 	.4byte Move_CONSTRICT
 	.4byte Move_AMNESIA
-	.4byte Move_KINESIS
+	.4byte Move_LUNA_DIAL
 	.4byte Move_SOFT_BOILED
 	.4byte Move_HI_JUMP_KICK
-	.4byte Move_GLARE
+	.4byte Move_COERCE
 	.4byte Move_DREAM_EATER
-	.4byte Move_POISON_GAS
+	.4byte Move_OMINOUS_WIND
 	.4byte Move_BARRAGE
 	.4byte Move_LEECH_LIFE
 	.4byte Move_LOVELY_KISS
@@ -163,22 +163,22 @@ gBattleAnims_Moves::
 	.4byte Move_TRANSFORM
 	.4byte Move_BUBBLE
 	.4byte Move_DIZZY_PUNCH
-	.4byte Move_SPORE
+	.4byte Move_BURN_POWDER
 	.4byte Move_FLASH
 	.4byte Move_PSYWAVE
 	.4byte Move_SPLASH
-	.4byte Move_ACID_ARMOR
-	.4byte Move_CRABHAMMER
+	.4byte Move_DISPERSE
+	.4byte Move_AQUA_JET
 	.4byte Move_EXPLOSION
 	.4byte Move_FURY_SWIPES
 	.4byte Move_BONEMERANG
 	.4byte Move_REST
 	.4byte Move_ROCK_SLIDE
-	.4byte Move_HYPER_FANG
+	.4byte Move_KILLING_BITE
 	.4byte Move_SHARPEN
 	.4byte Move_CONVERSION
 	.4byte Move_TRI_ATTACK
-	.4byte Move_SUPER_FANG
+	.4byte Move_HEAT_CLAW
 	.4byte Move_SLASH
 	.4byte Move_SUBSTITUTE
 	.4byte Move_STRUGGLE
@@ -186,7 +186,7 @@ gBattleAnims_Moves::
 	.4byte Move_TRIPLE_KICK
 	.4byte Move_THIEF
 	.4byte Move_SPIDER_WEB
-	.4byte Move_MIND_READER
+	.4byte Move_HEARTS_EYE
 	.4byte Move_NIGHTMARE
 	.4byte Move_FLAME_WHEEL
 	.4byte Move_SNORE
@@ -204,11 +204,11 @@ gBattleAnims_Moves::
 	.4byte Move_FAINT_ATTACK
 	.4byte Move_SWEET_KISS
 	.4byte Move_BELLY_DRUM
-	.4byte Move_SLUDGE_BOMB
+	.4byte Move_POISON_BOMB
 	.4byte Move_MUD_SLAP
-	.4byte Move_OCTAZOOKA
+	.4byte Move_BLACK_RIPPLE
 	.4byte Move_SPIKES
-	.4byte Move_ZAP_CANNON
+	.4byte Move_FOCUS_BLAST
 	.4byte Move_FORESIGHT
 	.4byte Move_DESTINY_BOND
 	.4byte Move_PERISH_SONG
@@ -221,39 +221,39 @@ gBattleAnims_Moves::
 	.4byte Move_GIGA_DRAIN
 	.4byte Move_ENDURE
 	.4byte Move_CHARM
-	.4byte Move_ROLLOUT
+	.4byte Move_TREMORS
 	.4byte Move_FALSE_SWIPE
 	.4byte Move_SWAGGER
 	.4byte Move_MILK_DRINK
-	.4byte Move_SPARK
+	.4byte Move_DISCHARGE
 	.4byte Move_FURY_CUTTER
 	.4byte Move_STEEL_WING
-	.4byte Move_MEAN_LOOK
+	.4byte Move_CHARMING_LOOK
 	.4byte Move_ATTRACT
 	.4byte Move_SLEEP_TALK
 	.4byte Move_HEAL_BELL
 	.4byte Move_RETURN
-	.4byte Move_PRESENT
+	.4byte Move_PRANK
 	.4byte Move_FRUSTRATION
 	.4byte Move_SAFEGUARD
 	.4byte Move_PAIN_SPLIT
 	.4byte Move_SACRED_FIRE
 	.4byte Move_MAGNITUDE
 	.4byte Move_DYNAMIC_PUNCH
-	.4byte Move_MEGAHORN
-	.4byte Move_DRAGON_BREATH
+	.4byte Move_BRAVE_BIRD
+	.4byte Move_LAVA_PLUME
 	.4byte Move_BATON_PASS
 	.4byte Move_ENCORE
 	.4byte Move_PURSUIT
 	.4byte Move_RAPID_SPIN
-	.4byte Move_SWEET_SCENT
-	.4byte Move_IRON_TAIL
+	.4byte Move_NATURE_POWER
+	.4byte Move_STEEL_FIST
 	.4byte Move_METAL_CLAW
 	.4byte Move_VITAL_THROW
-	.4byte Move_MORNING_SUN
+	.4byte Move_ENERGY_LIGHT
 	.4byte Move_SYNTHESIS
-	.4byte Move_MOONLIGHT
-	.4byte Move_HIDDEN_POWER
+	.4byte Move_LUNATIC
+	.4byte Move_CHARGE_BEAM
 	.4byte Move_CROSS_CHOP
 	.4byte Move_TWISTER
 	.4byte Move_RAIN_DANCE
@@ -264,31 +264,31 @@ gBattleAnims_Moves::
 	.4byte Move_EXTREME_SPEED
 	.4byte Move_ANCIENT_POWER
 	.4byte Move_SHADOW_BALL
-	.4byte Move_FUTURE_SIGHT
+	.4byte Move_PSYCHO_CUT
 	.4byte Move_ROCK_SMASH
 	.4byte Move_WHIRLPOOL
 	.4byte Move_BEAT_UP
 	.4byte Move_FAKE_OUT
-	.4byte Move_UPROAR
-	.4byte Move_STOCKPILE
-	.4byte Move_SPIT_UP
-	.4byte Move_SWALLOW
+	.4byte Move_PERFORMANCE
+	.4byte Move_NASTY_PLOT
+	.4byte Move_MIRROR_SHOT
+	.4byte Move_MYSTIC_WATER
 	.4byte Move_HEAT_WAVE
 	.4byte Move_HAIL
 	.4byte Move_TORMENT
-	.4byte Move_FLATTER
+	.4byte Move_LUCKY_CHANT
 	.4byte Move_WILL_O_WISP
 	.4byte Move_MEMENTO
 	.4byte Move_FACADE
 	.4byte Move_FOCUS_PUNCH
 	.4byte Move_SMELLING_SALT
-	.4byte Move_FOLLOW_ME
-	.4byte Move_NATURE_POWER
-	.4byte Move_CHARGE
+	.4byte Move_DISTURBANCE
+	.4byte Move_ROCK_BULLET
+	.4byte Move_BATT_CHARGE
 	.4byte Move_TAUNT
 	.4byte Move_HELPING_HAND
 	.4byte Move_TRICK
-	.4byte Move_ROLE_PLAY
+	.4byte Move_RECOLLECTION
 	.4byte Move_WISH
 	.4byte Move_ASSIST
 	.4byte Move_INGRAIN
@@ -304,24 +304,24 @@ gBattleAnims_Moves::
 	.4byte Move_SKILL_SWAP
 	.4byte Move_IMPRISON
 	.4byte Move_REFRESH
-	.4byte Move_GRUDGE
+	.4byte Move_SHADOW_DANCE
 	.4byte Move_SNATCH
 	.4byte Move_SECRET_POWER
-	.4byte Move_DIVE
-	.4byte Move_ARM_THRUST
+	.4byte Move_SHADOW_DIVE
+	.4byte Move_FORCE_PALM
 	.4byte Move_CAMOUFLAGE
-	.4byte Move_TAIL_GLOW
+	.4byte Move_MANA_CHARGE
 	.4byte Move_LUSTER_PURGE
 	.4byte Move_MIST_BALL
-	.4byte Move_FEATHER_DANCE
+	.4byte Move_ROOST
 	.4byte Move_TEETER_DANCE
 	.4byte Move_BLAZE_KICK
-	.4byte Move_MUD_SPORT
+	.4byte Move_EARTH_POWER
 	.4byte Move_ICE_BALL
 	.4byte Move_NEEDLE_ARM
 	.4byte Move_SLACK_OFF
 	.4byte Move_HYPER_VOICE
-	.4byte Move_POISON_FANG
+	.4byte Move_CROSS_POISON
 	.4byte Move_CRUSH_CLAW
 	.4byte Move_BLAST_BURN
 	.4byte Move_HYDRO_CANNON
@@ -330,46 +330,46 @@ gBattleAnims_Moves::
 	.4byte Move_WEATHER_BALL
 	.4byte Move_AROMATHERAPY
 	.4byte Move_FAKE_TEARS
-	.4byte Move_AIR_CUTTER
-	.4byte Move_OVERHEAT
-	.4byte Move_ODOR_SLEUTH
+	.4byte Move_AIR_SLASH
+	.4byte Move_FLARE_BLITZ
+	.4byte Move_SHADOW_HIT
 	.4byte Move_ROCK_TOMB
 	.4byte Move_SILVER_WIND
-	.4byte Move_METAL_SOUND
-	.4byte Move_GRASS_WHISTLE
+	.4byte Move_BINDING_VOICE
+	.4byte Move_NATURE_SOUND
 	.4byte Move_TICKLE
-	.4byte Move_COSMIC_POWER
-	.4byte Move_WATER_SPOUT
+	.4byte Move_DRACO_METEOR
+	.4byte Move_AQUA_SHOWER
 	.4byte Move_SIGNAL_BEAM
 	.4byte Move_SHADOW_PUNCH
 	.4byte Move_EXTRASENSORY
-	.4byte Move_SKY_UPPERCUT
+	.4byte Move_SOAR
 	.4byte Move_SAND_TOMB
 	.4byte Move_SHEER_COLD
 	.4byte Move_MUDDY_WATER
 	.4byte Move_BULLET_SEED
-	.4byte Move_AERIAL_ACE
-	.4byte Move_ICICLE_SPEAR
+	.4byte Move_BLADE_FLASH
+	.4byte Move_ICE_SHARD
 	.4byte Move_IRON_DEFENSE
 	.4byte Move_BLOCK
 	.4byte Move_HOWL
-	.4byte Move_DRAGON_CLAW
+	.4byte Move_HEART_BREAK
 	.4byte Move_FRENZY_PLANT
 	.4byte Move_BULK_UP
 	.4byte Move_BOUNCE
 	.4byte Move_MUD_SHOT
-	.4byte Move_POISON_TAIL
+	.4byte Move_POISON_JAB
 	.4byte Move_COVET
 	.4byte Move_VOLT_TACKLE
 	.4byte Move_MAGICAL_LEAF
-	.4byte Move_WATER_SPORT
+	.4byte Move_SPLASHING
 	.4byte Move_CALM_MIND
 	.4byte Move_LEAF_BLADE
-	.4byte Move_DRAGON_DANCE
+	.4byte Move_TAILWIND
 	.4byte Move_ROCK_BLAST
 	.4byte Move_SHOCK_WAVE
 	.4byte Move_WATER_PULSE
-	.4byte Move_DOOM_DESIRE
+	.4byte Move_DECISION
 	.4byte Move_PSYCHO_BOOST
 	.4byte Move_COUNT @ cannot be reached, because last move is Psycho Boost
 
@@ -422,7 +422,7 @@ gBattleAnims_Special::
 	.4byte Special_MonToSubstitute          @ B_ANIM_MON_TO_SUBSTITUTE
 
 Move_NONE:
-Move_MIRROR_MOVE:
+Move_DRAWN_LINE:
 Move_POUND:
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
@@ -435,7 +435,7 @@ Move_POUND:
 	blendoff
 	end
 
-Move_DOUBLE_SLAP:
+Move_BRAVER:
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
 	setalpha 12, 8
@@ -620,7 +620,7 @@ Move_BODY_SLAM:
 	blendoff
 	end
 
-Move_SUPERSONIC:
+Move_JAMMING:
 	loadspritegfx ANIM_TAG_GOLD_RING
 	monbg ANIM_ATK_PARTNER
 	splitbgprio_foes ANIM_ATTACKER
@@ -728,7 +728,7 @@ Move_PIN_MISSILE:
 	blendoff
 	end
 
-Move_ICICLE_SPEAR:
+Move_ICE_SHARD:
 	loadspritegfx ANIM_TAG_ICICLE_SPEAR
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
@@ -757,7 +757,7 @@ Move_ICICLE_SPEAR:
 	blendoff
 	end
 
-Move_TAKE_DOWN:
+Move_HEAD_SMASH:
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
 	setalpha 12, 8
@@ -936,7 +936,7 @@ EmberFireHit:
 	delay 4
 	return
 
-Move_MEGA_PUNCH:
+Move_DRAIN_PUNCH:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET
 	monbg ANIM_TARGET
@@ -979,7 +979,7 @@ SetImpactContestsBG:
 	changebg BG_IMPACT_CONTESTS
 	goto SetImpactBackgroundRet
 
-Move_MEGA_KICK:
+Move_GIGA_IMPACT:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET
 	monbg ANIM_TARGET
@@ -1212,7 +1212,7 @@ Move_CUT:
 	waitforvisualfinish
 	end
 
-Move_HIDDEN_POWER:
+Move_CHARGE_BEAM:
 	loadspritegfx ANIM_TAG_RED_ORB
 	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 11, ANIM_ATTACKER, 0
@@ -1297,7 +1297,7 @@ PursuitOnSwitchout:
 	createvisualtask AnimTask_ShakeTargetBasedOnMovePowerOrDmg, 5, FALSE, 1, 6, 1, 0
 	goto PursuitContinue
 
-Move_SPIKE_CANNON:
+Move_FEINT:
 	loadspritegfx ANIM_TAG_NEEDLE
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
@@ -1486,7 +1486,7 @@ SelfDestructExplode:
 	delay 6
 	return
 
-Move_SLAM:
+Move_POWER_WHIP:
 	loadspritegfx ANIM_TAG_SLAM_HIT
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
@@ -1521,7 +1521,7 @@ Move_VINE_WHIP:
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 6, 1
 	end
 
-Move_DRILL_PECK:
+Move_GALE:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_WHIRLWIND_LINES
 	createsprite gBowMonSpriteTemplate, ANIM_ATTACKER, 2, 0
@@ -1838,7 +1838,7 @@ Move_PAIN_SPLIT:
 	createvisualtask AnimTask_PainSplitMovement, 2, ANIM_TARGET, 2
 	end
 
-Move_VICE_GRIP:
+Move_NIGHT_SLASH:
 	loadspritegfx ANIM_TAG_CUT
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
@@ -1854,7 +1854,7 @@ Move_VICE_GRIP:
 	blendoff
 	end
 
-Move_GUILLOTINE:
+Move_JUDGEMENT:
 	loadspritegfx ANIM_TAG_CUT
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
@@ -1942,7 +1942,7 @@ OutrageFlames:
 	createsprite gOutrageFlameSpriteTemplate, ANIM_TARGET, 2, 0, 0, 30, -1280, -768, 3
 	return
 
-Move_SPARK:
+Move_DISCHARGE:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_SPARK_2
 	delay 0
@@ -2080,7 +2080,7 @@ Move_LOCK_ON:
 	waitforvisualfinish
 	end
 
-Move_MEAN_LOOK:
+Move_CHARMING_LOOK:
 	loadspritegfx ANIM_TAG_EYE
 	monbg ANIM_DEF_PARTNER
 	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
@@ -2095,7 +2095,7 @@ Move_MEAN_LOOK:
 	waitforvisualfinish
 	end
 
-Move_ROCK_THROW:
+Move_ROCK_WRECKER:
 	loadspritegfx ANIM_TAG_ROCKS
 	createsprite gShakeMonOrTerrainSpriteTemplate, ANIM_TARGET, 2, 6, 1, 15, 1
 	createsprite gFallingRockSpriteTemplate, ANIM_TARGET, 2, 0, 1, 0, 0
@@ -2420,7 +2420,7 @@ Move_HEADBUTT:
 	waitforvisualfinish
 	end
 
-Move_HORN_ATTACK:
+Move_KNIFE_THROW:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_HORN_HIT
 	createsprite gBowMonSpriteTemplate, ANIM_ATTACKER, 2, 0
@@ -2438,7 +2438,7 @@ Move_HORN_ATTACK:
 	waitforvisualfinish
 	end
 
-Move_FURY_ATTACK:
+Move_MAGIC_KNIFE:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_HORN_HIT
 	createvisualtask AnimTask_RotateMonSpriteToSide, 2, 4, 256, 0, 2
@@ -2462,7 +2462,7 @@ FuryAttackLeft:
 	playsewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET
 	goto FuryAttackContinue
 
-Move_HORN_DRILL:
+Move_SCULPTURE:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_HORN_HIT
 	jumpifcontest HornDrillInContest
@@ -2697,7 +2697,7 @@ DigThrowDirt:
 	delay 32
 	return
 
-Move_MEDITATE:
+Move_ZEN_HEADBUTT:
 	call SetPsychicBackground
 	createvisualtask AnimTask_MeditateStretchAttacker, 2
 	playsewithpan SE_M_HEADBUTT, SOUND_PAN_ATTACKER
@@ -2867,7 +2867,7 @@ Move_AMNESIA:
 	call UnsetPsychicBackground
 	end
 
-Move_KINESIS:
+Move_LUNA_DIAL:
 	loadspritegfx ANIM_TAG_ALERT
 	loadspritegfx ANIM_TAG_BENT_SPOON
 	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
@@ -2886,7 +2886,7 @@ Move_KINESIS:
 	call UnsetPsychicBackground
 	end
 
-Move_GLARE:
+Move_COERCE:
 	loadspritegfx ANIM_TAG_SMALL_RED_EYE
 	loadspritegfx ANIM_TAG_EYE_SPARKLE
 	createvisualtask AnimTask_GlareEyeDots, 5, 0
@@ -2994,7 +2994,7 @@ Move_SPLASH:
 	waitforvisualfinish
 	end
 
-Move_ACID_ARMOR:
+Move_DISPERSE:
 	monbg ANIM_ATTACKER
 	setalpha 15, 0
 	createvisualtask AnimTask_AcidArmor, 2, ANIM_ATTACKER
@@ -3011,7 +3011,7 @@ Move_SHARPEN:
 	waitforvisualfinish
 	end
 
-Move_SUPER_FANG:
+Move_HEAT_CLAW:
 	loadspritegfx ANIM_TAG_FANG_ATTACK
 	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_ATTACKER, 1, 0, 20, 1
 	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
@@ -3232,7 +3232,7 @@ Move_CHARM:
 	waitforvisualfinish
 	end
 
-Move_ROLLOUT:
+Move_TREMORS:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_MUD_SAND
 	loadspritegfx ANIM_TAG_ROCKS
@@ -3356,7 +3356,7 @@ Move_RAPID_SPIN:
 	clearmonbg ANIM_ATTACKER
 	end
 
-Move_MOONLIGHT:
+Move_LUNATIC:
 	loadspritegfx ANIM_TAG_MOON
 	loadspritegfx ANIM_TAG_GREEN_SPARKLE
 	loadspritegfx ANIM_TAG_BLUE_STAR
@@ -3431,7 +3431,7 @@ ExtremeSpeedAgainstPlayer:
 	fadetobg BG_HIGHSPEED_PLAYER
 	goto ExtremeSpeedContinue
 
-Move_UPROAR:
+Move_PERFORMANCE:
 	loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE
 	loadspritegfx ANIM_TAG_THIN_RING
 	monbg ANIM_DEF_PARTNER
@@ -3551,7 +3551,7 @@ Move_SMELLING_SALT:
 	loopsewithpan SE_M_SWAGGER2, SOUND_PAN_TARGET, 16, 3
 	end
 
-Move_FOLLOW_ME:
+Move_DISTURBANCE:
 	loadspritegfx ANIM_TAG_FINGER
 	createsprite gFollowMeFingerSpriteTemplate, ANIM_ATTACKER, 2, 0
 	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER
@@ -3561,7 +3561,7 @@ Move_FOLLOW_ME:
 	loopsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER, 22, 3
 	end
 
-Move_CHARGE:
+Move_BATT_CHARGE:
 	loadspritegfx ANIM_TAG_ELECTRIC_ORBS
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	loadspritegfx ANIM_TAG_ELECTRICITY
@@ -3851,7 +3851,7 @@ Move_IMPRISON:
 	call UnsetPsychicBackground
 	end
 
-Move_GRUDGE:
+Move_SHADOW_DANCE:
 	loadspritegfx ANIM_TAG_PURPLE_FLAME
 	monbg ANIM_ATTACKER
 	splitbgprio_all
@@ -3887,7 +3887,7 @@ Move_CAMOUFLAGE:
 	clearmonbg ANIM_ATK_PARTNER
 	end
 
-Move_TAIL_GLOW:
+Move_MANA_CHARGE:
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	monbg ANIM_ATTACKER
 	setalpha 12, 8
@@ -3966,7 +3966,7 @@ Move_MIST_BALL:
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 16, 0, RGB_WHITE
 	end
 
-Move_FEATHER_DANCE:
+Move_ROOST:
 	loadspritegfx ANIM_TAG_WHITE_FEATHER
 	monbg ANIM_DEF_PARTNER
 	splitbgprio_all
@@ -4008,7 +4008,7 @@ Move_TEETER_DANCE:
 	playsewithpan SE_M_TEETER_DANCE, SOUND_PAN_ATTACKER
 	end
 
-Move_MUD_SPORT:
+Move_EARTH_POWER:
 	loadspritegfx ANIM_TAG_MUD_SAND
 	createvisualtask AnimTask_Splash, 2, 0, 6
 	delay 24
@@ -4190,7 +4190,7 @@ Move_FAKE_TEARS:
 	waitforvisualfinish
 	end
 
-Move_AIR_CUTTER:
+Move_AIR_SLASH:
 	loadspritegfx ANIM_TAG_AIR_WAVE
 	loadspritegfx ANIM_TAG_CUT
 	loadspritegfx ANIM_TAG_IMPACT
@@ -4211,7 +4211,7 @@ Move_AIR_CUTTER:
 	delay 0
 	end
 
-Move_ODOR_SLEUTH:
+Move_SHADOW_HIT:
 	monbg ANIM_TARGET
 	createvisualtask AnimTask_OdorSleuthMovement, 5
 	delay 24
@@ -4227,7 +4227,7 @@ Move_ODOR_SLEUTH:
 	playsewithpan SE_M_LEER, SOUND_PAN_ATTACKER
 	end
 
-Move_GRASS_WHISTLE:
+Move_NATURE_SOUND:
 	loadspritegfx ANIM_TAG_MUSIC_NOTES
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 2, 0, 4, RGB(18, 31, 12)
 	waitforvisualfinish
@@ -4282,7 +4282,7 @@ Move_TICKLE:
 	waitforvisualfinish
 	end
 
-Move_WATER_SPOUT:
+Move_AQUA_SHOWER:
 	loadspritegfx ANIM_TAG_GLOWY_BLUE_ORB
 	loadspritegfx ANIM_TAG_WATER_IMPACT
 	monbg ANIM_DEF_PARTNER
@@ -4341,7 +4341,7 @@ Move_EXTRASENSORY:
 	call UnsetPsychicBackground
 	end
 
-Move_AERIAL_ACE:
+Move_BLADE_FLASH:
 	loadspritegfx ANIM_TAG_CUT
 	monbg ANIM_TARGET
 	setalpha 12, 8
@@ -4455,7 +4455,7 @@ Move_VOLT_TACKLE:
 	waitforvisualfinish
 	end
 
-Move_WATER_SPORT:
+Move_SPLASHING:
 	loadspritegfx ANIM_TAG_GLOWY_BLUE_ORB
 	createvisualtask AnimTask_WaterSport, 5
 	delay 8
@@ -4516,7 +4516,7 @@ Move_LEAF_BLADE:
 	blendoff
 	end
 
-Move_DRAGON_DANCE:
+Move_TAILWIND:
 	loadspritegfx ANIM_TAG_HOLLOW_ORB
 	monbg ANIM_ATTACKER
 	splitbgprio ANIM_ATTACKER
@@ -4619,7 +4619,7 @@ BellyDrumRight:
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 0, 8, 2, 1
 	return
 
-Move_MIND_READER:
+Move_HEARTS_EYE:
 	loadspritegfx ANIM_TAG_TEAL_ALERT
 	loadspritegfx ANIM_TAG_OPENING_EYE
 	loadspritegfx ANIM_TAG_ROUND_WHITE_HALO
@@ -4707,7 +4707,7 @@ Move_REST:
 	waitforvisualfinish
 	end
 
-Move_CONFUSION:
+Move_PSYSHOT:
 	monbg ANIM_DEF_PARTNER
 	call SetPsychicBackground
 	setalpha 8, 8
@@ -4724,7 +4724,7 @@ Move_CONFUSION:
 	call UnsetPsychicBackground
 	end
 
-Move_PSYCHIC:
+Move_MANA_BURST:
 	monbg ANIM_DEF_PARTNER
 	call SetPsychicBackground
 	setalpha 8, 8
@@ -4741,7 +4741,7 @@ Move_PSYCHIC:
 	call UnsetPsychicBackground
 	end
 
-Move_FUTURE_SIGHT:
+Move_PSYCHO_CUT:
 	goto FutureSight
 FutureSightContinue:
 	waitforvisualfinish
@@ -4922,7 +4922,7 @@ Move_SCRATCH:
 	waitforvisualfinish
 	end
 
-Move_DRAGON_BREATH:
+Move_LAVA_PLUME:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
@@ -5120,7 +5120,7 @@ Move_BUBBLE:
 	blendoff
 	end
 
-Move_SMOG:
+Move_TOXIC_GAS:
 	loadspritegfx ANIM_TAG_PURPLE_GAS_CLOUD
 	monbg ANIM_DEF_PARTNER
 	splitbgprio_all
@@ -5234,7 +5234,7 @@ MudSlapMud:
 	delay 2
 	return
 
-Move_DRAGON_RAGE:
+Move_DARK_PULSE:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	loadspritegfx ANIM_TAG_FIRE_PLUME
 	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
@@ -5325,7 +5325,7 @@ Move_CRUNCH:
 	waitbgfadein
 	end
 
-Move_CLAMP:
+Move_MANA_SHIELD:
 	loadspritegfx ANIM_TAG_CLAMP
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
@@ -5942,7 +5942,7 @@ ToxicBubbles:
 	delay 15
 	return
 
-Move_SLUDGE:
+Move_GUNK_SHOT:
 	loadspritegfx ANIM_TAG_POISON_BUBBLE
 	playsewithpan SE_M_BUBBLE3, SOUND_PAN_ATTACKER
 	createsprite gSludgeProjectileSpriteTemplate, ANIM_TARGET, 2, 20, 0, 40, 0
@@ -5953,7 +5953,7 @@ Move_SLUDGE:
 	waitforvisualfinish
 	end
 
-Move_SLUDGE_BOMB:
+Move_POISON_BOMB:
 	loadspritegfx ANIM_TAG_POISON_BUBBLE
 	call SludgeBombProjectile
 	call SludgeBombProjectile
@@ -5996,7 +5996,7 @@ SludgeBombProjectile:
 	delay 3
 	return
 
-Move_ACID:
+Move_POISON_TEARS:
 	loadspritegfx ANIM_TAG_POISON_BUBBLE
 	monbg ANIM_DEF_PARTNER
 	createsprite gAcidPoisonBubbleSpriteTemplate, ANIM_TARGET, 2, 20, 0, 40, 1, 0, 0
@@ -6100,7 +6100,7 @@ Move_SPIKES:
 	clearmonbg ANIM_DEF_PARTNER
 	end
 
-Move_MEGAHORN:
+Move_BRAVE_BIRD:
 	loadspritegfx ANIM_TAG_HORN_HIT_2
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
@@ -6258,7 +6258,7 @@ Move_WATER_GUN:
 	blendoff
 	end
 
-Move_CRABHAMMER:
+Move_AQUA_JET:
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS
 	loadspritegfx ANIM_TAG_WATER_IMPACT
 	monbg ANIM_DEF_PARTNER
@@ -6761,7 +6761,7 @@ CreateCottonSpores:
 	delay 12
 	return
 
-Move_SPORE:
+Move_BURN_POWDER:
 	loadspritegfx ANIM_TAG_SPORE
 	monbg ANIM_DEF_PARTNER
 	setalpha 12, 8
@@ -6785,7 +6785,7 @@ CreateSpore:
 	delay 12
 	return
 
-Move_PETAL_DANCE:
+Move_BATTLE_CHANT:
 	loadspritegfx ANIM_TAG_FLOWER
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
@@ -6863,7 +6863,7 @@ Move_RAZOR_LEAF:
 	blendoff
 	end
 
-Move_NATURE_POWER:
+Move_ROCK_BULLET:
 	@ No actual animation, uses the animation of a move from sNaturePowerMoves instead
 
 Move_ANCIENT_POWER:
@@ -6899,7 +6899,7 @@ Move_ANCIENT_POWER:
 	blendoff
 	end
 
-Move_OCTAZOOKA:
+Move_BLACK_RIPPLE:
 	loadspritegfx ANIM_TAG_GRAY_SMOKE
 	loadspritegfx ANIM_TAG_BLACK_BALL
 	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_ATTACKER
@@ -7072,7 +7072,7 @@ DreamEaterAbsorb:
 	delay 4
 	return
 
-Move_POISON_GAS:
+Move_OMINOUS_WIND:
 	loadspritegfx ANIM_TAG_PURPLE_GAS_CLOUD
 	loadspritegfx ANIM_TAG_POISON_BUBBLE
 	delay 0
@@ -7194,7 +7194,7 @@ PsywaveRings:
 	delay 4
 	return
 
-Move_ZAP_CANNON:
+Move_FOCUS_BLAST:
 	loadspritegfx ANIM_TAG_BLACK_BALL_2
 	loadspritegfx ANIM_TAG_SPARK_2
 	playsewithpan SE_M_THUNDER_WAVE, SOUND_PAN_ATTACKER
@@ -7242,7 +7242,7 @@ Move_STEEL_WING:
 	blendoff
 	end
 
-Move_IRON_TAIL:
+Move_STEEL_FIST:
 	loadspritegfx ANIM_TAG_IMPACT
 	loopsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER, 28, 2
 	createvisualtask AnimTask_MetallicShine, 5, 1, 0, 0
@@ -7261,7 +7261,7 @@ Move_IRON_TAIL:
 	waitforvisualfinish
 	end
 
-Move_POISON_TAIL:
+Move_POISON_JAB:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_POISON_BUBBLE
 	loopsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER, 28, 2
@@ -7322,7 +7322,7 @@ Move_NIGHT_SHADE:
 	waitbgfadein
 	end
 
-Move_EGG_BOMB:
+Move_MIND_BOMB:
 	loadspritegfx ANIM_TAG_EXPLOSION
 	loadspritegfx ANIM_TAG_LARGE_FRESH_EGG
 	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER
@@ -7384,7 +7384,7 @@ Move_FOCUS_ENERGY:
 	waitforvisualfinish
 	end
 
-Move_BIDE:
+Move_GUARD:
 	choosetwoturnanim BideSetUp, BideUnleash
 	end
 BideSetUp:
@@ -7424,7 +7424,7 @@ BideUnleash:
 	blendoff
 	end
 
-Move_STRING_SHOT:
+Move_WIRE_WEB:
 	loadspritegfx ANIM_TAG_STRING
 	loadspritegfx ANIM_TAG_WEB_THREAD
 	monbg ANIM_DEF_PARTNER
@@ -7857,7 +7857,7 @@ Move_INGRAIN:
 	waitforvisualfinish
 	end
 
-Move_PRESENT:
+Move_PRANK:
 	loadspritegfx ANIM_TAG_ITEM_BAG
 	createvisualtask AnimTask_IsHealingMove, 2
 	createsprite gPresentSpriteTemplate, ANIM_TARGET, 2, 0, -5, 10, 2, -1
@@ -7987,7 +7987,7 @@ Move_SLEEP_TALK:
 	waitforvisualfinish
 	end
 
-Move_HYPER_FANG:
+Move_KILLING_BITE:
 	loadspritegfx ANIM_TAG_FANG_ATTACK
 	playsewithpan SE_M_BITE, SOUND_PAN_TARGET
 	delay 1
@@ -8162,7 +8162,7 @@ Move_WISH:
 	waitforvisualfinish
 	end
 
-Move_STOCKPILE:
+Move_NASTY_PLOT:
 	loadspritegfx ANIM_TAG_GRAY_ORB
 	playsewithpan SE_M_MEGA_KICK, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 8, 1, 0, 12, RGB_WHITE
@@ -8191,7 +8191,7 @@ StockpileAbsorb:
 	delay 1
 	return
 
-Move_SPIT_UP:
+Move_MIRROR_SHOT:
 	loadspritegfx ANIM_TAG_RED_ORB_2
 	loadspritegfx ANIM_TAG_IMPACT
 	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
@@ -8238,7 +8238,7 @@ SpitUpStrongest:
 	createsprite gSpitUpOrbSpriteTemplate, ANIM_ATTACKER, 2, 240
 	goto SpitUpContinue
 
-Move_SWALLOW:
+Move_MYSTIC_WATER:
 	loadspritegfx ANIM_TAG_BLUE_ORB
 	loadspritegfx ANIM_TAG_BLUE_STAR
 	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
@@ -8283,7 +8283,7 @@ Move_TRANSFORM:
 	clearmonbg ANIM_ATTACKER
 	end
 
-Move_MORNING_SUN:
+Move_ENERGY_LIGHT:
 	loadspritegfx ANIM_TAG_GREEN_STAR
 	loadspritegfx ANIM_TAG_BLUE_STAR
 	createvisualtask AnimTask_MorningSunLightBeam, 5
@@ -8315,7 +8315,7 @@ MorningSunStar:
 	delay 5
 	return
 
-Move_SWEET_SCENT:
+Move_NATURE_POWER:
 	loadspritegfx ANIM_TAG_PINK_PETAL
 	playsewithpan SE_M_SWEET_SCENT, SOUND_PAN_ATTACKER
 	createsprite gSweetScentPetalSpriteTemplate, ANIM_ATTACKER, 2, 100, 0, 100
@@ -8403,7 +8403,7 @@ HyperBeamOrbs:
 	delay 1
 	return
 
-Move_FLATTER:
+Move_LUCKY_CHANT:
 	loadspritegfx ANIM_TAG_SPOTLIGHT
 	loadspritegfx ANIM_TAG_CONFETTI
 	createvisualtask SoundTask_PlaySE2WithPanning, 5, SE_M_ENCORE2, SOUND_PAN_TARGET
@@ -8448,7 +8448,7 @@ CreateFlatterConfetti:
 	createsprite gFlatterConfettiSpriteTemplate, ANIM_ATTACKER, 40, ANIM_TARGET
 	return
 
-Move_ROLE_PLAY:
+Move_RECOLLECTION:
 	monbg ANIM_ATK_PARTNER
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 16, RGB_WHITE
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 2, 0, 10, RGB_BLACK
@@ -8565,7 +8565,7 @@ Move_SHEER_COLD:
 	waitbgfadein
 	end
 
-Move_ARM_THRUST:
+Move_FORCE_PALM:
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET
 	loadspritegfx ANIM_TAG_IMPACT
 	splitbgprio ANIM_TARGET
@@ -8623,7 +8623,7 @@ Move_BULLET_SEED:
 	waitforvisualfinish
 	end
 
-Move_DRAGON_CLAW:
+Move_HEART_BREAK:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	loadspritegfx ANIM_TAG_CLAW_SLASH
 	playsewithpan SE_M_SACRED_FIRE2, SOUND_PAN_ATTACKER
@@ -8769,7 +8769,7 @@ Move_REVENGE:
 	blendoff
 	end
 
-Move_POISON_FANG:
+Move_CROSS_POISON:
 	loadspritegfx ANIM_TAG_FANG_ATTACK
 	loadspritegfx ANIM_TAG_POISON_BUBBLE
 	playsewithpan SE_M_BITE, SOUND_PAN_TARGET
@@ -8847,7 +8847,7 @@ Move_FRENZY_PLANT:
 	blendoff
 	end
 
-Move_METAL_SOUND:
+Move_BINDING_VOICE:
 	loadspritegfx ANIM_TAG_METAL_SOUND_WAVES
 	monbg ANIM_DEF_PARTNER
 	splitbgprio_foes ANIM_TARGET
@@ -9052,7 +9052,7 @@ ReturnStrongestHit:
 	waitforvisualfinish
 	return
 
-Move_COSMIC_POWER:
+Move_DRACO_METEOR:
 	loadspritegfx ANIM_TAG_SPARKLE_2
 	createvisualtask SoundTask_PlaySE2WithPanning, 5, SE_M_COSMIC_POWER, 0
 	playsewithpan SE_M_COSMIC_POWER, 0
@@ -9216,7 +9216,7 @@ Move_SNATCH:
 	createvisualtask AnimTask_WindUpLunge, 5, ANIM_ATTACKER, -12, 4, 10, 10, 12, 6
 	end
 
-Move_DIVE:
+Move_SHADOW_DIVE:
 	loadspritegfx ANIM_TAG_SPLASH
 	loadspritegfx ANIM_TAG_SWEAT_BEAD
 	choosetwoturnanim DiveSetUp, DiveAttack
@@ -9279,7 +9279,7 @@ Move_ROCK_BLAST:
 	waitforvisualfinish
 	end
 
-Move_OVERHEAT:
+Move_FLARE_BLITZ:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
@@ -9571,7 +9571,7 @@ Move_KNOCK_OFF:
 	waitforvisualfinish
 	end
 
-Move_DOOM_DESIRE:
+Move_DECISION:
 	createvisualtask GetIsDoomDesireHitTurn, 2
 	delay 1
 	monbg ANIM_ATK_PARTNER
@@ -9590,7 +9590,7 @@ Move_DOOM_DESIRE:
 	blendoff
 	end
 
-Move_SKY_UPPERCUT:
+Move_SOAR:
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
@@ -9642,10 +9642,10 @@ Move_SECRET_POWER:
 	jumpargeq 0, BATTLE_TERRAIN_UNDERWATER, Move_WATERFALL
 	jumpargeq 0, BATTLE_TERRAIN_WATER,      Move_SURF
 	jumpargeq 0, BATTLE_TERRAIN_POND,       Move_BUBBLE_BEAM
-	jumpargeq 0, BATTLE_TERRAIN_MOUNTAIN,   Move_ROCK_THROW
+	jumpargeq 0, BATTLE_TERRAIN_MOUNTAIN,   Move_ROCK_WRECKER
 	jumpargeq 0, BATTLE_TERRAIN_CAVE,       Move_BITE
 	jumpargeq 0, BATTLE_TERRAIN_BUILDING,   Move_STRENGTH
-	goto Move_SLAM
+	goto Move_POWER_WHIP
 
 Move_TWISTER:
 	loadspritegfx ANIM_TAG_LEAF

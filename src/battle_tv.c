@@ -73,13 +73,13 @@ enum {
 // const rom data
 static const u16 sVariableDmgMoves[] =
 {
-    MOVE_COUNTER, MOVE_FISSURE, MOVE_BIDE, MOVE_MIRROR_COAT,
-    MOVE_HORN_DRILL, MOVE_FLAIL, MOVE_REVERSAL, MOVE_HIDDEN_POWER,
+    MOVE_COUNTER, MOVE_FISSURE, MOVE_GUARD, MOVE_MIRROR_COAT,
+    MOVE_SCULPTURE, MOVE_FLAIL, MOVE_REVERSAL, MOVE_CHARGE_BEAM,
     MOVE_SHEER_COLD, MOVE_FOCUS_PUNCH, MOVE_ERUPTION,
-    MOVE_WATER_SPOUT, MOVE_DREAM_EATER, MOVE_WEATHER_BALL,
-    MOVE_SNORE, MOVE_PAIN_SPLIT, MOVE_GUILLOTINE,
+    MOVE_AQUA_SHOWER, MOVE_DREAM_EATER, MOVE_WEATHER_BALL,
+    MOVE_SNORE, MOVE_PAIN_SPLIT, MOVE_JUDGEMENT,
     MOVE_FRUSTRATION, MOVE_RETURN, MOVE_ENDEAVOR,
-    MOVE_PRESENT, MOVE_REVENGE, TABLE_END,
+    MOVE_PRANK, MOVE_REVENGE, TABLE_END,
     // those are handled by the function itself
     MOVE_MAGNITUDE, MOVE_PSYWAVE, TABLE_END
 };
@@ -322,25 +322,25 @@ static const u16 sPoints_RainMoves[] =
 {
     MOVE_BUBBLE, 3,
     MOVE_WHIRLPOOL, 3,
-    MOVE_OCTAZOOKA, 3,
-    MOVE_CLAMP, 3,
+    MOVE_BLACK_RIPPLE, 3,
+    MOVE_MANA_SHIELD, 3,
     MOVE_WITHDRAW, 3,
-    MOVE_CRABHAMMER, 3,
-    MOVE_WATER_SPOUT, 3,
-    MOVE_DIVE, 3,
+    MOVE_AQUA_JET, 3,
+    MOVE_AQUA_SHOWER, 3,
+    MOVE_SHADOW_DIVE, 3,
     MOVE_WATERFALL, 3,
     MOVE_MUDDY_WATER, 3,
     MOVE_SURF, 3,
     MOVE_HYDRO_CANNON, 3,
     MOVE_HYDRO_PUMP, 3,
     MOVE_BUBBLE_BEAM, 3,
-    MOVE_WATER_SPORT, 0, // Unnecessary, unlisted moves are already given 0 points
+    MOVE_SPLASHING, 0, // Unnecessary, unlisted moves are already given 0 points
     MOVE_WATER_GUN, 3,
     MOVE_WATER_PULSE, 3,
     MOVE_WEATHER_BALL, 3,
     MOVE_THUNDER, 3,
     MOVE_SOLAR_BEAM, -4,
-    MOVE_OVERHEAT, -4,
+    MOVE_FLARE_BLITZ, -4,
     MOVE_FLAME_WHEEL, -4,
     MOVE_FLAMETHROWER, -4,
     MOVE_SACRED_FIRE, -4,
@@ -357,7 +357,7 @@ static const u16 sPoints_RainMoves[] =
 };
 static const u16 sPoints_SunMoves[] =
 {
-    MOVE_OVERHEAT, 3,
+    MOVE_FLARE_BLITZ, 3,
     MOVE_FLAME_WHEEL, 3,
     MOVE_FLAMETHROWER, 3,
     MOVE_SACRED_FIRE, 3,
@@ -371,8 +371,8 @@ static const u16 sPoints_SunMoves[] =
     MOVE_FIRE_PUNCH, 3,
     MOVE_SOLAR_BEAM, 5,
     MOVE_SYNTHESIS, 3,
-    MOVE_MORNING_SUN, 3,
-    MOVE_MOONLIGHT, 3,
+    MOVE_ENERGY_LIGHT, 3,
+    MOVE_LUNATIC, 3,
     MOVE_WEATHER_BALL, 3,
     TABLE_END, 0
 };
@@ -392,9 +392,9 @@ static const u16 sPoints_ElectricMoves[] =
 {
     MOVE_THUNDERBOLT, 3,
     MOVE_THUNDER_PUNCH, 3,
-    MOVE_SPARK, 3,
+    MOVE_DISCHARGE, 3,
     MOVE_THUNDER_SHOCK, 3,
-    MOVE_ZAP_CANNON, 3,
+    MOVE_FOCUS_BLAST, 3,
     MOVE_SHOCK_WAVE, 3,
     MOVE_THUNDER_WAVE, 0, // Unnecessary, unlisted moves are already given 0 points
     MOVE_THUNDER, 3,
@@ -1431,7 +1431,7 @@ static void TrySetBattleSeminarShow(void)
         return;
     else if (gBattleMons[gBattlerTarget].statStages[STAT_EVASION] > DEFAULT_STAT_STAGE)
         return;
-    else if (gCurrentMove == MOVE_HIDDEN_POWER || gCurrentMove == MOVE_WEATHER_BALL)
+    else if (gCurrentMove == MOVE_WEATHER_BALL)
         return;
     else if (gBattleTypeFlags & (BATTLE_TYPE_PALACE | BATTLE_TYPE_PIKE | BATTLE_TYPE_PYRAMID))
         return;

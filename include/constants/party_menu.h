@@ -12,9 +12,9 @@
 #define AILMENT_PKRS  6
 #define AILMENT_FNT   7
 
-#define TUTOR_MOVE_MEGA_PUNCH      0
+#define TUTOR_MOVE_DRAIN_PUNCH     0
 #define TUTOR_MOVE_SWORDS_DANCE    1
-#define TUTOR_MOVE_MEGA_KICK       2
+#define TUTOR_MOVE_GIGA_IMPACT     2
 #define TUTOR_MOVE_BODY_SLAM       3
 #define TUTOR_MOVE_DOUBLE_EDGE     4
 #define TUTOR_MOVE_COUNTER         5
@@ -28,7 +28,7 @@
 #define TUTOR_MOVE_ROCK_SLIDE      13
 #define TUTOR_MOVE_SUBSTITUTE      14
 #define TUTOR_MOVE_DYNAMIC_PUNCH   15
-#define TUTOR_MOVE_ROLLOUT         16
+#define TUTOR_MOVE_TREMORS         16
 #define TUTOR_MOVE_PSYCH_UP        17
 #define TUTOR_MOVE_SNORE           18
 #define TUTOR_MOVE_ICY_WIND        19

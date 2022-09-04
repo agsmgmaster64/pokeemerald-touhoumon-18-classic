@@ -685,8 +685,8 @@ void HandleAction_ActionFinished(void)
 
 static const u16 sSoundMovesTable[] =
 {
-    MOVE_GROWL, MOVE_ROAR, MOVE_SING, MOVE_SUPERSONIC, MOVE_SCREECH, MOVE_SNORE,
-    MOVE_UPROAR, MOVE_METAL_SOUND, MOVE_GRASS_WHISTLE, MOVE_HYPER_VOICE, 0xFFFF
+    MOVE_GROWL, MOVE_ROAR, MOVE_SING, MOVE_JAMMING, MOVE_SCREECH, MOVE_SNORE,
+    MOVE_PERFORMANCE, MOVE_BINDING_VOICE, MOVE_NATURE_SOUND, MOVE_HYPER_VOICE, 0xFFFF
 };
 
 u8 GetBattlerForBattleScript(u8 caseId)
@@ -1788,7 +1788,7 @@ bool8 HandleWishPerishSongOnTurnEnd(void)
              && --gWishFutureKnock.futureSightCounter[gActiveBattler] == 0
              && gBattleMons[gActiveBattler].hp != 0)
             {
-                if (gWishFutureKnock.futureSightMove[gActiveBattler] == MOVE_FUTURE_SIGHT)
+                if (gWishFutureKnock.futureSightMove[gActiveBattler] == MOVE_PSYCHO_CUT)
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FUTURE_SIGHT;
                 else
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
@@ -2216,11 +2216,11 @@ u8 AtkCanceller_UnableToUseMove(void)
                     //gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_MULTIPLETURNS;
                     if (gTakenDmg[gBattlerAttacker])
                     {
-                        gCurrentMove = MOVE_BIDE;
+                        gCurrentMove = MOVE_GUARD;
                         *bideDmg = gTakenDmg[gBattlerAttacker] * 2;
                         gBattlerTarget = gTakenDmgByBattler[gBattlerAttacker];
                         if (gAbsentBattlerFlags & gBitTable[gBattlerTarget])
-                            gBattlerTarget = GetMoveTarget(MOVE_BIDE, MOVE_TARGET_SELECTED + 1);
+                            gBattlerTarget = GetMoveTarget(MOVE_GUARD, MOVE_TARGET_SELECTED + 1);
                         gBattlescriptCurrInstr = BattleScript_BideAttack;
                     }
                     else
