@@ -113,7 +113,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectConversion2            @ EFFECT_CONVERSION_2
 	.4byte BattleScript_EffectLockOn                 @ EFFECT_LOCK_ON
 	.4byte BattleScript_EffectSketch                 @ EFFECT_SKETCH
-	.4byte BattleScript_EffectHit                    @ EFFECT_UNUSED_60
+	.4byte BattleScript_EffectFreezeHit              @ EFFECT_BLIZZARD
 	.4byte BattleScript_EffectSleepTalk              @ EFFECT_SLEEP_TALK
 	.4byte BattleScript_EffectDestinyBond            @ EFFECT_DESTINY_BOND
 	.4byte BattleScript_EffectFlail                  @ EFFECT_FLAIL
@@ -4574,3 +4574,57 @@ BattleScript_PrintPlayerForfeitedLinkBattle::
 	endlinkbattle
 	waitmessage B_WAIT_TIME_LONG
 	end2
+
+.ifdef WLD_BATTLE
+BattleScript_FascinateActivatesEnd3::
+	call BattleScript_PauseFascinateActivates
+	end3
+
+BattleScript_PauseFascinateActivates:
+	pause B_WAIT_TIME_SHORT
+BattleScript_FascinateActivates::
+	setbyte gBattlerTarget, 0
+	setstatchanger STAT_SPATK, 1, TRUE
+BattleScript_FascinateActivatesLoop:
+	trygetintimidatetarget BattleScript_FascinateActivatesReturn
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_FascinateActivatesLoopIncrement
+	jumpifability BS_TARGET, ABILITY_HAKUREI_MIKO, BattleScript_FascinatePrevented
+	jumpifability BS_TARGET, ABILITY_HIGH_STRENGTH, BattleScript_FascinatePrevented
+	jumpifability BS_TARGET, ABILITY_MAGIC_BARRIER, BattleScript_FascinatePrevented
+	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED | STAT_BUFF_ALLOW_PTR, BattleScript_FascinateActivatesLoopIncrement
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 1, BattleScript_FascinateActivatesLoopIncrement
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printstring STRINGID_PKMNCUTSATTACKWITH
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_FascinateActivatesLoopIncrement:
+	addbyte gBattlerTarget, 1
+	goto BattleScript_FascinateActivatesLoop
+BattleScript_FascinateActivatesReturn:
+	return
+BattleScript_FascinatePrevented:
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_PREVENTEDFROMWORKING
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_FascinateActivatesLoopIncrement
+
+BattleScript_MoveStatDrain_PPLoss::
+	ppreduce
+BattleScript_MoveStatDrain::
+	attackstring
+	pause B_WAIT_TIME_SHORT
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	waitanimation
+	printstring STRINGID_TARGETABILITYSTATRAISE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_SnowWarningActivates::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_PKMNSXWHIPPEDUPHAILSTORM
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_HAIL_CONTINUES
+	call BattleScript_WeatherFormChanges
+	end3
+.endif

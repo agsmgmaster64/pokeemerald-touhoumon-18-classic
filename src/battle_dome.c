@@ -2475,7 +2475,7 @@ static void CalcDomeMonStats(u16 species, int level, int ivs, u8 evBits, u8 natu
             evs[i] = resultingEvs;
     }
 
-    if (species == SPECIES_SHEDINJA)
+    if (gBaseStats[species].baseHP == 1)
     {
         stats[STAT_HP] = 1;
     }
@@ -2762,9 +2762,7 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int mode)
         if (mode == EFFECTIVENESS_MODE_BAD)
         {
             typePower = 8;
-        #ifdef BUGFIX
             return;
-        #endif
         }
     }
     else
@@ -2781,11 +2779,7 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int mode)
             if (TYPE_EFFECT_ATK_TYPE(i) == moveType)
             {
                 // BUG: the value of TYPE_x2 does not exist in gTypeEffectiveness, so if defAbility is ABILITY_PLAY_GHOST, the conditional always fails
-                #ifndef BUGFIX
-                    #define WONDER_GUARD_EFFECTIVENESS TYPE_x2
-                #else
-                    #define WONDER_GUARD_EFFECTIVENESS TYPE_MUL_SUPER_EFFECTIVE
-                #endif
+                #define WONDER_GUARD_EFFECTIVENESS TYPE_MUL_SUPER_EFFECTIVE
                 if (TYPE_EFFECT_DEF_TYPE(i) == defType1)
                     if ((defAbility == ABILITY_PLAY_GHOST && TYPE_EFFECT_MULTIPLIER(i) == WONDER_GUARD_EFFECTIVENESS) || defAbility != ABILITY_PLAY_GHOST)
                         typePower = (typePower * TYPE_EFFECT_MULTIPLIER(i)) / 10;
@@ -5993,10 +5987,8 @@ static void DecideRoundWinners(u8 roundId)
         else if (tournamentId2 != 0xFF)
         {
             // BUG: points1 and points2 are not cleared at the beginning of the loop resulting in not fair results.
-            #ifdef BUGFIX
             points1 = 0;
             points2 = 0;
-            #endif
 
             // Calculate points for both trainers.
             for (monId1 = 0; monId1 < FRONTIER_PARTY_SIZE; monId1++)

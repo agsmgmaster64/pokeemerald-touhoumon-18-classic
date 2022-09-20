@@ -395,11 +395,7 @@ static void HandleInputChooseTarget(void)
             do
             {
                 if (--i < 0)
-#ifdef UBFIX
                     i = MAX_BATTLERS_COUNT - 1;
-#else
-                    i = MAX_BATTLERS_COUNT; // UB: array out of range
-#endif
                 gMultiUsePlayerCursor = GetBattlerAtPosition(identities[i]);
             } while (gMultiUsePlayerCursor == gBattlersCount);
 
@@ -1498,7 +1494,12 @@ static void MoveSelectionDisplayMoveType(void)
     u8 *txtPtr;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct*)(&gBattleBufferA[gActiveBattler][4]);
 
-    txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
+    if (gBattleMoves[moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]].category == MOVE_CATEGORY_PHYSICAL)
+        txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfacePhysical);
+    else if (gBattleMoves[moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]].category == MOVE_CATEGORY_SPECIAL)
+        txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceSpecial);
+    else
+        txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceStatus);
     *(txtPtr)++ = EXT_CTRL_CODE_BEGIN;
     *(txtPtr)++ = EXT_CTRL_CODE_FONT;
     *(txtPtr)++ = 1;

@@ -77,7 +77,7 @@ static const u16 sUnusedPal3[]  = INCBIN_U16("graphics/evolution_scene/unused_3.
 static const u16 sUnusedPal4[] = INCBIN_U16("graphics/evolution_scene/unused_4.gbapal");
 static const u16 sBgAnim_Pal[] = INCBIN_U16("graphics/evolution_scene/bg_anim.gbapal");
 
-static const u8 sText_ShedinjaJapaneseName[] = _("ヌケニン");
+static const u8 sText_ShedinjaJapaneseName[] = _("ゾンビF");
 
 // The below table is used by Task_UpdateBgPalette to control the speed at which the bg color updates.
 // The first two values are indexes into sBgAnim_PalIndexes (indirectly, via sBgAnimPal), and are
@@ -575,10 +575,13 @@ static void CreateShedinja(u16 preEvoSpecies, struct Pokemon* mon)
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(gEvolutionTable[preEvoSpecies][1].targetSpecies), FLAG_SET_SEEN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(gEvolutionTable[preEvoSpecies][1].targetSpecies), FLAG_SET_CAUGHT);
 
-        if (GetMonData(shedinja, MON_DATA_SPECIES) == SPECIES_SHEDINJA
-            && GetMonData(shedinja, MON_DATA_LANGUAGE) == LANGUAGE_JAPANESE
-            && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NINJASK)
+        if (GetMonData(shedinja, MON_DATA_LANGUAGE) == LANGUAGE_JAPANESE)
+            if (GetMonData(shedinja, MON_DATA_SPECIES) == SPECIES_SHEDINJA)
                 SetMonData(shedinja, MON_DATA_NICKNAME, sText_ShedinjaJapaneseName);
+        //if (GetMonData(shedinja, MON_DATA_SPECIES) == SPECIES_SHEDINJA
+            //&& GetMonData(shedinja, MON_DATA_LANGUAGE) == LANGUAGE_JAPANESE
+            //&& GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NINJASK)
+                //SetMonData(shedinja, MON_DATA_NICKNAME, sText_ShedinjaJapaneseName);
     }
 }
 

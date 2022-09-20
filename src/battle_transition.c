@@ -4763,9 +4763,6 @@ static bool8 FrontierSquaresScroll_End(struct Task *task)
 
     DestroyTask(FindTaskIdByFunc(task->func));
 
-#ifndef UBFIX
-    task->tState++; // UB: changing value of a destroyed task
-#endif
     return FALSE;
 }
 

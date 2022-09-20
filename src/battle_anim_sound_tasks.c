@@ -135,10 +135,6 @@ void SoundTask_PlayCryHighPitch(u8 taskId)
     {
         if (gBattleAnimArgs[0] == ANIM_ATTACKER)
             species = gContestResources->moveAnim->species;
-        #ifndef UBFIX
-        else
-            DestroyAnimVisualTask(taskId); // UB: task gets destroyed twice.
-        #endif
     }
     else
     {

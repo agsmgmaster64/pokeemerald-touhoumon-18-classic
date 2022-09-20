@@ -230,7 +230,7 @@
 #define STRINGID_ITHURTCONFUSION            230
 #define STRINGID_MIRRORMOVEFAILED           231
 #define STRINGID_STARTEDTORAIN              232
-#define STRINGID_DOWNPOURSTARTED            233
+#define STRINGID_PKMNSXWHIPPEDUPHAILSTORM   233
 #define STRINGID_RAINCONTINUES              234
 #define STRINGID_DOWNPOURCONTINUES          235
 #define STRINGID_RAINSTOPPED                236
@@ -381,8 +381,9 @@
 #define STRINGID_POKEFLUTECATCHY            381
 #define STRINGID_POKEFLUTE                  382
 #define STRINGID_MONHEARINGFLUTEAWOKE       383
+#define STRINGID_TARGETABILITYSTATRAISE     384
 
-#define BATTLESTRINGS_COUNT                 384
+#define BATTLESTRINGS_COUNT                 385
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

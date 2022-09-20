@@ -2134,13 +2134,8 @@ AI_CV_SemiInvulnerable2:
 	if_status2 AI_TARGET, STATUS2_CURSED, AI_CV_SemiInvulnerable_TryEncourage
 	if_status3 AI_TARGET, STATUS3_LEECHSEED, AI_CV_SemiInvulnerable_TryEncourage
 	get_weather
-.ifdef BUGFIX
 	if_equal AI_WEATHER_HAIL, AI_CV_SemiInvulnerable_CheckIceType
 	if_equal AI_WEATHER_SANDSTORM, AI_CV_SemiInvulnerable_CheckSandstormTypes
-.else
-	if_equal AI_WEATHER_HAIL, AI_CV_SemiInvulnerable_CheckSandstormTypes
-	if_equal AI_WEATHER_SANDSTORM, AI_CV_SemiInvulnerable_CheckIceType
-.endif
 	goto AI_CV_SemiInvulnerable5
 
 AI_CV_SemiInvulnerable_CheckSandstormTypes:
@@ -3123,9 +3118,6 @@ AI_HPAware_DiscouragedEffectsWhenTargetLowHP:
 AI_TrySunnyDayStart:
 	if_target_is_ally AI_TryOnAlly
 	if_not_effect EFFECT_SUNNY_DAY, AI_TrySunnyDayStart_End
-.ifndef BUGFIX  @ funcResult has not been set in this script yet, below call is nonsense
-	if_equal FALSE, AI_TrySunnyDayStart_End
-.endif
 	is_first_turn_for AI_USER
 	if_equal FALSE, AI_TrySunnyDayStart_End
 	score +5

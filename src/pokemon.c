@@ -2830,7 +2830,7 @@ void CalculateMonStats(struct Pokemon *mon)
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
-    if (species == SPECIES_SHEDINJA)
+    if (gBaseStats[species].baseHP == 1)
     {
         newMaxHP = 1;
     }
@@ -2852,7 +2852,7 @@ void CalculateMonStats(struct Pokemon *mon)
     CALC_STAT(baseSpAttack, spAttackIV, spAttackEV, STAT_SPATK, MON_DATA_SPATK)
     CALC_STAT(baseSpDefense, spDefenseIV, spDefenseEV, STAT_SPDEF, MON_DATA_SPDEF)
 
-    if (species == SPECIES_SHEDINJA)
+    if (gBaseStats[species].baseHP == 1)
     {
         if (currentHP != 0 || oldMaxHP == 0)
             currentHP = 1;
@@ -2866,10 +2866,8 @@ void CalculateMonStats(struct Pokemon *mon)
         else if (currentHP != 0) {
             // BUG: currentHP is unintentionally able to become <= 0 after the instruction below. This causes the pomeg berry glitch.
             currentHP += newMaxHP - oldMaxHP;
-            #ifdef BUGFIX
             if (currentHP <= 0)
                 currentHP = 1;
-            #endif
         }
         else
             return;
@@ -3141,15 +3139,6 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     if (attacker->ability == ABILITY_UNZAN || attacker->ability == ABILITY_PURE_POWER)
         attack *= 2;
 
-    //if (ShouldGetStatBadgeBoost(FLAG_BADGE01_GET, battlerIdAtk))
-        //attack = (110 * attack) / 100;
-    //if (ShouldGetStatBadgeBoost(FLAG_BADGE05_GET, battlerIdDef))
-        //defense = (110 * defense) / 100;
-    //if (ShouldGetStatBadgeBoost(FLAG_BADGE07_GET, battlerIdAtk))
-        //spAttack = (110 * spAttack) / 100;
-    //if (ShouldGetStatBadgeBoost(FLAG_BADGE07_GET, battlerIdDef))
-        //spDefense = (110 * spDefense) / 100;
-
     // Apply type-bonus hold item
     for (i = 0; i < ARRAY_COUNT(sHoldEffectToType); i++)
     {
@@ -3169,16 +3158,43 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         spAttack = (150 * spAttack) / 100;
     if (defenderHoldEffect == HOLD_EFFECT_SOUL_DEW && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER)) && (defender->species == SPECIES_LATIAS || defender->species == SPECIES_LATIOS))
         spDefense = (150 * spDefense) / 100;
+#ifdef WLD_BATTLE
+    if (attackerHoldEffect == HOLD_EFFECT_KUSANAGI && attacker->species == SPECIES_CLAMPERL)
+        attack *= 2;
+    if (attackerHoldEffect == HOLD_EFFECT_KUSANAGI && attacker->species == SPECIES_GOREBYSS)
+        spAttack *= 2;
+    if (defenderHoldEffect == HOLD_EFFECT_YATA_MIRROR && defender->species == SPECIES_CLAMPERL)
+        defense *= 2;
+    if (defenderHoldEffect == HOLD_EFFECT_YATA_MIRROR && defender->species == SPECIES_GOREBYSS)
+        spDefense *= 2;
+    if (attackerHoldEffect == HOLD_EFFECT_LIGHT_BALL && attacker->species == SPECIES_PIKACHU)
+        attack *= 2;
+        spAttack *= 2;
+    if (defenderHoldEffect == HOLD_EFFECT_ASSIST_BALL && defender->species == SPECIES_DODOU)
+        defense *= 2;
+        spDefense *= 2;
+    if (attackerHoldEffect == HOLD_EFFECT_THICK_CLUB && (attacker->species == SPECIES_CUBONE || attacker->species == SPECIES_MAROWAK))
+        attack *= 2;
+    if (attackerHoldEffect == HOLD_EFFECT_CHOICE_SPECS)
+        spAttack = (150 * spAttack) / 100;
+    if (attackerHoldEffect == HOLD_EFFECT_ICEBURN_GEM)
+        spAttack *= 2;
+    if (defenderHoldEffect == HOLD_EFFECT_LUNAR_VEST)
+        defense *= 2;
+    if (defenderHoldEffect == HOLD_EFFECT_PARASOL)
+        defense *= 2;
+#else
     if (attackerHoldEffect == HOLD_EFFECT_KUSANAGI && attacker->species == SPECIES_CLAMPERL)
         attack *= 2;
     if (defenderHoldEffect == HOLD_EFFECT_YATA_MIRROR && defender->species == SPECIES_CLAMPERL)
         defense *= 2;
     if (attackerHoldEffect == HOLD_EFFECT_LIGHT_BALL && attacker->species == SPECIES_PIKACHU)
         spAttack *= 2;
-    if (defenderHoldEffect == HOLD_EFFECT_METAL_POWDER && defender->species == SPECIES_DITTO)
+    if (defenderHoldEffect == HOLD_EFFECT_ASSIST_BALL && defender->species == SPECIES_DITTO)
         defense *= 2;
     if (attackerHoldEffect == HOLD_EFFECT_THICK_CLUB && (attacker->species == SPECIES_CUBONE || attacker->species == SPECIES_MAROWAK))
         attack *= 2;
+#endif
 
     // Apply abilities / field sports
     if (defender->ability == ABILITY_WALL_OF_ICE && (type == TYPE_FIRE || type == TYPE_ICE))
@@ -3193,6 +3209,20 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         attack = (150 * attack) / 100;
     if (defender->ability == ABILITY_SPRING_CHARM && defender->status1)
         defense = (150 * defense) / 100;
+#ifdef WLD_BATTLE
+    if (attacker->ability == ABILITY_TRUANT)
+        gBattleMovePower = (120 * gBattleMovePower) / 100;
+    if (attacker->ability == ABILITY_TOXIC_BOOST && (attacker->status1 & STATUS1_PSN_ANY))
+        attack = (150 * attack) / 100;
+    if (attacker->ability == ABILITY_FLARE_BOOST && (attacker->status1 & STATUS1_BURN))
+        spAttack = (150 * spAttack) / 100;
+    if (attacker->ability == ABILITY_TECHNICIAN && gDynamicBasePower <= 60)
+        gBattleMovePower = (150 * gBattleMovePower) / 100;
+    if (attacker->ability == ABILITY_UNWAVERING && attacker->status1)
+        spAttack = (150 * spAttack) / 100;
+#endif
+    
+
     if (type == TYPE_WIND && AbilityBattleEffects(ABILITYEFFECT_FIELD_SPORT, 0, 0, ABILITYEFFECT_MUD_SPORT, 0))
         gBattleMovePower /= 2;
     if (type == TYPE_FIRE && AbilityBattleEffects(ABILITYEFFECT_FIELD_SPORT, 0, 0, ABILITYEFFECT_WATER_SPORT, 0))
@@ -3205,6 +3235,10 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         gBattleMovePower = (150 * gBattleMovePower) / 100;
     if (type == TYPE_DREAM && attacker->ability == ABILITY_INNER_POWER && attacker->hp <= (attacker->maxHP / 3))
         gBattleMovePower = (150 * gBattleMovePower) / 100;
+#ifdef WLD_BATTLE
+    if (type == TYPE_ICE && attacker->ability == ABILITY_COLD_HEART && attacker->hp <= (attacker->maxHP / 3))
+        gBattleMovePower = (150 * gBattleMovePower) / 100;
+#endif
 
     // Self-destruct / Explosion cut defense in half
     if (gBattleMoves[gCurrentMove].effect == EFFECT_EXPLOSION)
@@ -5820,11 +5854,7 @@ u16 ModifyStatByNature(u8 nature, u16 stat, u8 statIndex)
 // Neither occur in the base game, but this can happen if
 // any Nature-affected base stat is increased to a value
 // above 248. The closest by default is Shuckle at 230.
-#ifdef BUGFIX
     u32 retVal;
-#else
-    u16 retVal;
-#endif
 
     // Don't modify HP, Accuracy, or Evasion by nature
     if (statIndex <= STAT_HP || statIndex > NUM_NATURE_STATS)

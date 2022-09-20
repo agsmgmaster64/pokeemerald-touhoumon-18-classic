@@ -830,7 +830,11 @@ static const u8 sTerrainToType[] =
     [BATTLE_TERRAIN_WATER]      = TYPE_WATER,
     [BATTLE_TERRAIN_POND]       = TYPE_WATER,
     [BATTLE_TERRAIN_MOUNTAIN]   = TYPE_BEAST,
+#ifdef WLD_BATTLE
+    [BATTLE_TERRAIN_CAVE]       = TYPE_DARK,
+#else
     [BATTLE_TERRAIN_CAVE]       = TYPE_BEAST,
+#endif
     [BATTLE_TERRAIN_BUILDING]   = TYPE_ILLUSION,
     [BATTLE_TERRAIN_PLAIN]      = TYPE_ILLUSION,
 };
@@ -1084,8 +1088,14 @@ static bool8 AccuracyCalcHelper(u16 move)
 
     gHitMarker &= ~HITMARKER_IGNORE_UNDERWATER;
 
+#ifdef WLD_BATTLE
+    if ((WEATHER_HAS_EFFECT && (gBattleWeather & B_WEATHER_RAIN) && gBattleMoves[move].effect == EFFECT_THUNDER)
+     || (WEATHER_HAS_EFFECT && (gBattleWeather & B_WEATHER_HAIL) && gBattleMoves[move].effect == EFFECT_BLIZZARD)
+     || (gBattleMoves[move].accuracy == 0))
+#else
     if ((WEATHER_HAS_EFFECT && (gBattleWeather & B_WEATHER_RAIN) && gBattleMoves[move].effect == EFFECT_THUNDER)
      || (gBattleMoves[move].effect == EFFECT_ALWAYS_HIT || gBattleMoves[move].effect == EFFECT_VITAL_THROW))
+#endif
     {
         JumpIfMoveFailed(7, move);
         return TRUE;
@@ -1676,7 +1686,7 @@ static void Cmd_adjustnormaldamage(void)
         gSpecialStatuses[gBattlerTarget].focusBanded = 1;
     }
     if (!(gBattleMons[gBattlerTarget].status2 & STATUS2_SUBSTITUTE)
-     && (gBattleMoves[gCurrentMove].effect == EFFECT_FALSE_SWIPE || gProtectStructs[gBattlerTarget].endured || gSpecialStatuses[gBattlerTarget].focusBanded)
+     && (gBattleMoves[gCurrentMove].effect == EFFECT_FALSE_SWIPE || gProtectStructs[gBattlerTarget].endured || gSpecialStatuses[gBattlerTarget].focusBanded || gBattleMons[gBattlerTarget].ability == ABILITY_STURDY)
      && gBattleMons[gBattlerTarget].hp <= gBattleMoveDamage)
     {
         gBattleMoveDamage = gBattleMons[gBattlerTarget].hp - 1;
@@ -1718,7 +1728,7 @@ static void Cmd_adjustnormaldamage2(void) // The same as adjustnormaldamage exce
         gSpecialStatuses[gBattlerTarget].focusBanded = 1;
     }
     if (!(gBattleMons[gBattlerTarget].status2 & STATUS2_SUBSTITUTE)
-     && (gProtectStructs[gBattlerTarget].endured || gSpecialStatuses[gBattlerTarget].focusBanded)
+     && (gProtectStructs[gBattlerTarget].endured || gSpecialStatuses[gBattlerTarget].focusBanded || gBattleMons[gBattlerTarget].ability == ABILITY_STURDY)
      && gBattleMons[gBattlerTarget].hp <= gBattleMoveDamage)
     {
         gBattleMoveDamage = gBattleMons[gBattlerTarget].hp - 1;
@@ -3437,8 +3447,6 @@ static void Cmd_getexp(void)
                     gBattleMons[0].maxHP = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_MAX_HP);
                     gBattleMons[0].attack = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_ATK);
                     gBattleMons[0].defense = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_DEF);
-                    // Speed is duplicated, likely due to a copy-paste error.
-                    gBattleMons[0].speed = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPEED);
                     gBattleMons[0].speed = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPEED);
                     gBattleMons[0].spAttack = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPATK);
                     gBattleMons[0].spDefense = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPDEF);
@@ -3452,13 +3460,8 @@ static void Cmd_getexp(void)
                     gBattleMons[2].attack = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_ATK);
                     gBattleMons[2].defense = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_DEF);
                     gBattleMons[2].speed = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPEED);
-                    // Speed is duplicated again, but Special Defense is missing.
-#ifdef BUGFIX
-                    gBattleMons[2].spDefense = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPDEF);
-#else
-                    gBattleMons[2].speed = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPEED);
-#endif
                     gBattleMons[2].spAttack = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPATK);
+                    gBattleMons[2].spDefense = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPDEF);
                 }
                 gBattleScripting.getexpState = 5;
             }
@@ -5838,7 +5841,7 @@ static void Cmd_adjustsetdamage(void) // The same as adjustnormaldamage, except 
         gSpecialStatuses[gBattlerTarget].focusBanded = 1;
     }
     if (!(gBattleMons[gBattlerTarget].status2 & STATUS2_SUBSTITUTE)
-     && (gBattleMoves[gCurrentMove].effect == EFFECT_FALSE_SWIPE || gProtectStructs[gBattlerTarget].endured || gSpecialStatuses[gBattlerTarget].focusBanded)
+     && (gProtectStructs[gBattlerTarget].endured || gSpecialStatuses[gBattlerTarget].focusBanded || gBattleMons[gBattlerTarget].ability == ABILITY_STURDY)
      && gBattleMons[gBattlerTarget].hp <= gBattleMoveDamage)
     {
         gBattleMoveDamage = gBattleMons[gBattlerTarget].hp - 1;
@@ -6185,12 +6188,7 @@ static void Cmd_recordlastability(void)
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
     RecordAbilityBattle(gActiveBattler, gLastUsedAbility);
 
-#ifdef BUGFIX
-    // This command occupies two bytes (one for the command id, and one for the battler id parameter).
     gBattlescriptCurrInstr += 2;
-#else
-    gBattlescriptCurrInstr += 1;
-#endif
 }
 
 void BufferMoveToLearnIntoBattleTextBuff2(void)
@@ -7357,6 +7355,24 @@ static void Cmd_forcerandomswitch(void)
 
 static void Cmd_tryconversiontypechange(void) // randomly changes user's type to one of its moves' type
 {
+#ifdef WLD_BATTLE
+    u8 moveType;
+
+    moveType = gBattleMoves[gBattleMons[gBattlerAttacker].moves[0]].type;
+
+    if (moveType != gBattleMons[gBattlerAttacker].type1
+        && moveType != gBattleMons[gBattlerAttacker].type2)
+    {
+        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+    }
+    else
+    {
+        SET_BATTLER_TYPE(gBattlerAttacker, moveType);
+        PREPARE_TYPE_BUFFER(gBattleTextBuff1, moveType);
+
+        gBattlescriptCurrInstr += 5;
+    }
+#else
     u8 validMoves = 0;
     u8 moveChecked;
     u8 moveType;
@@ -7373,13 +7389,6 @@ static void Cmd_tryconversiontypechange(void) // randomly changes user's type to
     {
         moveType = gBattleMoves[gBattleMons[gBattlerAttacker].moves[moveChecked]].type;
 
-        if (moveType == TYPE_MYSTERY)
-        {
-            if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
-                moveType = TYPE_GHOST;
-            else
-                moveType = TYPE_ILLUSION;
-        }
         if (moveType != gBattleMons[gBattlerAttacker].type1
             && moveType != gBattleMons[gBattlerAttacker].type2)
         {
@@ -7400,13 +7409,6 @@ static void Cmd_tryconversiontypechange(void) // randomly changes user's type to
 
             moveType = gBattleMoves[gBattleMons[gBattlerAttacker].moves[moveChecked]].type;
 
-            if (moveType == TYPE_MYSTERY)
-            {
-                if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
-                    moveType = TYPE_GHOST;
-                else
-                    moveType = TYPE_ILLUSION;
-            }
         }
         while (moveType == gBattleMons[gBattlerAttacker].type1 || moveType == gBattleMons[gBattlerAttacker].type2);
 
@@ -7415,6 +7417,7 @@ static void Cmd_tryconversiontypechange(void) // randomly changes user's type to
 
         gBattlescriptCurrInstr += 5;
     }
+#endif
 }
 
 static void Cmd_givepaydaymoney(void)
@@ -7650,10 +7653,17 @@ static void Cmd_tryinfatuating(void)
     }
     else
     {
+#ifdef WLD_BATTLE
+        if ((GetGenderFromSpeciesAndPersonality(speciesAttacker, personalityAttacker) == GetGenderFromSpeciesAndPersonality(speciesTarget, personalityTarget) && (gBattleMons[gBattlerAttacker].ability != ABILITY_DIVA))
+            || gBattleMons[gBattlerTarget].status2 & STATUS2_INFATUATION
+            || (GetGenderFromSpeciesAndPersonality(speciesAttacker, personalityAttacker) == MON_GENDERLESS && (gBattleMons[gBattlerAttacker].ability != ABILITY_DIVA))
+            || (GetGenderFromSpeciesAndPersonality(speciesTarget, personalityTarget) == MON_GENDERLESS && (gBattleMons[gBattlerAttacker].ability != ABILITY_DIVA)))
+#else
         if (GetGenderFromSpeciesAndPersonality(speciesAttacker, personalityAttacker) == GetGenderFromSpeciesAndPersonality(speciesTarget, personalityTarget)
             || gBattleMons[gBattlerTarget].status2 & STATUS2_INFATUATION
             || GetGenderFromSpeciesAndPersonality(speciesAttacker, personalityAttacker) == MON_GENDERLESS
             || GetGenderFromSpeciesAndPersonality(speciesTarget, personalityTarget) == MON_GENDERLESS)
+#endif
         {
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
         }
@@ -8297,7 +8307,11 @@ static void Cmd_tryspiteppreduce(void)
 
         if (i != MAX_MON_MOVES && gBattleMons[gBattlerTarget].pp[i] > 1)
         {
+#ifdef WLD_BATTLE
+            s32 ppToDeduct = 4
+#else
             s32 ppToDeduct = (Random() & 3) + 2;
+#endif
             if (gBattleMons[gBattlerTarget].pp[i] < ppToDeduct)
                 ppToDeduct = gBattleMons[gBattlerTarget].pp[i];
 
@@ -9021,6 +9035,22 @@ static void Cmd_sethail(void)
 
 static void Cmd_jumpifattackandspecialattackcannotfall(void) // memento
 {
+#ifdef WLD_BATTLE
+    gActiveBattler = gBattlerAttacker;
+    gBattleMoveDamage = gBattleMons[gActiveBattler].hp;
+    BtlController_EmitHealthBarUpdate(BUFFER_A, INSTANT_HP_BAR_DROP);
+    MarkBattlerForControllerExec(gActiveBattler);
+    if (gBattleMons[gBattlerTarget].statStages[STAT_ATK] == MIN_STAT_STAGE
+        && gBattleMons[gBattlerTarget].statStages[STAT_SPATK] == MIN_STAT_STAGE
+        && gBattleCommunication[MISS_TYPE] != B_MSG_PROTECTED)
+    {
+        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+    }
+    else
+    {
+        gBattlescriptCurrInstr += 5;
+    }
+#else
     if (gBattleMons[gBattlerTarget].statStages[STAT_ATK] == MIN_STAT_STAGE
         && gBattleMons[gBattlerTarget].statStages[STAT_SPATK] == MIN_STAT_STAGE
         && gBattleCommunication[MISS_TYPE] != B_MSG_PROTECTED)
@@ -9035,6 +9065,7 @@ static void Cmd_jumpifattackandspecialattackcannotfall(void) // memento
         MarkBattlerForControllerExec(gActiveBattler);
         gBattlescriptCurrInstr += 5;
     }
+#endif
 }
 
 static void Cmd_setforcedtarget(void) // follow me
@@ -9132,6 +9163,7 @@ static void Cmd_trysethelpinghand(void)
 
 static void Cmd_tryswapitems(void) // trick
 {
+#ifndef WLD_BATTLE
     // opponent can't swap items with player in regular battles
     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL
         || (GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT
@@ -9145,6 +9177,7 @@ static void Cmd_tryswapitems(void) // trick
     }
     else
     {
+#endif
         u8 sideAttacker = GetBattlerSide(gBattlerAttacker);
         u8 sideTarget = GetBattlerSide(gBattlerTarget);
 
@@ -9214,7 +9247,9 @@ static void Cmd_tryswapitems(void) // trick
             else
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ITEM_SWAP_GIVEN; // attacker's item -> <- nothing
         }
+#ifndef WLD_BATTLE
     }
+#endif
 }
 
 static void Cmd_trycopyability(void) // role play
@@ -9358,6 +9393,10 @@ static void Cmd_tryimprison(void)
     }
     else
     {
+#ifdef WLD_BATTLE
+        gStatuses3[gBattlerAttacker] |= STATUS3_IMPRISONED_OTHERS;
+        gBattlescriptCurrInstr += 5;
+#else
         u8 battlerId, sideAttacker;
 
         sideAttacker = GetBattlerSide(gBattlerAttacker);
@@ -9389,6 +9428,7 @@ static void Cmd_tryimprison(void)
         }
         if (battlerId == gBattlersCount) // In Generation 3 games, Imprison fails if the user doesn't share any moves with any of the foes
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+#endif
     }
 }
 
