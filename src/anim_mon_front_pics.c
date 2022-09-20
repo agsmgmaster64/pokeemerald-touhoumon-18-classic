@@ -2,20 +2,20 @@
 
 const u32 gMonFrontPic_CircledQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/circled/anim_front.4bpp.lz");
 
-const u32 gMonFrontPic_Bulbasaur[] = INCBIN_U32("graphics/pokemon/bulbasaur/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Ivysaur[] = INCBIN_U32("graphics/pokemon/ivysaur/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Venusaur[] = INCBIN_U32("graphics/pokemon/venusaur/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Charmander[] = INCBIN_U32("graphics/pokemon/charmander/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Charmeleon[] = INCBIN_U32("graphics/pokemon/charmeleon/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Charizard[] = INCBIN_U32("graphics/pokemon/charizard/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Squirtle[] = INCBIN_U32("graphics/pokemon/squirtle/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Wartortle[] = INCBIN_U32("graphics/pokemon/wartortle/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Blastoise[] = INCBIN_U32("graphics/pokemon/blastoise/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Caterpie[] = INCBIN_U32("graphics/pokemon/caterpie/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Metapod[] = INCBIN_U32("graphics/pokemon/metapod/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Butterfree[] = INCBIN_U32("graphics/pokemon/butterfree/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Weedle[] = INCBIN_U32("graphics/pokemon/weedle/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Kakuna[] = INCBIN_U32("graphics/pokemon/kakuna/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Bulbasaur[] = INCBIN_U32("graphics/pokemon/csanae/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Ivysaur[] = INCBIN_U32("graphics/pokemon/sanae/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Venusaur[] = INCBIN_U32("graphics/pokemon/calice/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Charmander[] = INCBIN_U32("graphics/pokemon/alice/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Charmeleon[] = INCBIN_U32("graphics/pokemon/creisen/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Charizard[] = INCBIN_U32("graphics/pokemon/reisen/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Squirtle[] = INCBIN_U32("graphics/pokemon/clilywhite/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Wartortle[] = INCBIN_U32("graphics/pokemon/lilywhite/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Blastoise[] = INCBIN_U32("graphics/pokemon/clilyblack/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Caterpie[] = INCBIN_U32("graphics/pokemon/lilyblack/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Metapod[] = INCBIN_U32("graphics/pokemon/cmomiji/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Butterfree[] = INCBIN_U32("graphics/pokemon/momiji/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Weedle[] = INCBIN_U32("graphics/pokemon/cshizuha/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Kakuna[] = INCBIN_U32("graphics/pokemon/shizuha/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Beedrill[] = INCBIN_U32("graphics/pokemon/beedrill/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Pidgey[] = INCBIN_U32("graphics/pokemon/pidgey/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Pidgeotto[] = INCBIN_U32("graphics/pokemon/pidgeotto/anim_front.4bpp.lz");
