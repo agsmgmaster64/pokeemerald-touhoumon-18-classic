@@ -35,7 +35,7 @@ static const u16 sSanaeLevelUpLearnset[] = {
 
 static const u16 sCAliceLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_POUND),
-    LEVEL_UP_MOVE( 5, MOVE_GROWL),
+    LEVEL_UP_MOVE( 5, MOVE_HYPNOSIS),
     LEVEL_UP_MOVE( 9, MOVE_PSYSHOT),
     LEVEL_UP_MOVE(14, MOVE_AURORA_BEAM),
     LEVEL_UP_MOVE(18, MOVE_MAGIC_KNIFE),

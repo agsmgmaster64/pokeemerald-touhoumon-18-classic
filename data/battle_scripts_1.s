@@ -4583,7 +4583,6 @@ BattleScript_PrintPlayerForfeitedLinkBattle::
 	waitmessage B_WAIT_TIME_LONG
 	end2
 
-.ifdef WLD_BATTLE
 BattleScript_FascinateActivatesEnd3::
 	call BattleScript_PauseFascinateActivates
 	end3
@@ -4635,4 +4634,3 @@ BattleScript_SnowWarningActivates::
 	playanimation BS_BATTLER_0, B_ANIM_HAIL_CONTINUES
 	call BattleScript_WeatherFormChanges
 	end3
-.endif

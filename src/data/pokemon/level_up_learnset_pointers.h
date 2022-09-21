@@ -1,12 +1,12 @@
 const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
 {
     [SPECIES_NONE] = sCSanaeLevelUpLearnset,
-    [SPECIES_BULBASAUR] = sCSanaeLevelUpLearnset,
-    [SPECIES_IVYSAUR] = sSanaeLevelUpLearnset,
-    [SPECIES_VENUSAUR] = sCAliceLevelUpLearnset,
-    [SPECIES_CHARMANDER] = sAliceLevelUpLearnset,
-    [SPECIES_CHARMELEON] = sCReisenLevelUpLearnset,
-    [SPECIES_CHARIZARD] = sReisenLevelUpLearnset,
+    [SPECIES_CSANAE] = sCSanaeLevelUpLearnset,
+    [SPECIES_SANAE] = sSanaeLevelUpLearnset,
+    [SPECIES_CALICE] = sCAliceLevelUpLearnset,
+    [SPECIES_ALICE] = sAliceLevelUpLearnset,
+    [SPECIES_CREISEN] = sCReisenLevelUpLearnset,
+    [SPECIES_REISEN] = sReisenLevelUpLearnset,
     [SPECIES_SQUIRTLE] = sCLilyWhiteLevelUpLearnset,
     [SPECIES_WARTORTLE] = sLilyWhiteLevelUpLearnset,
     [SPECIES_BLASTOISE] = sCLilyBlackLevelUpLearnset,

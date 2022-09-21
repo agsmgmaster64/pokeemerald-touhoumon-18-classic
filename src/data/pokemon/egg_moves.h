@@ -3,7 +3,7 @@
 #define egg_moves(species, moves...) (SPECIES_##species + EGG_MOVES_SPECIES_OFFSET), moves
 
 const u16 gEggMoves[] = {
-    egg_moves(BULBASAUR,
+    egg_moves(CSANAE,
               MOVE_LIGHT_SCREEN,
               MOVE_SKULL_BASH,
               MOVE_SAFEGUARD,
@@ -13,7 +13,7 @@ const u16 gEggMoves[] = {
               MOVE_NATURE_SOUND,
               MOVE_CURSE),
 
-    egg_moves(CHARMANDER,
+    egg_moves(CALICE,
               MOVE_BELLY_DRUM,
               MOVE_ANCIENT_POWER,
               MOVE_ROCK_SLIDE,
@@ -23,7 +23,7 @@ const u16 gEggMoves[] = {
               MOVE_SWORDS_DANCE,
               MOVE_TAILWIND),
 
-    egg_moves(SQUIRTLE,
+    egg_moves(CREISEN,
               MOVE_MIRROR_COAT,
               MOVE_HAZE,
               MOVE_MIST,

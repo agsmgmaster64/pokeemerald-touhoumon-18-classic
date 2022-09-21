@@ -8340,7 +8340,7 @@ static void Cmd_tryspiteppreduce(void)
         if (i != MAX_MON_MOVES && gBattleMons[gBattlerTarget].pp[i] > 1)
         {
 #ifdef WLD_BATTLE
-            s32 ppToDeduct = 4
+            s32 ppToDeduct = 4;
 #else
             s32 ppToDeduct = (Random() & 3) + 2;
 #endif

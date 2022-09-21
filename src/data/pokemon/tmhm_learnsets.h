@@ -8,7 +8,7 @@ const u32 gTMHMLearnsets[][2] =
 {
     [SPECIES_NONE]        = TMHM_LEARNSET(0),
 
-    [SPECIES_BULBASAUR]   = TMHM_LEARNSET(TMHM(TM06_TOXIC)
+    [SPECIES_CSANAE]   = TMHM_LEARNSET(TMHM(TM06_TOXIC)
                                         | TMHM(TM09_DECISION)
                                         | TMHM(TM10_POISON_JAB)
                                         | TMHM(TM11_SUNNY_DAY)
@@ -28,7 +28,7 @@ const u32 gTMHMLearnsets[][2] =
                                         | TMHM(HM05_FLASH)
                                         | TMHM(HM06_ROCK_SMASH)),
 
-    [SPECIES_IVYSAUR]     = TMHM_LEARNSET(TMHM(TM06_TOXIC)
+    [SPECIES_SANAE]     = TMHM_LEARNSET(TMHM(TM06_TOXIC)
                                         | TMHM(TM09_DECISION)
                                         | TMHM(TM10_POISON_JAB)
                                         | TMHM(TM11_SUNNY_DAY)
@@ -48,7 +48,7 @@ const u32 gTMHMLearnsets[][2] =
                                         | TMHM(HM05_FLASH)
                                         | TMHM(HM06_ROCK_SMASH)),
 
-    [SPECIES_VENUSAUR]    = TMHM_LEARNSET(TMHM(TM05_ROAR)
+    [SPECIES_CALICE]    = TMHM_LEARNSET(TMHM(TM05_ROAR)
                                         | TMHM(TM06_TOXIC)
                                         | TMHM(TM09_DECISION)
                                         | TMHM(TM10_POISON_JAB)
@@ -71,7 +71,7 @@ const u32 gTMHMLearnsets[][2] =
                                         | TMHM(HM05_FLASH)
                                         | TMHM(HM06_ROCK_SMASH)),
 
-    [SPECIES_CHARMANDER]  = TMHM_LEARNSET(TMHM(TM01_FOCUS_PUNCH)
+    [SPECIES_ALICE]  = TMHM_LEARNSET(TMHM(TM01_FOCUS_PUNCH)
                                         | TMHM(TM02_HEART_BREAK)
                                         | TMHM(TM06_TOXIC)
                                         | TMHM(TM10_POISON_JAB)
@@ -95,7 +95,7 @@ const u32 gTMHMLearnsets[][2] =
                                         | TMHM(HM04_STRENGTH)
                                         | TMHM(HM06_ROCK_SMASH)),
 
-    [SPECIES_CHARMELEON]  = TMHM_LEARNSET(TMHM(TM01_FOCUS_PUNCH)
+    [SPECIES_CREISEN]  = TMHM_LEARNSET(TMHM(TM01_FOCUS_PUNCH)
                                         | TMHM(TM02_HEART_BREAK)
                                         | TMHM(TM06_TOXIC)
                                         | TMHM(TM10_POISON_JAB)
@@ -119,7 +119,7 @@ const u32 gTMHMLearnsets[][2] =
                                         | TMHM(HM04_STRENGTH)
                                         | TMHM(HM06_ROCK_SMASH)),
 
-    [SPECIES_CHARIZARD]   = TMHM_LEARNSET(TMHM(TM01_FOCUS_PUNCH)
+    [SPECIES_REISEN]   = TMHM_LEARNSET(TMHM(TM01_FOCUS_PUNCH)
                                         | TMHM(TM02_HEART_BREAK)
                                         | TMHM(TM05_ROAR)
                                         | TMHM(TM06_TOXIC)

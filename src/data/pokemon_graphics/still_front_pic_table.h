@@ -1,12 +1,12 @@
 const struct CompressedSpriteSheet gMonStillFrontPicTable[] =
 {
     SPECIES_SPRITE(NONE,          gMonStillFrontPic_CircledQuestionMark),
-    SPECIES_SPRITE(BULBASAUR,     gMonStillFrontPic_CSanae),
-    SPECIES_SPRITE(IVYSAUR,       gMonStillFrontPic_Sanae),
-    SPECIES_SPRITE(VENUSAUR,      gMonStillFrontPic_CAlice),
-    SPECIES_SPRITE(CHARMANDER,    gMonStillFrontPic_Alice),
-    SPECIES_SPRITE(CHARMELEON,    gMonStillFrontPic_CReisen),
-    SPECIES_SPRITE(CHARIZARD,     gMonStillFrontPic_Reisen),
+    SPECIES_SPRITE(CSANAE,     gMonStillFrontPic_CSanae),
+    SPECIES_SPRITE(SANAE,       gMonStillFrontPic_Sanae),
+    SPECIES_SPRITE(CALICE,      gMonStillFrontPic_CAlice),
+    SPECIES_SPRITE(ALICE,    gMonStillFrontPic_Alice),
+    SPECIES_SPRITE(CREISEN,    gMonStillFrontPic_CReisen),
+    SPECIES_SPRITE(REISEN,     gMonStillFrontPic_Reisen),
     SPECIES_SPRITE(SQUIRTLE,      gMonStillFrontPic_Squirtle),
     SPECIES_SPRITE(WARTORTLE,     gMonStillFrontPic_Wartortle),
     SPECIES_SPRITE(BLASTOISE,     gMonStillFrontPic_Blastoise),

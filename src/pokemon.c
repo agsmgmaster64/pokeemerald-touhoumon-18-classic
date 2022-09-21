@@ -98,12 +98,12 @@ static const struct CombinedMove sCombinedMoves[2] =
 // Assigns all species to the Hoenn Dex Index (Summary No. for Hoenn Dex)
 static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
 {
-    SPECIES_TO_HOENN(BULBASAUR),
-    SPECIES_TO_HOENN(IVYSAUR),
-    SPECIES_TO_HOENN(VENUSAUR),
-    SPECIES_TO_HOENN(CHARMANDER),
-    SPECIES_TO_HOENN(CHARMELEON),
-    SPECIES_TO_HOENN(CHARIZARD),
+    SPECIES_TO_HOENN(CSANAE),
+    SPECIES_TO_HOENN(SANAE),
+    SPECIES_TO_HOENN(CALICE),
+    SPECIES_TO_HOENN(ALICE),
+    SPECIES_TO_HOENN(CREISEN),
+    SPECIES_TO_HOENN(REISEN),
     SPECIES_TO_HOENN(SQUIRTLE),
     SPECIES_TO_HOENN(WARTORTLE),
     SPECIES_TO_HOENN(BLASTOISE),
@@ -514,12 +514,12 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
 // Assigns all species to the National Dex Index (Summary No. for National Dex)
 static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
 {
-    SPECIES_TO_NATIONAL(BULBASAUR),
-    SPECIES_TO_NATIONAL(IVYSAUR),
-    SPECIES_TO_NATIONAL(VENUSAUR),
-    SPECIES_TO_NATIONAL(CHARMANDER),
-    SPECIES_TO_NATIONAL(CHARMELEON),
-    SPECIES_TO_NATIONAL(CHARIZARD),
+    SPECIES_TO_NATIONAL(CSANAE),
+    SPECIES_TO_NATIONAL(SANAE),
+    SPECIES_TO_NATIONAL(CALICE),
+    SPECIES_TO_NATIONAL(ALICE),
+    SPECIES_TO_NATIONAL(CREISEN),
+    SPECIES_TO_NATIONAL(REISEN),
     SPECIES_TO_NATIONAL(SQUIRTLE),
     SPECIES_TO_NATIONAL(WARTORTLE),
     SPECIES_TO_NATIONAL(BLASTOISE),
@@ -1132,12 +1132,12 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(RAYQUAZA),
     HOENN_TO_NATIONAL(JIRACHI),
     HOENN_TO_NATIONAL(DEOXYS),
-    HOENN_TO_NATIONAL(BULBASAUR), // Pokémon from here onwards are UNSEEN in the HoennDex.
-    HOENN_TO_NATIONAL(IVYSAUR),
-    HOENN_TO_NATIONAL(VENUSAUR),
-    HOENN_TO_NATIONAL(CHARMANDER),
-    HOENN_TO_NATIONAL(CHARMELEON),
-    HOENN_TO_NATIONAL(CHARIZARD),
+    HOENN_TO_NATIONAL(CSANAE), // Pokémon from here onwards are UNSEEN in the HoennDex.
+    HOENN_TO_NATIONAL(SANAE),
+    HOENN_TO_NATIONAL(CALICE),
+    HOENN_TO_NATIONAL(ALICE),
+    HOENN_TO_NATIONAL(CREISEN),
+    HOENN_TO_NATIONAL(REISEN),
     HOENN_TO_NATIONAL(SQUIRTLE),
     HOENN_TO_NATIONAL(WARTORTLE),
     HOENN_TO_NATIONAL(BLASTOISE),
@@ -1396,12 +1396,12 @@ const s8 gNatureStatTable[NUM_NATURES][NUM_NATURE_STATS] =
 
 static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
 {
-    [SPECIES_BULBASAUR - 1]   = ANIM_V_JUMPS_H_JUMPS,
-    [SPECIES_IVYSAUR - 1]     = ANIM_V_STRETCH,
-    [SPECIES_VENUSAUR - 1]    = ANIM_ROTATE_UP_SLAM_DOWN,
-    [SPECIES_CHARMANDER - 1]  = ANIM_V_JUMPS_SMALL,
-    [SPECIES_CHARMELEON - 1]  = ANIM_BACK_AND_LUNGE,
-    [SPECIES_CHARIZARD - 1]   = ANIM_V_SHAKE,
+    [SPECIES_CSANAE - 1]   = ANIM_V_JUMPS_H_JUMPS,
+    [SPECIES_SANAE - 1]     = ANIM_V_STRETCH,
+    [SPECIES_CALICE - 1]    = ANIM_ROTATE_UP_SLAM_DOWN,
+    [SPECIES_ALICE - 1]  = ANIM_V_JUMPS_SMALL,
+    [SPECIES_CREISEN - 1]  = ANIM_BACK_AND_LUNGE,
+    [SPECIES_REISEN - 1]   = ANIM_V_SHAKE,
     [SPECIES_SQUIRTLE - 1]    = ANIM_SWING_CONCAVE,
     [SPECIES_WARTORTLE - 1]   = ANIM_SHRINK_GROW,
     [SPECIES_BLASTOISE - 1]   = ANIM_V_SHAKE_TWICE,
@@ -3170,7 +3170,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     if (attackerHoldEffect == HOLD_EFFECT_LIGHT_BALL && attacker->species == SPECIES_PIKACHU)
         attack *= 2;
         spAttack *= 2;
-    if (defenderHoldEffect == HOLD_EFFECT_ASSIST_BALL && defender->species == SPECIES_DODOU)
+    if (defenderHoldEffect == HOLD_EFFECT_ASSIST_BALL && defender->species == SPECIES_DODUO)
         defense *= 2;
         spDefense *= 2;
     if (attackerHoldEffect == HOLD_EFFECT_THICK_CLUB && (attacker->species == SPECIES_CUBONE || attacker->species == SPECIES_MAROWAK))
@@ -3210,7 +3210,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     if (defender->ability == ABILITY_SPRING_CHARM && defender->status1)
         defense = (150 * defense) / 100;
 #ifdef WLD_BATTLE
-    if (attacker->ability == ABILITY_TRUANT)
+    if (attacker->ability == ABILITY_FRETFUL)
         gBattleMovePower = (120 * gBattleMovePower) / 100;
     if (attacker->ability == ABILITY_TOXIC_BOOST && (attacker->status1 & STATUS1_PSN_ANY))
         attack = (150 * attack) / 100;
@@ -6503,10 +6503,10 @@ const struct CompressedSpritePalette *GetMonSpritePalStructFromOtIdPersonality(u
 
 bool32 IsHMMove2(u16 move)
 {
-    int i = 0;
-    while (sHMMoves[i] != 0xFFFF)
+    u32 i = 0;
+    for (i = 0; sHMMoves[i] != 0xFFFF; i++)
     {
-        if (sHMMoves[i++] == move)
+        if (sHMMoves[i] == move)
             return TRUE;
     }
     return FALSE;
@@ -6596,10 +6596,10 @@ void SetMonPreventsSwitchingString(void)
     BattleStringExpandPlaceholders(gText_PkmnsXPreventsSwitching, gStringVar4);
 }
 
-static s32 GetWildMonTableIdInAlteringCave(u16 species)
+static u32 GetWildMonTableIdInAlteringCave(u16 species)
 {
-    s32 i;
-    for (i = 0; i < (s32) ARRAY_COUNT(sAlteringCaveWildMonHeldItems); i++)
+    u32 i;
+    for (i = 0; i < ARRAY_COUNT(sAlteringCaveWildMonHeldItems); i++)
         if (sAlteringCaveWildMonHeldItems[i].species == species)
             return i;
     return 0;
@@ -6621,7 +6621,7 @@ void SetWildMonHeldItem(void)
         }
         if (gMapHeader.mapLayoutId == LAYOUT_ALTERING_CAVE)
         {
-            s32 alteringCaveId = GetWildMonTableIdInAlteringCave(species);
+            u32 alteringCaveId = GetWildMonTableIdInAlteringCave(species);
             if (alteringCaveId != 0)
             {
                 // In active Altering Cave, use special item list
@@ -6669,11 +6669,8 @@ bool8 IsMonShiny(struct Pokemon *mon)
 
 bool8 IsShinyOtIdPersonality(u32 otId, u32 personality)
 {
-    bool8 retVal = FALSE;
     u32 shinyValue = GET_SHINY_VALUE(otId, personality);
-    if (shinyValue < SHINY_ODDS)
-        retVal = TRUE;
-    return retVal;
+    return (shinyValue < SHINY_ODDS);
 }
 
 const u8 *GetTrainerPartnerName(void)
@@ -6730,14 +6727,6 @@ static void Task_PokemonSummaryAnimateAfterDelay(u8 taskId)
     }
 }
 
-void BattleAnimateFrontSprite(struct Sprite* sprite, u16 species, bool8 noCry, u8 panMode)
-{
-    if (gHitMarker & HITMARKER_NO_ANIMATIONS && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
-        DoMonFrontSpriteAnimation(sprite, species, noCry, panMode | SKIP_FRONT_ANIM);
-    else
-        DoMonFrontSpriteAnimation(sprite, species, noCry, panMode);
-}
-
 void DoMonFrontSpriteAnimation(struct Sprite* sprite, u16 species, bool8 noCry, u8 panModeAnimFlag)
 {
     s8 pan;
@@ -6753,57 +6742,14 @@ void DoMonFrontSpriteAnimation(struct Sprite* sprite, u16 species, bool8 noCry, 
         pan = 0;
         break;
     }
-    if (panModeAnimFlag & SKIP_FRONT_ANIM)
-    {
-        // No animation, only check if cry needs to be played
-        if (!noCry)
-            PlayCry_Normal(species, pan);
-        sprite->callback = SpriteCallbackDummy;
-    }
-    else
-    {
-        if (!noCry)
-        {
-            PlayCry_Normal(species, pan);
-            if (HasTwoFramesAnimation(species))
-                StartSpriteAnim(sprite, 1);
-        }
-        if (sMonAnimationDelayTable[species - 1] != 0)
-        {
-            // Animation has delay, start delay task
-            u8 taskId = CreateTask(Task_AnimateAfterDelay, 0);
-            STORE_PTR_IN_TASK(sprite, taskId, 0);
-            gTasks[taskId].sAnimId = sMonFrontAnimIdsTable[species - 1];
-            gTasks[taskId].sAnimDelay = sMonAnimationDelayTable[species - 1];
-        }
-        else
-        {
-            // No delay, start animation
-            LaunchAnimationTaskForFrontSprite(sprite, sMonFrontAnimIdsTable[species - 1]);
-        }
-        sprite->callback = SpriteCallbackDummy_2;
-    }
+    if (!noCry)
+        PlayCry_Normal(species, pan);
+    sprite->callback = SpriteCallbackDummy;
 }
 
 void PokemonSummaryDoMonAnimation(struct Sprite* sprite, u16 species, bool8 oneFrame)
 {
-    if (!oneFrame && HasTwoFramesAnimation(species))
-        StartSpriteAnim(sprite, 1);
-    if (sMonAnimationDelayTable[species - 1] != 0)
-    {
-        // Animation has delay, start delay task
-        u8 taskId = CreateTask(Task_PokemonSummaryAnimateAfterDelay, 0);
-        STORE_PTR_IN_TASK(sprite, taskId, 0);
-        gTasks[taskId].sAnimId = sMonFrontAnimIdsTable[species - 1];
-        gTasks[taskId].sAnimDelay = sMonAnimationDelayTable[species - 1];
-        SummaryScreen_SetAnimDelayTaskId(taskId);
-        SetSpriteCB_MonAnimDummy(sprite);
-    }
-    else
-    {
-        // No delay, start animation
-        StartMonSummaryAnimation(sprite, sMonFrontAnimIdsTable[species - 1]);
-    }
+    sprite->callback = SpriteCallbackDummy;
 }
 
 void StopPokemonAnimationDelayTask(void)
@@ -6811,19 +6757,6 @@ void StopPokemonAnimationDelayTask(void)
     u8 delayTaskId = FindTaskIdByFunc(Task_PokemonSummaryAnimateAfterDelay);
     if (delayTaskId != TASK_NONE)
         DestroyTask(delayTaskId);
-}
-
-void BattleAnimateBackSprite(struct Sprite* sprite, u16 species)
-{
-    if (gHitMarker & HITMARKER_NO_ANIMATIONS && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
-    {
-        sprite->callback = SpriteCallbackDummy;
-    }
-    else
-    {
-        LaunchAnimationTaskForBackSprite(sprite, GetSpeciesBackAnimSet(species));
-        sprite->callback = SpriteCallbackDummy_2;
-    }
 }
 
 // Unused, identical to GetOpposingLinkMultiBattlerId but for the player

@@ -2,12 +2,12 @@
 static const u32 sUnused[] =
 {
     [SPECIES_NONE]        = 0x888,
-    [SPECIES_BULBASAUR]   = 0x888,
-    [SPECIES_IVYSAUR]     = 0x888,
-    [SPECIES_VENUSAUR]    = 0x888,
-    [SPECIES_CHARMANDER]  = 0x88,
-    [SPECIES_CHARMELEON]  = 0x888,
-    [SPECIES_CHARIZARD]   = 0x888,
+    [SPECIES_CSANAE]   = 0x888,
+    [SPECIES_SANAE]     = 0x888,
+    [SPECIES_CALICE]    = 0x888,
+    [SPECIES_ALICE]  = 0x88,
+    [SPECIES_CREISEN]  = 0x888,
+    [SPECIES_REISEN]   = 0x888,
     [SPECIES_SQUIRTLE]    = 0x886,
     [SPECIES_WARTORTLE]   = 0x888,
     [SPECIES_BLASTOISE]   = 0x886,

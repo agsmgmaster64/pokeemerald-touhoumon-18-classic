@@ -964,12 +964,12 @@ static const union AnimCmd sUnknownAnim_JIRACHI_1[] =
 };
 
 static const union AnimCmd *const sUnknownAnims_NONE[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_BULBASAUR[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_IVYSAUR[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_VENUSAUR[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_CHARMANDER[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_CHARMELEON[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_CHARIZARD[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CSANAE[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_SANAE[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CALICE[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_ALICE[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CREISEN[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_REISEN[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_SQUIRTLE[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_WARTORTLE[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_BLASTOISE[] = {sAnim_GeneralFrame0};
@@ -1877,12 +1877,12 @@ static const union AnimCmd *const sUnknownAnims_UNOWN_QMARK[] = {sAnim_GeneralFr
 static const union AnimCmd *const *const sUnknownAnimsTable[] =
 {
     ANIM_CMD(NONE),
-    ANIM_CMD(BULBASAUR),
-    ANIM_CMD(IVYSAUR),
-    ANIM_CMD(VENUSAUR),
-    ANIM_CMD(CHARMANDER),
-    ANIM_CMD(CHARMELEON),
-    ANIM_CMD(CHARIZARD),
+    ANIM_CMD(CSANAE),
+    ANIM_CMD(SANAE),
+    ANIM_CMD(CALICE),
+    ANIM_CMD(ALICE),
+    ANIM_CMD(CREISEN),
+    ANIM_CMD(REISEN),
     ANIM_CMD(SQUIRTLE),
     ANIM_CMD(WARTORTLE),
     ANIM_CMD(BLASTOISE),

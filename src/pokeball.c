@@ -568,8 +568,7 @@ static void SpriteCB_BallThrow_FallToGround(struct Sprite *sprite)
 
 static void SpriteCB_BallThrow_StartShakes(struct Sprite *sprite)
 {
-    sprite->data[3]++;
-    if (sprite->data[3] == 31)
+    if (sprite->data[3] == 30)
     {
         sprite->data[3] = 0;
         sprite->affineAnimPaused = TRUE;
@@ -577,6 +576,8 @@ static void SpriteCB_BallThrow_StartShakes(struct Sprite *sprite)
         sprite->callback = SpriteCB_BallThrow_Shake;
         PlaySE(SE_BALL);
     }
+    else
+        sprite->data[3]++;
 }
 
 static void SpriteCB_BallThrow_Shake(struct Sprite *sprite)
@@ -806,16 +807,11 @@ static void SpriteCB_ReleaseMonFromBall(struct Sprite *sprite)
         gTasks[taskId].tCryTaskBattler = battlerId;
         gTasks[taskId].tCryTaskMonSpriteId = gBattlerSpriteIds[sprite->sBattler];
         gTasks[taskId].tCryTaskMonPtr1 = (u32)(mon) >> 16;
-        gTasks[taskId].tCryTaskMonPtr2 = (u32)(mon);
+        gTasks[taskId].tCryTaskMonPtr2 = (u32)(mon) & 0xFFFF;
         gTasks[taskId].tCryTaskState = 0;
     }
 
     StartSpriteAffineAnim(&gSprites[gBattlerSpriteIds[sprite->sBattler]], BATTLER_AFFINE_EMERGE);
-
-    if (GetBattlerSide(sprite->sBattler) == B_SIDE_OPPONENT)
-        gSprites[gBattlerSpriteIds[sprite->sBattler]].callback = SpriteCB_OpponentMonFromBall;
-    else
-        gSprites[gBattlerSpriteIds[sprite->sBattler]].callback = SpriteCB_PlayerMonFromBall;
 
     AnimateSprite(&gSprites[gBattlerSpriteIds[sprite->sBattler]]);
     gSprites[gBattlerSpriteIds[sprite->sBattler]].data[1] = 0x1000;
@@ -1119,14 +1115,7 @@ static void SpriteCB_ReleasedMonFlyOut(struct Sprite *sprite)
         atFinalPosition = TRUE;
     }
     if (sprite->animEnded && emergeAnimFinished && atFinalPosition)
-    {
-        if (gSprites[monSpriteId].sSpecies == SPECIES_EGG)
-            DoMonFrontSpriteAnimation(&gSprites[monSpriteId], gSprites[monSpriteId].sSpecies, TRUE, 0);
-        else
-            DoMonFrontSpriteAnimation(&gSprites[monSpriteId], gSprites[monSpriteId].sSpecies, FALSE, 0);
-
         DestroySpriteAndFreeResources(sprite);
-    }
 }
 
 #undef sSpecies

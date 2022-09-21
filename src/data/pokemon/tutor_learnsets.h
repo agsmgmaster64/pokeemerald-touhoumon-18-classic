@@ -38,7 +38,7 @@ static const u32 sTutorLearnsets[] =
 {
     [SPECIES_NONE]             = (0),
 
-    [SPECIES_BULBASAUR]        = (TUTOR(MOVE_SWORDS_DANCE)
+    [SPECIES_CSANAE]        = (TUTOR(MOVE_SWORDS_DANCE)
                                 | TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
@@ -51,7 +51,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_DEFENSE_CURL)
                                 | TUTOR(MOVE_FURY_CUTTER)),
 
-    [SPECIES_IVYSAUR]          = (TUTOR(MOVE_SWORDS_DANCE)
+    [SPECIES_SANAE]          = (TUTOR(MOVE_SWORDS_DANCE)
                                 | TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
@@ -64,7 +64,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_DEFENSE_CURL)
                                 | TUTOR(MOVE_FURY_CUTTER)),
 
-    [SPECIES_VENUSAUR]         = (TUTOR(MOVE_SWORDS_DANCE)
+    [SPECIES_CALICE]         = (TUTOR(MOVE_SWORDS_DANCE)
                                 | TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
@@ -77,7 +77,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_DEFENSE_CURL)
                                 | TUTOR(MOVE_FURY_CUTTER)),
 
-    [SPECIES_CHARMANDER]       = (TUTOR(MOVE_DRAIN_PUNCH)
+    [SPECIES_ALICE]       = (TUTOR(MOVE_DRAIN_PUNCH)
                                 | TUTOR(MOVE_SWORDS_DANCE)
                                 | TUTOR(MOVE_GIGA_IMPACT)
                                 | TUTOR(MOVE_BODY_SLAM)
@@ -98,7 +98,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_FIRE_PUNCH)
                                 | TUTOR(MOVE_FURY_CUTTER)),
 
-    [SPECIES_CHARMELEON]       = (TUTOR(MOVE_DRAIN_PUNCH)
+    [SPECIES_CREISEN]       = (TUTOR(MOVE_DRAIN_PUNCH)
                                 | TUTOR(MOVE_SWORDS_DANCE)
                                 | TUTOR(MOVE_GIGA_IMPACT)
                                 | TUTOR(MOVE_BODY_SLAM)
@@ -119,7 +119,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_FIRE_PUNCH)
                                 | TUTOR(MOVE_FURY_CUTTER)),
 
-    [SPECIES_CHARIZARD]        = (TUTOR(MOVE_DRAIN_PUNCH)
+    [SPECIES_REISEN]        = (TUTOR(MOVE_DRAIN_PUNCH)
                                 | TUTOR(MOVE_SWORDS_DANCE)
                                 | TUTOR(MOVE_GIGA_IMPACT)
                                 | TUTOR(MOVE_BODY_SLAM)
