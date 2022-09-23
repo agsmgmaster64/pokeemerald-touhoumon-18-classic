@@ -3984,7 +3984,7 @@ static const struct TrainerMonItemDefaultMoves sParty_Vanessa[] = {
     {
     .iv = 0,
     .lvl = 30,
-    .species = SPECIES_PIKACHU,
+    .species = SPECIES_CCIRNO,
     .heldItem = ITEM_ORAN_BERRY
     }
 };
@@ -10630,7 +10630,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wattson3[] = {
     {
     .iv = 255,
     .lvl = 39,
-    .species = SPECIES_PIKACHU,
+    .species = SPECIES_CCIRNO,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_THUNDER, MOVE_POWER_WHIP, MOVE_RAIN_DANCE, MOVE_SHOCK_WAVE}
     },
@@ -10668,7 +10668,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wattson4[] = {
     {
     .iv = 255,
     .lvl = 44,
-    .species = SPECIES_RAICHU,
+    .species = SPECIES_CIRNO,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_THUNDER, MOVE_POWER_WHIP, MOVE_RAIN_DANCE, MOVE_PROTECT}
     },
@@ -10713,7 +10713,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wattson5[] = {
     {
     .iv = 255,
     .lvl = 51,
-    .species = SPECIES_RAICHU,
+    .species = SPECIES_CIRNO,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_THUNDER, MOVE_POWER_WHIP, MOVE_RAIN_DANCE, MOVE_PROTECT}
     },

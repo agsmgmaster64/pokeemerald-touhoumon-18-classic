@@ -140,7 +140,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_FIRE_PUNCH)
                                 | TUTOR(MOVE_FURY_CUTTER)),
 
-    [SPECIES_SQUIRTLE]         = (TUTOR(MOVE_DRAIN_PUNCH)
+    [SPECIES_CLILYWHITE]         = (TUTOR(MOVE_DRAIN_PUNCH)
                                 | TUTOR(MOVE_GIGA_IMPACT)
                                 | TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
@@ -159,7 +159,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_DEFENSE_CURL)),
 
-    [SPECIES_WARTORTLE]        = (TUTOR(MOVE_DRAIN_PUNCH)
+    [SPECIES_LILYWHITE]        = (TUTOR(MOVE_DRAIN_PUNCH)
                                 | TUTOR(MOVE_GIGA_IMPACT)
                                 | TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
@@ -178,7 +178,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_DEFENSE_CURL)),
 
-    [SPECIES_BLASTOISE]        = (TUTOR(MOVE_DRAIN_PUNCH)
+    [SPECIES_CLILYBLACK]        = (TUTOR(MOVE_DRAIN_PUNCH)
                                 | TUTOR(MOVE_GIGA_IMPACT)
                                 | TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
@@ -197,11 +197,11 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_DEFENSE_CURL)),
 
-    [SPECIES_CATERPIE]         = (0),
+    [SPECIES_LILYBLACK]         = (0),
 
-    [SPECIES_METAPOD]          = (0),
+    [SPECIES_CMOMIJI]          = (0),
 
-    [SPECIES_BUTTERFREE]       = (TUTOR(MOVE_DOUBLE_EDGE)
+    [SPECIES_MOMIJI]       = (TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
                                 | TUTOR(MOVE_DREAM_EATER)
                                 | TUTOR(MOVE_SUBSTITUTE)
@@ -211,11 +211,11 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_SWIFT)),
 
-    [SPECIES_WEEDLE]           = (0),
+    [SPECIES_CSHIZUHA]           = (0),
 
-    [SPECIES_KAKUNA]           = (0),
+    [SPECIES_SHIZUHA]           = (0),
 
-    [SPECIES_BEEDRILL]         = (TUTOR(MOVE_SWORDS_DANCE)
+    [SPECIES_CMEDICINE]         = (TUTOR(MOVE_SWORDS_DANCE)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
                                 | TUTOR(MOVE_SUBSTITUTE)
@@ -226,7 +226,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SWIFT)
                                 | TUTOR(MOVE_FURY_CUTTER)),
 
-    [SPECIES_PIDGEY]           = (TUTOR(MOVE_DOUBLE_EDGE)
+    [SPECIES_MEDICINE]           = (TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
                                 | TUTOR(MOVE_SUBSTITUTE)
                                 | TUTOR(MOVE_SNORE)
@@ -236,7 +236,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_SWIFT)),
 
-    [SPECIES_PIDGEOTTO]        = (TUTOR(MOVE_DOUBLE_EDGE)
+    [SPECIES_CKOAKUMA]        = (TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
                                 | TUTOR(MOVE_SUBSTITUTE)
                                 | TUTOR(MOVE_SNORE)
@@ -246,7 +246,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_SWIFT)),
 
-    [SPECIES_PIDGEOT]          = (TUTOR(MOVE_DOUBLE_EDGE)
+    [SPECIES_KOAKUMA]          = (TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
                                 | TUTOR(MOVE_SUBSTITUTE)
                                 | TUTOR(MOVE_SNORE)
@@ -256,7 +256,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_SWIFT)),
 
-    [SPECIES_RATTATA]          = (TUTOR(MOVE_BODY_SLAM)
+    [SPECIES_CNAZRIN]          = (TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_COUNTER)
                                 | TUTOR(MOVE_MIMIC)
@@ -271,7 +271,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SWIFT)
                                 | TUTOR(MOVE_DEFENSE_CURL)),
 
-    [SPECIES_RATICATE]         = (TUTOR(MOVE_BODY_SLAM)
+    [SPECIES_NAZRIN]         = (TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_COUNTER)
                                 | TUTOR(MOVE_MIMIC)
@@ -286,7 +286,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SWIFT)
                                 | TUTOR(MOVE_DEFENSE_CURL)),
 
-    [SPECIES_SPEAROW]          = (TUTOR(MOVE_DOUBLE_EDGE)
+    [SPECIES_CTOKIKO]          = (TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
                                 | TUTOR(MOVE_SUBSTITUTE)
                                 | TUTOR(MOVE_SNORE)
@@ -296,7 +296,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_SWIFT)),
 
-    [SPECIES_FEAROW]           = (TUTOR(MOVE_DOUBLE_EDGE)
+    [SPECIES_TOKIKO]           = (TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
                                 | TUTOR(MOVE_SUBSTITUTE)
                                 | TUTOR(MOVE_SNORE)
@@ -306,7 +306,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_SWIFT)),
 
-    [SPECIES_EKANS]            = (TUTOR(MOVE_BODY_SLAM)
+    [SPECIES_CREMILIA]            = (TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
                                 | TUTOR(MOVE_ROCK_SLIDE)
@@ -316,7 +316,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SWAGGER)
                                 | TUTOR(MOVE_SLEEP_TALK)),
 
-    [SPECIES_ARBOK]            = (TUTOR(MOVE_BODY_SLAM)
+    [SPECIES_REMILIA]            = (TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
                                 | TUTOR(MOVE_ROCK_SLIDE)
@@ -326,7 +326,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SWAGGER)
                                 | TUTOR(MOVE_SLEEP_TALK)),
 
-    [SPECIES_PIKACHU]          = (TUTOR(MOVE_DRAIN_PUNCH)
+    [SPECIES_CCIRNO]          = (TUTOR(MOVE_DRAIN_PUNCH)
                                 | TUTOR(MOVE_GIGA_IMPACT)
                                 | TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
@@ -346,7 +346,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_DEFENSE_CURL)
                                 | TUTOR(MOVE_THUNDER_PUNCH)),
 
-    [SPECIES_RAICHU]           = (TUTOR(MOVE_DRAIN_PUNCH)
+    [SPECIES_CIRNO]           = (TUTOR(MOVE_DRAIN_PUNCH)
                                 | TUTOR(MOVE_GIGA_IMPACT)
                                 | TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
@@ -462,7 +462,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_DEFENSE_CURL)),
 
-    [SPECIES_NIDORINO]         = (TUTOR(MOVE_BODY_SLAM)
+    [SPECIES_CYOUMU]         = (TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_COUNTER)
                                 | TUTOR(MOVE_MIMIC)
@@ -474,7 +474,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_DEFENSE_CURL)),
 
-    [SPECIES_NIDOKING]         = (TUTOR(MOVE_DRAIN_PUNCH)
+    [SPECIES_YOUMU]         = (TUTOR(MOVE_DRAIN_PUNCH)
                                 | TUTOR(MOVE_GIGA_IMPACT)
                                 | TUTOR(MOVE_BODY_SLAM)
                                 | TUTOR(MOVE_DOUBLE_EDGE)

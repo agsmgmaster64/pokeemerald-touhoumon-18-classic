@@ -3,23 +3,23 @@
 
 // Pokemon types
 #define TYPE_NONE             255
-#define TYPE_ILLUSION           0
-#define TYPE_DREAM         1
+#define TYPE_ILLUSION         0
+#define TYPE_DREAM            1
 #define TYPE_FLYING           2
 #define TYPE_MIASMA           3
-#define TYPE_EARTH           4
-#define TYPE_BEAST             5
-#define TYPE_HEART              6
+#define TYPE_EARTH            4
+#define TYPE_BEAST            5
+#define TYPE_HEART            6
 #define TYPE_GHOST            7
 #define TYPE_STEEL            8
 #define TYPE_MYSTERY          9
 #define TYPE_FIRE             10
 #define TYPE_WATER            11
-#define TYPE_NATURE            12
-#define TYPE_WIND         13
-#define TYPE_REASON          14
+#define TYPE_NATURE           12
+#define TYPE_WIND             13
+#define TYPE_REASON           14
 #define TYPE_ICE              15
-#define TYPE_FAITH           16
+#define TYPE_FAITH            16
 #define TYPE_DARK             17
 #define NUMBER_OF_MON_TYPES   18
 
@@ -255,7 +255,7 @@
 #define LEVEL_UP_MOVE_LV   0xFE00
 #define LEVEL_UP_END       0xFFFF
 
-#define MAX_LEVEL_UP_MOVES       20
+#define MAX_LEVEL_UP_MOVES       25
 
 #define MON_MALE       0x00
 #define MON_FEMALE     0xFE
@@ -279,7 +279,7 @@
 #define MAX_PER_STAT_IVS 31
 #define MAX_IV_MASK 31
 #define USE_RANDOM_IVS (MAX_PER_STAT_IVS + 1)
-#define MAX_PER_STAT_EVS 255
+#define MAX_PER_STAT_EVS 252
 #define MAX_TOTAL_EVS 510
 #define EV_ITEM_RAISE_LIMIT 100
 

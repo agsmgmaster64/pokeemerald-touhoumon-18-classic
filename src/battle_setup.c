@@ -404,7 +404,11 @@ static void DoStandardWildBattle(void)
     FreezeObjectEvents();
     StopPlayerAvatar();
     gMain.savedCallback = CB2_EndWildBattle;
+#ifdef PALACE_GLOBAL
+    gBattleTypeFlags = BATTLE_TYPE_PALACE;
+#else
     gBattleTypeFlags = 0;
+#endif
     if (InBattlePyramid())
     {
         VarSet(VAR_TEMP_E, 0);
@@ -423,7 +427,11 @@ void BattleSetup_StartRoamerBattle(void)
     FreezeObjectEvents();
     StopPlayerAvatar();
     gMain.savedCallback = CB2_EndWildBattle;
+#ifdef PALACE_GLOBAL
+    gBattleTypeFlags = BATTLE_TYPE_ROAMER | BATTLE_TYPE_PALACE;
+#else
     gBattleTypeFlags = BATTLE_TYPE_ROAMER;
+#endif
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -489,7 +497,11 @@ void BattleSetup_StartScriptedWildBattle(void)
 {
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
+#ifdef PALACE_GLOBAL
+    gBattleTypeFlags = BATTLE_TYPE_PALACE;
+#else
     gBattleTypeFlags = 0;
+#endif
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -501,7 +513,11 @@ void BattleSetup_StartLatiBattle(void)
 {
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
+#ifdef PALACE_GLOBAL
+    gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_PALACE;
+#else
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY;
+#endif
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -513,7 +529,11 @@ void BattleSetup_StartLegendaryBattle(void)
 {
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
+#ifdef PALACE_GLOBAL
+    gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_PALACE;
+#else
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY;
+#endif
 
     switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
     {
@@ -552,7 +572,11 @@ void StartGroudonKyogreBattle(void)
 {
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
+#ifdef PALACE_GLOBAL
+    gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_KYOGRE_GROUDON | BATTLE_TYPE_PALACE;
+#else
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_KYOGRE_GROUDON;
+#endif
 
     if (gGameVersion == VERSION_RUBY)
         CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_VS_KYOGRE_GROUDON); // GROUDON
@@ -572,7 +596,11 @@ void StartRegiBattle(void)
 
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
+#ifdef PALACE_GLOBAL
+    gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_REGI | BATTLE_TYPE_PALACE;
+#else
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_REGI;
+#endif
 
     species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES);
     switch (species)
@@ -1270,9 +1298,17 @@ void ClearTrainerFlag(u16 trainerId)
 void BattleSetup_StartTrainerBattle(void)
 {
     if (gNoOfApproachingTrainers == 2)
+#ifdef PALACE_GLOBAL
+        gBattleTypeFlags = (BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_TRAINER | BATTLE_TYPE_PALACE);
+#else
         gBattleTypeFlags = (BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_TRAINER);
+#endif
     else
+#ifdef PALACE_GLOBAL
+        gBattleTypeFlags = (BATTLE_TYPE_TRAINER | BATTLE_TYPE_PALACE);
+#else
         gBattleTypeFlags = (BATTLE_TYPE_TRAINER);
+#endif
 
     if (InBattlePyramid())
     {
@@ -1367,7 +1403,11 @@ static void CB2_EndRematchBattle(void)
 
 void BattleSetup_StartRematchBattle(void)
 {
+#ifdef PALACE_GLOBAL
+    gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_PALACE;
+#else
     gBattleTypeFlags = BATTLE_TYPE_TRAINER;
+#endif
     gMain.savedCallback = CB2_EndRematchBattle;
     DoTrainerBattle();
     ScriptContext1_Stop();

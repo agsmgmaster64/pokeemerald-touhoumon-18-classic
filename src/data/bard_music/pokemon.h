@@ -60,7 +60,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         { 0x33, 0x0, 0x0, 0x0, 0x0},
         NULL_BARD_SOUND
     },
-    [SPECIES_SQUIRTLE] = {
+    [SPECIES_CLILYWHITE] = {
         { 0x30, 0x0, 0x0, 0x0, 0x0},
         { 0x24, 0x0, 0x0, 0x0, 0x0},
         { 0x33, 0x0, 0x0, 0x0, 0x0},
@@ -68,7 +68,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_WARTORTLE] = {
+    [SPECIES_LILYWHITE] = {
         { 0x8, 0x0, 0x0, 0x0, 0x0},
         { 0x30, 0x0, 0x0, 0x0, 0x0},
         { 0x24, 0x0, 0x0, 0x0, 0x0},
@@ -76,7 +76,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_BLASTOISE] = {
+    [SPECIES_CLILYBLACK] = {
         { 0x0, 0x0, 0x0, 0x0, 0x0},
         { 0x1e, 0x0, 0x0, 0x0, 0x0},
         { 0x33, 0x0, 0x0, 0x0, 0x0},
@@ -84,7 +84,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_CATERPIE] = {
+    [SPECIES_LILYBLACK] = {
         { 0x0, 0x0, 0x0, 0x0, 0x0},
         { 0x30, 0x0, 0x0, 0x0, 0x0},
         { 0xc, 0x0, 0x0, 0x0, 0x0},
@@ -92,7 +92,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_METAPOD] = {
+    [SPECIES_CMOMIJI] = {
         { 0x9, 0x0, 0x0, 0x0, 0x0},
         { 0x2a, 0x0, 0x0, 0x0, 0x0},
         { 0x15, 0x0, 0x0, 0x0, 0x0},
@@ -100,7 +100,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_BUTTERFREE] = {
+    [SPECIES_MOMIJI] = {
         { 0x2a, 0x0, 0x0, 0x0, 0x0},
         { 0x30, 0x0, 0x0, 0x0, 0x0},
         { 0xc, 0x0, 0x0, 0x0, 0x0},
@@ -108,7 +108,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_WEEDLE] = {
+    [SPECIES_CSHIZUHA] = {
         { 0xe, 0x0, 0x0, 0x0, 0x0},
         { 0x26, 0x0, 0x0, 0x0, 0x0},
         { 0x33, 0x0, 0x0, 0x0, 0x0},
@@ -116,7 +116,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_KAKUNA] = {
+    [SPECIES_SHIZUHA] = {
         { 0x2a, 0x0, 0x0, 0x0, 0x0},
         { 0x27, 0x0, 0x0, 0x0, 0x0},
         { 0x2a, 0x0, 0x0, 0x0, 0x0},
@@ -124,7 +124,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_BEEDRILL] = {
+    [SPECIES_CMEDICINE] = {
         { 0xc, 0x0, 0x0, 0x0, 0x0},
         { 0x11, 0x0, 0x0, 0x0, 0x0},
         { 0x33, 0x0, 0x0, 0x0, 0x0},
@@ -132,7 +132,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_PIDGEY] = {
+    [SPECIES_MEDICINE] = {
         { 0x11, 0x0, 0x0, 0x0, 0x0},
         { 0xc, 0x0, 0x0, 0x0, 0x0},
         { 0x33, 0x0, 0x0, 0x0, 0x0},
@@ -140,7 +140,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_PIDGEOTTO] = {
+    [SPECIES_CKOAKUMA] = {
         { 0x11, 0x0, 0x0, 0x0, 0x0},
         { 0xc, 0x0, 0x0, 0x0, 0x0},
         { 0x18, 0x0, 0x0, 0x0, 0x0},
@@ -148,7 +148,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_PIDGEOT] = {
+    [SPECIES_KOAKUMA] = {
         { 0x11, 0x0, 0x0, 0x0, 0x0},
         { 0xc, 0x0, 0x0, 0x0, 0x0},
         { 0x15, 0x0, 0x0, 0x0, 0x0},
@@ -156,7 +156,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_RATTATA] = {
+    [SPECIES_CNAZRIN] = {
         { 0x0, 0x0, 0x0, 0x0, 0x0},
         { 0x0, 0x0, 0x0, 0x0, 0x0},
         { 0x2c, 0x0, 0x0, 0x0, 0x0},
@@ -164,7 +164,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_RATICATE] = {
+    [SPECIES_NAZRIN] = {
         { 0x0, 0x0, 0x0, 0x0, 0x0},
         { 0xc, 0x0, 0x0, 0x0, 0x0},
         { 0x3, 0x0, 0x0, 0x0, 0x0},
@@ -172,7 +172,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_SPEAROW] = {
+    [SPECIES_CTOKIKO] = {
         { 0xc, 0x0, 0x0, 0x0, 0x0},
         { 0x18, 0x0, 0x0, 0x0, 0x0},
         { 0x33, 0x0, 0x0, 0x0, 0x0},
@@ -180,7 +180,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_FEAROW] = {
+    [SPECIES_TOKIKO] = {
         { 0xc, 0x0, 0x0, 0x0, 0x0},
         { 0x18, 0x0, 0x0, 0x0, 0x0},
         { 0x33, 0x0, 0x0, 0x0, 0x0},
@@ -188,7 +188,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_EKANS] = {
+    [SPECIES_CREMILIA] = {
         { 0x9, 0x0, 0x0, 0x0, 0x0},
         { 0x0, 0x0, 0x0, 0x0, 0x0},
         { 0x33, 0x0, 0x0, 0x0, 0x0},
@@ -196,7 +196,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_ARBOK] = {
+    [SPECIES_REMILIA] = {
         { 0x6, 0x0, 0x0, 0x0, 0x0},
         { 0x17, 0x0, 0x0, 0x0, 0x0},
         { 0x33, 0x0, 0x0, 0x0, 0x0},
@@ -204,7 +204,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_PIKACHU] = {
+    [SPECIES_CCIRNO] = {
         { 0xc, 0x0, 0x0, 0x0, 0x0},
         { 0x2a, 0x0, 0x0, 0x0, 0x0},
         { 0x27, 0x0, 0x0, 0x0, 0x0},
@@ -212,7 +212,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_RAICHU] = {
+    [SPECIES_CIRNO] = {
         { 0x12, 0x0, 0x0, 0x0, 0x0},
         { 0x27, 0x0, 0x0, 0x0, 0x0},
         { 0x33, 0x0, 0x0, 0x0, 0x0},
@@ -268,7 +268,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_NIDORINO] = {
+    [SPECIES_CYOUMU] = {
         { 0x12, 0x0, 0x0, 0x0, 0x0},
         { 0x18, 0x0, 0x0, 0x0, 0x0},
         { 0xc, 0x0, 0x0, 0x0, 0x0},
@@ -276,7 +276,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [SPECIES_NIDOKING] = {
+    [SPECIES_YOUMU] = {
         { 0x12, 0x0, 0x0, 0x0, 0x0},
         { 0x18, 0x0, 0x0, 0x0, 0x0},
         { 0xc, 0x0, 0x0, 0x0, 0x0},

@@ -2574,7 +2574,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     }
                 }
                 break;
-#ifdef WLD_BATTLE
             case ABILITY_SNOW_WARNING:
                 if (!(gBattleWeather & B_WEATHER_HAIL_PERMANENT))
                 {
@@ -2591,7 +2590,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     gSpecialStatuses[battler].intimidatedMon = 1;
                 }
                 break;
-#endif
             }
             break;
         case ABILITYEFFECT_ENDTURN: // 1
@@ -2672,7 +2670,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
         case ABILITYEFFECT_ABSORBING: // 3
             if (move)
             {
-#ifdef WLD_BATTLE
                 u8 statId;
                 switch (gLastUsedAbility)
                 {
@@ -2758,76 +2755,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                             gBattlescriptCurrInstr = BattleScript_FlashFireBoost_PPLoss;
                     }
                 }
-#else
-                switch (gLastUsedAbility)
-                {
-                case ABILITY_VOLT_ABSORB:
-                    if (moveType == TYPE_WIND && gBattleMoves[move].power != 0)
-                    {
-                        if (gProtectStructs[gBattlerAttacker].notFirstStrike)
-                            gBattlescriptCurrInstr = BattleScript_MoveHPDrain;
-                        else
-                            gBattlescriptCurrInstr = BattleScript_MoveHPDrain_PPLoss;
-
-                        effect = 1;
-                    }
-                    break;
-                case ABILITY_WATER_ABSORB:
-                    if (moveType == TYPE_WATER && gBattleMoves[move].power != 0)
-                    {
-                        if (gProtectStructs[gBattlerAttacker].notFirstStrike)
-                            gBattlescriptCurrInstr = BattleScript_MoveHPDrain;
-                        else
-                            gBattlescriptCurrInstr = BattleScript_MoveHPDrain_PPLoss;
-
-                        effect = 1;
-                    }
-                    break;
-                case ABILITY_FLASH_FIRE:
-                    if (moveType == TYPE_FIRE && !(gBattleMons[battler].status1 & STATUS1_FREEZE))
-                    {
-                        if (!(gBattleResources->flags->flags[battler] & RESOURCE_FLAG_FLASH_FIRE))
-                        {
-                            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FLASH_FIRE_BOOST;
-                            if (gProtectStructs[gBattlerAttacker].notFirstStrike)
-                                gBattlescriptCurrInstr = BattleScript_FlashFireBoost;
-                            else
-                                gBattlescriptCurrInstr = BattleScript_FlashFireBoost_PPLoss;
-
-                            gBattleResources->flags->flags[battler] |= RESOURCE_FLAG_FLASH_FIRE;
-                            effect = 2;
-                        }
-                        else
-                        {
-                            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FLASH_FIRE_NO_BOOST;
-                            if (gProtectStructs[gBattlerAttacker].notFirstStrike)
-                                gBattlescriptCurrInstr = BattleScript_FlashFireBoost;
-                            else
-                                gBattlescriptCurrInstr = BattleScript_FlashFireBoost_PPLoss;
-
-                            effect = 2;
-                        }
-                    }
-                    break;
-                }
-                if (effect == 1)
-                {
-                    if (gBattleMons[battler].maxHP == gBattleMons[battler].hp)
-                    {
-                        if ((gProtectStructs[gBattlerAttacker].notFirstStrike))
-                            gBattlescriptCurrInstr = BattleScript_MonMadeMoveUseless;
-                        else
-                            gBattlescriptCurrInstr = BattleScript_MonMadeMoveUseless_PPLoss;
-                    }
-                    else
-                    {
-                        gBattleMoveDamage = gBattleMons[battler].maxHP / 4;
-                        if (gBattleMoveDamage == 0)
-                            gBattleMoveDamage = 1;
-                        gBattleMoveDamage *= -1;
-                    }
-                }
-#endif
             }
             break;
         case ABILITYEFFECT_ON_DAMAGE: // Contact abilities and Color Change
@@ -3095,7 +3022,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     effect++;
                     break;
                 }
-#ifdef WLD_BATTLE
                 else if (gBattleMons[i].ability == ABILITY_FASCINATE && gStatuses3[i] & STATUS3_INTIMIDATE_POKES)
                 {
                     gLastUsedAbility = ABILITY_FASCINATE;
@@ -3105,7 +3031,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     effect++;
                     break;
                 }
-#endif
             }
             break;
         case ABILITYEFFECT_TRACE: // 11
@@ -3178,7 +3103,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     effect++;
                     break;
                 }
-#ifdef WLD_BATTLE
                 else if (gBattleMons[i].ability == ABILITY_FASCINATE && (gStatuses3[i] & STATUS3_INTIMIDATE_POKES))
                 {
                     gLastUsedAbility = ABILITY_FASCINATE;
@@ -3189,7 +3113,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     effect++;
                     break;
                 }
-#endif
             }
             break;
         case ABILITYEFFECT_CHECK_OTHER_SIDE: // 12

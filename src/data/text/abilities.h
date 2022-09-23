@@ -76,7 +76,6 @@ static const u8 sPurePowerDescription[] = _("Doubles Attack.");
 static const u8 sShellArmorDescription[] = _("Blocks critical hits.");
 static const u8 sCacophonyDescription[] = _("Avoids sound-based moves.");
 static const u8 sHisoutenDescription[] = _("Negates weather effects.");
-#ifdef WLD_BATTLE
 static const u8 sGluttonyDescription[] = _("Eats Berries earlier.");
 static const u8 sSkillLinkDescription[] = _("Multi-hit moves go 5 times.");
 static const u8 sNoGuardDescription[] = _("Moves hit for user and foe.");
@@ -90,7 +89,6 @@ static const u8 sUnwaveringDescription[] = _("Ups Sp. Atk if suffering.");
 static const u8 sFascinateDescription[] = _("Lowers the foe's Sp. Atk.");
 static const u8 sImposterDescription[] = _("Transforms into the foe.");
 static const u8 sColdHeartDescription[] = _("Ups Ice moves in a pinch.");
-#endif
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -172,7 +170,6 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SHELL_ARMOR] = _("SHELL ARMOR"),
     [ABILITY_SNOW_WARNING] = _("Snow Warning"),
     [ABILITY_HISOUTEN] = _("Hisouten"),
-#ifdef WLD_BATTLE
     [ABILITY_GLUTTONY] = _("Gluttony"),
     [ABILITY_SKILL_LINK] = _("Skill LInk"),
     [ABILITY_NO_GUARD] = _("No Guard"),
@@ -186,7 +183,6 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FASCINATE] = _("Fascinate"),
     [ABILITY_IMPOSTER] = _("Imposter"),
     [ABILITY_COLD_HEART] = _("Cold Heart"),
-#endif
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -269,7 +265,6 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SHELL_ARMOR] = sShellArmorDescription,
     [ABILITY_SNOW_WARNING] = sCacophonyDescription,
     [ABILITY_HISOUTEN] = sHisoutenDescription,
-#ifdef WLD_BATTLE
     [ABILITY_GLUTTONY] = sGluttonyDescription,
     [ABILITY_SKILL_LINK] = sSkillLinkDescription,
     [ABILITY_NO_GUARD] = sNoGuardDescription,
@@ -283,5 +278,4 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_FASCINATE] = sFascinateDescription,
     [ABILITY_IMPOSTER] = sImposterDescription,
     [ABILITY_COLD_HEART] = sColdHeartDescription,
-#endif
 };

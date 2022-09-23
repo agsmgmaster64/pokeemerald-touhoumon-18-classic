@@ -970,34 +970,34 @@ static const union AnimCmd *const sUnknownAnims_CALICE[] = {sAnim_GeneralFrame0}
 static const union AnimCmd *const sUnknownAnims_ALICE[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_CREISEN[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_REISEN[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_SQUIRTLE[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_WARTORTLE[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_BLASTOISE[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_CATERPIE[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_METAPOD[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_BUTTERFREE[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_WEEDLE[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_KAKUNA[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_BEEDRILL[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_PIDGEY[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_PIDGEOTTO[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_PIDGEOT[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_RATTATA[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_RATICATE[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_SPEAROW[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_FEAROW[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_EKANS[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_ARBOK[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_PIKACHU[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_RAICHU[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CLILYWHITE[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_LILYWHITE[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CLILYBLACK[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_LILYBLACK[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CMOMIJI[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_MOMIJI[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CSHIZUHA[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_SHIZUHA[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CMEDICINE[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_MEDICINE[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CKOAKUMA[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_KOAKUMA[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CNAZRIN[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_NAZRIN[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CTOKIKO[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_TOKIKO[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CREMILIA[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_REMILIA[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CCIRNO[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CIRNO[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_SANDSHREW[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_SANDSLASH[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_NIDORAN_F[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_NIDORINA[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_NIDOQUEEN[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_NIDORAN_M[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_NIDORINO[] = {sAnim_GeneralFrame0};
-static const union AnimCmd *const sUnknownAnims_NIDOKING[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_CYOUMU[] = {sAnim_GeneralFrame0};
+static const union AnimCmd *const sUnknownAnims_YOUMU[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_CLEFAIRY[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_CLEFABLE[] = {sAnim_GeneralFrame0};
 static const union AnimCmd *const sUnknownAnims_VULPIX[] = {sAnim_GeneralFrame0};
@@ -1883,34 +1883,34 @@ static const union AnimCmd *const *const sUnknownAnimsTable[] =
     ANIM_CMD(ALICE),
     ANIM_CMD(CREISEN),
     ANIM_CMD(REISEN),
-    ANIM_CMD(SQUIRTLE),
-    ANIM_CMD(WARTORTLE),
-    ANIM_CMD(BLASTOISE),
-    ANIM_CMD(CATERPIE),
-    ANIM_CMD(METAPOD),
-    ANIM_CMD(BUTTERFREE),
-    ANIM_CMD(WEEDLE),
-    ANIM_CMD(KAKUNA),
-    ANIM_CMD(BEEDRILL),
-    ANIM_CMD(PIDGEY),
-    ANIM_CMD(PIDGEOTTO),
-    ANIM_CMD(PIDGEOT),
-    ANIM_CMD(RATTATA),
-    ANIM_CMD(RATICATE),
-    ANIM_CMD(SPEAROW),
-    ANIM_CMD(FEAROW),
-    ANIM_CMD(EKANS),
-    ANIM_CMD(ARBOK),
-    ANIM_CMD(PIKACHU),
-    ANIM_CMD(RAICHU),
+    ANIM_CMD(CLILYWHITE),
+    ANIM_CMD(LILYWHITE),
+    ANIM_CMD(CLILYBLACK),
+    ANIM_CMD(LILYBLACK),
+    ANIM_CMD(CMOMIJI),
+    ANIM_CMD(MOMIJI),
+    ANIM_CMD(CSHIZUHA),
+    ANIM_CMD(SHIZUHA),
+    ANIM_CMD(CMEDICINE),
+    ANIM_CMD(MEDICINE),
+    ANIM_CMD(CKOAKUMA),
+    ANIM_CMD(KOAKUMA),
+    ANIM_CMD(CNAZRIN),
+    ANIM_CMD(NAZRIN),
+    ANIM_CMD(CTOKIKO),
+    ANIM_CMD(TOKIKO),
+    ANIM_CMD(CREMILIA),
+    ANIM_CMD(REMILIA),
+    ANIM_CMD(CCIRNO),
+    ANIM_CMD(CIRNO),
     ANIM_CMD(SANDSHREW),
     ANIM_CMD(SANDSLASH),
     ANIM_CMD(NIDORAN_F),
     ANIM_CMD(NIDORINA),
     ANIM_CMD(NIDOQUEEN),
     ANIM_CMD(NIDORAN_M),
-    ANIM_CMD(NIDORINO),
-    ANIM_CMD(NIDOKING),
+    ANIM_CMD(CYOUMU),
+    ANIM_CMD(YOUMU),
     ANIM_CMD(CLEFAIRY),
     ANIM_CMD(CLEFABLE),
     ANIM_CMD(VULPIX),

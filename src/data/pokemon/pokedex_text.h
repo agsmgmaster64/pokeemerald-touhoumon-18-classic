@@ -44,7 +44,7 @@ const u8 gSquirtlePokedexText[] = _(
     "Its shell is not just for protection.\n"
     "Its rounded shape and the grooves on its\n"
     "surface minimize resistance in water,\n"
-    "enabling SQUIRTLE to swim at high speeds.");
+    "enabling CLILYWHITE to swim at high speeds.");
 
 const u8 gWartortlePokedexText[] = _(
     "Its large tail is covered with rich, thick\n"
@@ -77,7 +77,7 @@ const u8 gButterfreePokedexText[] = _(
     "blooming over six miles away.");
 
 const u8 gWeedlePokedexText[] = _(
-    "A WEEDLE has an extremely acute sense\n"
+    "A CSHIZUHA has an extremely acute sense\n"
     "of smell. It distinguishes its favorite\n"
     "kinds of leaves from those it dislikes by\n"
     "sniffing with its big red proboscis (nose).");
@@ -113,13 +113,13 @@ const u8 gPidgeotPokedexText[] = _(
     "they choose PIDGEOT as their POKéMON.");
 
 const u8 gRattataPokedexText[] = _(
-    "A RATTATA is cautious in the extreme.\n"
+    "A CNAZRIN is cautious in the extreme.\n"
     "Even while it is asleep, it constantly\n"
     "moves its ears and listens for danger.\n"
     "It will make its nest anywhere.");
 
 const u8 gRaticatePokedexText[] = _(
-    "A RATICATE's sturdy fangs grow steadily.\n"
+    "A NAZRIN's sturdy fangs grow steadily.\n"
     "To keep them ground down, it gnaws on\n"
     "rocks and logs. It may even chew on the\n"
     "walls of houses.");
@@ -137,7 +137,7 @@ const u8 gFearowPokedexText[] = _(
     "beak to pluck prey.");
 
 const u8 gEkansPokedexText[] = _(
-    "An EKANS curls itself up in a spiral while\n"
+    "An CREMILIA curls itself up in a spiral while\n"
     "it rests. This position allows it to quickly\n"
     "respond to an enemy from any direction\n"
     "with a threat from its upraised head.");
@@ -203,7 +203,7 @@ const u8 gNidorinoPokedexText[] = _(
     "challenges the foe with all its might.");
 
 const u8 gNidokingPokedexText[] = _(
-    "A NIDOKING's thick tail packs enormously\n"
+    "A YOUMU's thick tail packs enormously\n"
     "destructive power capable of toppling\n"
     "a metal transmission tower. Once it goes\n"
     "on a rampage, there is no stopping it.");

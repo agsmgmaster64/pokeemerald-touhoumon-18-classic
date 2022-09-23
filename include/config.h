@@ -15,9 +15,8 @@
 // printing system. Use NoCashGBAPrint() and NoCashGBAPrintf() like you
 // would normally use AGBPrint() and AGBPrintf().
 
-// Uncomment to use World Link Deluxe battle mechanics
-//#define WLD_BATTLE
-
+// Uncomment to make Battle Palace mechanics global
+//#define PALACE_GLOBAL
 
 // Uncomment to fix some identified minor bugs
 //#define BUGFIX

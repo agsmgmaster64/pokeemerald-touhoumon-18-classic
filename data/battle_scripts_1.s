@@ -4596,7 +4596,6 @@ BattleScript_FascinateActivatesLoop:
 	trygetintimidatetarget BattleScript_FascinateActivatesReturn
 	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_FascinateActivatesLoopIncrement
 	jumpifability BS_TARGET, ABILITY_HAKUREI_MIKO, BattleScript_FascinatePrevented
-	jumpifability BS_TARGET, ABILITY_HIGH_STRENGTH, BattleScript_FascinatePrevented
 	jumpifability BS_TARGET, ABILITY_MAGIC_BARRIER, BattleScript_FascinatePrevented
 	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED | STAT_BUFF_ALLOW_PTR, BattleScript_FascinateActivatesLoopIncrement
 	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 1, BattleScript_FascinateActivatesLoopIncrement

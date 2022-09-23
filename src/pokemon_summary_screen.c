@@ -297,9 +297,8 @@ static void SetContestMoveTypeIcons(void);
 static void SetNewMoveTypeIcon(void);
 static void SwapMovesTypeSprites(u8, u8);
 static u8 LoadMonGfxAndSprite(struct Pokemon *, s16 *);
-static u8 CreateMonSprite();
+static u8 CreateMonSprite(struct Pokemon *);
 static void SpriteCB_Pokemon(struct Sprite *);
-static void StopPokemonAnimations(void);
 static void CreateMonMarkingsSprite(struct Pokemon *);
 static void RemoveAndCreateMonMarkingsSprite(struct Pokemon *);
 static void CreateCaughtBallSprite(struct Pokemon *);
@@ -883,7 +882,7 @@ static const struct SpriteTemplate sSpriteTemplate_MoveTypes =
 };
 static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT] =
 {
-    [TYPE_ILLUSION] = 13,
+    [TYPE_ILLUSION] = 15,
     [TYPE_DREAM] = 13,
     [TYPE_FLYING] = 14,
     [TYPE_MIASMA] = 14,
@@ -896,10 +895,10 @@ static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIE
     [TYPE_FIRE] = 13,
     [TYPE_WATER] = 14,
     [TYPE_NATURE] = 15,
-    [TYPE_WIND] = 13,
+    [TYPE_WIND] = 15,
     [TYPE_REASON] = 14,
     [TYPE_ICE] = 14,
-    [TYPE_FAITH] = 15,
+    [TYPE_FAITH] = 13,
     [TYPE_DARK] = 13,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = 13,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = 14,
@@ -1532,7 +1531,6 @@ static void Task_HandleInput(u8 taskId)
             {
                 if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
                 {
-                    StopPokemonAnimations();
                     PlaySE(SE_SELECT);
                     BeginCloseSummaryScreen(taskId);
                 }
@@ -1545,7 +1543,6 @@ static void Task_HandleInput(u8 taskId)
         }
         else if (JOY_NEW(B_BUTTON))
         {
-            StopPokemonAnimations();
             PlaySE(SE_SELECT);
             BeginCloseSummaryScreen(taskId);
         }
@@ -2196,7 +2193,6 @@ static void Task_HandleReplaceMoveInput(u8 taskId)
             {
                 if (CanReplaceMove() == TRUE)
                 {
-                    StopPokemonAnimations();
                     PlaySE(SE_SELECT);
                     sMoveSlotToReplace = sMonSummaryScreen->firstMoveIndex;
                     gSpecialVar_0x8005 = sMoveSlotToReplace;
@@ -2210,7 +2206,6 @@ static void Task_HandleReplaceMoveInput(u8 taskId)
             }
             else if (JOY_NEW(B_BUTTON))
             {
-                StopPokemonAnimations();
                 PlaySE(SE_SELECT);
                 sMoveSlotToReplace = MAX_MON_MOVES;
                 gSpecialVar_0x8005 = MAX_MON_MOVES;
@@ -3869,7 +3864,7 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state)
     switch (*state)
     {
     default:
-        return CreateMonSprite();
+        return CreateMonSprite(mon);
     case 0:
         if (gMain.inBattle)
         {
@@ -3936,7 +3931,7 @@ static void PlayMonCry(void)
     }
 }
 
-static u8 CreateMonSprite()
+static u8 CreateMonSprite(struct Pokemon *unused)
 {
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     u8 spriteId = CreateSprite(&gMultiuseSpriteTemplate, 40, 64, 5);
@@ -3963,7 +3958,7 @@ static void SpriteCB_Pokemon(struct Sprite *sprite)
     {
         sprite->data[1] = IsMonSpriteNotFlipped(sprite->data[0]);
         PlayMonCry();
-        PokemonSummaryDoMonAnimation(sprite, sprite->data[0], summary->isEgg);
+        sprite->callback = SpriteCallbackDummy;
     }
 }
 
@@ -3980,24 +3975,6 @@ static void SummaryScreen_DestroyAnimDelayTask(void)
     {
         DestroyTask(sAnimDelayTaskId);
         sAnimDelayTaskId = TASK_NONE;
-    }
-}
-
-static void StopPokemonAnimations(void)  // A subtle effect, this function stops pokemon animations when leaving the PSS
-{
-    u16 i;
-    u16 paletteIndex;
-
-    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]].animPaused = TRUE;
-    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]].callback = SpriteCallbackDummy;
-    StopPokemonAnimationDelayTask();
-
-    paletteIndex = (gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]].oam.paletteNum * 16) | 0x100;
-
-    for (i = 0; i < 16; i++)
-    {
-        u16 id = i + paletteIndex;
-        gPlttBufferUnfaded[id] = gPlttBufferFaded[id];
     }
 }
 

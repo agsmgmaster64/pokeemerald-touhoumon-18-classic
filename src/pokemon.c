@@ -104,34 +104,34 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(ALICE),
     SPECIES_TO_HOENN(CREISEN),
     SPECIES_TO_HOENN(REISEN),
-    SPECIES_TO_HOENN(SQUIRTLE),
-    SPECIES_TO_HOENN(WARTORTLE),
-    SPECIES_TO_HOENN(BLASTOISE),
-    SPECIES_TO_HOENN(CATERPIE),
-    SPECIES_TO_HOENN(METAPOD),
-    SPECIES_TO_HOENN(BUTTERFREE),
-    SPECIES_TO_HOENN(WEEDLE),
-    SPECIES_TO_HOENN(KAKUNA),
-    SPECIES_TO_HOENN(BEEDRILL),
-    SPECIES_TO_HOENN(PIDGEY),
-    SPECIES_TO_HOENN(PIDGEOTTO),
-    SPECIES_TO_HOENN(PIDGEOT),
-    SPECIES_TO_HOENN(RATTATA),
-    SPECIES_TO_HOENN(RATICATE),
-    SPECIES_TO_HOENN(SPEAROW),
-    SPECIES_TO_HOENN(FEAROW),
-    SPECIES_TO_HOENN(EKANS),
-    SPECIES_TO_HOENN(ARBOK),
-    SPECIES_TO_HOENN(PIKACHU),
-    SPECIES_TO_HOENN(RAICHU),
+    SPECIES_TO_HOENN(CLILYWHITE),
+    SPECIES_TO_HOENN(LILYWHITE),
+    SPECIES_TO_HOENN(CLILYBLACK),
+    SPECIES_TO_HOENN(LILYBLACK),
+    SPECIES_TO_HOENN(CMOMIJI),
+    SPECIES_TO_HOENN(MOMIJI),
+    SPECIES_TO_HOENN(CSHIZUHA),
+    SPECIES_TO_HOENN(SHIZUHA),
+    SPECIES_TO_HOENN(CMEDICINE),
+    SPECIES_TO_HOENN(MEDICINE),
+    SPECIES_TO_HOENN(CKOAKUMA),
+    SPECIES_TO_HOENN(KOAKUMA),
+    SPECIES_TO_HOENN(CNAZRIN),
+    SPECIES_TO_HOENN(NAZRIN),
+    SPECIES_TO_HOENN(CTOKIKO),
+    SPECIES_TO_HOENN(TOKIKO),
+    SPECIES_TO_HOENN(CREMILIA),
+    SPECIES_TO_HOENN(REMILIA),
+    SPECIES_TO_HOENN(CCIRNO),
+    SPECIES_TO_HOENN(CIRNO),
     SPECIES_TO_HOENN(SANDSHREW),
     SPECIES_TO_HOENN(SANDSLASH),
     SPECIES_TO_HOENN(NIDORAN_F),
     SPECIES_TO_HOENN(NIDORINA),
     SPECIES_TO_HOENN(NIDOQUEEN),
     SPECIES_TO_HOENN(NIDORAN_M),
-    SPECIES_TO_HOENN(NIDORINO),
-    SPECIES_TO_HOENN(NIDOKING),
+    SPECIES_TO_HOENN(CYOUMU),
+    SPECIES_TO_HOENN(YOUMU),
     SPECIES_TO_HOENN(CLEFAIRY),
     SPECIES_TO_HOENN(CLEFABLE),
     SPECIES_TO_HOENN(VULPIX),
@@ -520,34 +520,34 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(ALICE),
     SPECIES_TO_NATIONAL(CREISEN),
     SPECIES_TO_NATIONAL(REISEN),
-    SPECIES_TO_NATIONAL(SQUIRTLE),
-    SPECIES_TO_NATIONAL(WARTORTLE),
-    SPECIES_TO_NATIONAL(BLASTOISE),
-    SPECIES_TO_NATIONAL(CATERPIE),
-    SPECIES_TO_NATIONAL(METAPOD),
-    SPECIES_TO_NATIONAL(BUTTERFREE),
-    SPECIES_TO_NATIONAL(WEEDLE),
-    SPECIES_TO_NATIONAL(KAKUNA),
-    SPECIES_TO_NATIONAL(BEEDRILL),
-    SPECIES_TO_NATIONAL(PIDGEY),
-    SPECIES_TO_NATIONAL(PIDGEOTTO),
-    SPECIES_TO_NATIONAL(PIDGEOT),
-    SPECIES_TO_NATIONAL(RATTATA),
-    SPECIES_TO_NATIONAL(RATICATE),
-    SPECIES_TO_NATIONAL(SPEAROW),
-    SPECIES_TO_NATIONAL(FEAROW),
-    SPECIES_TO_NATIONAL(EKANS),
-    SPECIES_TO_NATIONAL(ARBOK),
-    SPECIES_TO_NATIONAL(PIKACHU),
-    SPECIES_TO_NATIONAL(RAICHU),
+    SPECIES_TO_NATIONAL(CLILYWHITE),
+    SPECIES_TO_NATIONAL(LILYWHITE),
+    SPECIES_TO_NATIONAL(CLILYBLACK),
+    SPECIES_TO_NATIONAL(LILYBLACK),
+    SPECIES_TO_NATIONAL(CMOMIJI),
+    SPECIES_TO_NATIONAL(MOMIJI),
+    SPECIES_TO_NATIONAL(CSHIZUHA),
+    SPECIES_TO_NATIONAL(SHIZUHA),
+    SPECIES_TO_NATIONAL(CMEDICINE),
+    SPECIES_TO_NATIONAL(MEDICINE),
+    SPECIES_TO_NATIONAL(CKOAKUMA),
+    SPECIES_TO_NATIONAL(KOAKUMA),
+    SPECIES_TO_NATIONAL(CNAZRIN),
+    SPECIES_TO_NATIONAL(NAZRIN),
+    SPECIES_TO_NATIONAL(CTOKIKO),
+    SPECIES_TO_NATIONAL(TOKIKO),
+    SPECIES_TO_NATIONAL(CREMILIA),
+    SPECIES_TO_NATIONAL(REMILIA),
+    SPECIES_TO_NATIONAL(CCIRNO),
+    SPECIES_TO_NATIONAL(CIRNO),
     SPECIES_TO_NATIONAL(SANDSHREW),
     SPECIES_TO_NATIONAL(SANDSLASH),
     SPECIES_TO_NATIONAL(NIDORAN_F),
     SPECIES_TO_NATIONAL(NIDORINA),
     SPECIES_TO_NATIONAL(NIDOQUEEN),
     SPECIES_TO_NATIONAL(NIDORAN_M),
-    SPECIES_TO_NATIONAL(NIDORINO),
-    SPECIES_TO_NATIONAL(NIDOKING),
+    SPECIES_TO_NATIONAL(CYOUMU),
+    SPECIES_TO_NATIONAL(YOUMU),
     SPECIES_TO_NATIONAL(CLEFAIRY),
     SPECIES_TO_NATIONAL(CLEFABLE),
     SPECIES_TO_NATIONAL(VULPIX),
@@ -1085,8 +1085,8 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(VULPIX),
     HOENN_TO_NATIONAL(NINETALES),
     HOENN_TO_NATIONAL(PICHU),
-    HOENN_TO_NATIONAL(PIKACHU),
-    HOENN_TO_NATIONAL(RAICHU),
+    HOENN_TO_NATIONAL(CCIRNO),
+    HOENN_TO_NATIONAL(CIRNO),
     HOENN_TO_NATIONAL(PSYDUCK),
     HOENN_TO_NATIONAL(GOLDUCK),
     HOENN_TO_NATIONAL(WYNAUT),
@@ -1138,30 +1138,30 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(ALICE),
     HOENN_TO_NATIONAL(CREISEN),
     HOENN_TO_NATIONAL(REISEN),
-    HOENN_TO_NATIONAL(SQUIRTLE),
-    HOENN_TO_NATIONAL(WARTORTLE),
-    HOENN_TO_NATIONAL(BLASTOISE),
-    HOENN_TO_NATIONAL(CATERPIE),
-    HOENN_TO_NATIONAL(METAPOD),
-    HOENN_TO_NATIONAL(BUTTERFREE),
-    HOENN_TO_NATIONAL(WEEDLE),
-    HOENN_TO_NATIONAL(KAKUNA),
-    HOENN_TO_NATIONAL(BEEDRILL),
-    HOENN_TO_NATIONAL(PIDGEY),
-    HOENN_TO_NATIONAL(PIDGEOTTO),
-    HOENN_TO_NATIONAL(PIDGEOT),
-    HOENN_TO_NATIONAL(RATTATA),
-    HOENN_TO_NATIONAL(RATICATE),
-    HOENN_TO_NATIONAL(SPEAROW),
-    HOENN_TO_NATIONAL(FEAROW),
-    HOENN_TO_NATIONAL(EKANS),
-    HOENN_TO_NATIONAL(ARBOK),
+    HOENN_TO_NATIONAL(CLILYWHITE),
+    HOENN_TO_NATIONAL(LILYWHITE),
+    HOENN_TO_NATIONAL(CLILYBLACK),
+    HOENN_TO_NATIONAL(LILYBLACK),
+    HOENN_TO_NATIONAL(CMOMIJI),
+    HOENN_TO_NATIONAL(MOMIJI),
+    HOENN_TO_NATIONAL(CSHIZUHA),
+    HOENN_TO_NATIONAL(SHIZUHA),
+    HOENN_TO_NATIONAL(CMEDICINE),
+    HOENN_TO_NATIONAL(MEDICINE),
+    HOENN_TO_NATIONAL(CKOAKUMA),
+    HOENN_TO_NATIONAL(KOAKUMA),
+    HOENN_TO_NATIONAL(CNAZRIN),
+    HOENN_TO_NATIONAL(NAZRIN),
+    HOENN_TO_NATIONAL(CTOKIKO),
+    HOENN_TO_NATIONAL(TOKIKO),
+    HOENN_TO_NATIONAL(CREMILIA),
+    HOENN_TO_NATIONAL(REMILIA),
     HOENN_TO_NATIONAL(NIDORAN_F),
     HOENN_TO_NATIONAL(NIDORINA),
     HOENN_TO_NATIONAL(NIDOQUEEN),
     HOENN_TO_NATIONAL(NIDORAN_M),
-    HOENN_TO_NATIONAL(NIDORINO),
-    HOENN_TO_NATIONAL(NIDOKING),
+    HOENN_TO_NATIONAL(CYOUMU),
+    HOENN_TO_NATIONAL(YOUMU),
     HOENN_TO_NATIONAL(CLEFAIRY),
     HOENN_TO_NATIONAL(CLEFABLE),
     HOENN_TO_NATIONAL(PARAS),
@@ -1402,34 +1402,34 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_ALICE - 1]  = ANIM_V_JUMPS_SMALL,
     [SPECIES_CREISEN - 1]  = ANIM_BACK_AND_LUNGE,
     [SPECIES_REISEN - 1]   = ANIM_V_SHAKE,
-    [SPECIES_SQUIRTLE - 1]    = ANIM_SWING_CONCAVE,
-    [SPECIES_WARTORTLE - 1]   = ANIM_SHRINK_GROW,
-    [SPECIES_BLASTOISE - 1]   = ANIM_V_SHAKE_TWICE,
-    [SPECIES_CATERPIE - 1]    = ANIM_SWING_CONCAVE,
-    [SPECIES_METAPOD - 1]     = ANIM_SWING_CONCAVE,
-    [SPECIES_BUTTERFREE - 1]  = ANIM_H_SLIDE_WOBBLE,
-    [SPECIES_WEEDLE - 1]      = ANIM_H_SLIDE_SLOW,
-    [SPECIES_KAKUNA - 1]      = ANIM_GLOW_ORANGE,
-    [SPECIES_BEEDRILL - 1]    = ANIM_H_VIBRATE,
-    [SPECIES_PIDGEY - 1]      = ANIM_V_SLIDE_SLOW,
-    [SPECIES_PIDGEOTTO - 1]   = ANIM_V_STRETCH,
-    [SPECIES_PIDGEOT - 1]     = ANIM_FRONT_FLIP,
-    [SPECIES_RATTATA - 1]     = ANIM_RAPID_H_HOPS,
-    [SPECIES_RATICATE - 1]    = ANIM_FIGURE_8,
-    [SPECIES_SPEAROW - 1]     = ANIM_RISING_WOBBLE,
-    [SPECIES_FEAROW - 1]      = ANIM_FIGURE_8,
-    [SPECIES_EKANS - 1]       = ANIM_H_STRETCH,
-    [SPECIES_ARBOK - 1]       = ANIM_V_STRETCH,
-    [SPECIES_PIKACHU - 1]     = ANIM_FLASH_YELLOW,
-    [SPECIES_RAICHU - 1]      = ANIM_V_STRETCH,
+    [SPECIES_CLILYWHITE - 1]    = ANIM_SWING_CONCAVE,
+    [SPECIES_LILYWHITE - 1]   = ANIM_SHRINK_GROW,
+    [SPECIES_CLILYBLACK - 1]   = ANIM_V_SHAKE_TWICE,
+    [SPECIES_LILYBLACK - 1]    = ANIM_SWING_CONCAVE,
+    [SPECIES_CMOMIJI - 1]     = ANIM_SWING_CONCAVE,
+    [SPECIES_MOMIJI - 1]  = ANIM_H_SLIDE_WOBBLE,
+    [SPECIES_CSHIZUHA - 1]      = ANIM_H_SLIDE_SLOW,
+    [SPECIES_SHIZUHA - 1]      = ANIM_GLOW_ORANGE,
+    [SPECIES_CMEDICINE - 1]    = ANIM_H_VIBRATE,
+    [SPECIES_MEDICINE - 1]      = ANIM_V_SLIDE_SLOW,
+    [SPECIES_CKOAKUMA - 1]   = ANIM_V_STRETCH,
+    [SPECIES_KOAKUMA - 1]     = ANIM_FRONT_FLIP,
+    [SPECIES_CNAZRIN - 1]     = ANIM_RAPID_H_HOPS,
+    [SPECIES_NAZRIN - 1]    = ANIM_FIGURE_8,
+    [SPECIES_CTOKIKO - 1]     = ANIM_RISING_WOBBLE,
+    [SPECIES_TOKIKO - 1]      = ANIM_FIGURE_8,
+    [SPECIES_CREMILIA - 1]       = ANIM_H_STRETCH,
+    [SPECIES_REMILIA - 1]       = ANIM_V_STRETCH,
+    [SPECIES_CCIRNO - 1]     = ANIM_FLASH_YELLOW,
+    [SPECIES_CIRNO - 1]      = ANIM_V_STRETCH,
     [SPECIES_SANDSHREW - 1]   = ANIM_SWING_CONCAVE_FAST_SHORT,
     [SPECIES_SANDSLASH - 1]   = ANIM_V_STRETCH,
     [SPECIES_NIDORAN_F - 1]   = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_NIDORINA - 1]    = ANIM_V_STRETCH,
     [SPECIES_NIDOQUEEN - 1]   = ANIM_H_SHAKE,
     [SPECIES_NIDORAN_M - 1]   = ANIM_GROW_VIBRATE,
-    [SPECIES_NIDORINO - 1]    = ANIM_SHRINK_GROW,
-    [SPECIES_NIDOKING - 1]    = ANIM_H_SHAKE,
+    [SPECIES_CYOUMU - 1]    = ANIM_SHRINK_GROW,
+    [SPECIES_YOUMU - 1]    = ANIM_H_SHAKE,
     [SPECIES_CLEFAIRY - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_CLEFABLE - 1]    = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL_SLOW,
     [SPECIES_VULPIX - 1]      = ANIM_V_STRETCH,
@@ -1786,15 +1786,15 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =
 {
-    [SPECIES_BLASTOISE - 1]  = 50,
-    [SPECIES_WEEDLE - 1]     = 10,
-    [SPECIES_KAKUNA - 1]     = 20,
-    [SPECIES_BEEDRILL - 1]   = 35,
-    [SPECIES_PIDGEOTTO - 1]  = 25,
-    [SPECIES_FEAROW - 1]     = 2,
-    [SPECIES_EKANS - 1]      = 30,
+    [SPECIES_CLILYBLACK - 1]  = 50,
+    [SPECIES_CSHIZUHA - 1]     = 10,
+    [SPECIES_SHIZUHA - 1]     = 20,
+    [SPECIES_CMEDICINE - 1]   = 35,
+    [SPECIES_CKOAKUMA - 1]  = 25,
+    [SPECIES_TOKIKO - 1]     = 2,
+    [SPECIES_CREMILIA - 1]      = 30,
     [SPECIES_NIDORAN_F - 1]  = 28,
-    [SPECIES_NIDOKING - 1]   = 25,
+    [SPECIES_YOUMU - 1]   = 25,
     [SPECIES_PARAS - 1]      = 10,
     [SPECIES_PARASECT - 1]   = 45,
     [SPECIES_VENONAT - 1]    = 20,
@@ -3158,7 +3158,6 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         spAttack = (150 * spAttack) / 100;
     if (defenderHoldEffect == HOLD_EFFECT_SOUL_DEW && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER)) && (defender->species == SPECIES_LATIAS || defender->species == SPECIES_LATIOS))
         spDefense = (150 * spDefense) / 100;
-#ifdef WLD_BATTLE
     if (attackerHoldEffect == HOLD_EFFECT_KUSANAGI && attacker->species == SPECIES_CLAMPERL)
         attack *= 2;
     if (attackerHoldEffect == HOLD_EFFECT_KUSANAGI && attacker->species == SPECIES_GOREBYSS)
@@ -3167,7 +3166,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         defense *= 2;
     if (defenderHoldEffect == HOLD_EFFECT_YATA_MIRROR && defender->species == SPECIES_GOREBYSS)
         spDefense *= 2;
-    if (attackerHoldEffect == HOLD_EFFECT_LIGHT_BALL && attacker->species == SPECIES_PIKACHU)
+    if (attackerHoldEffect == HOLD_EFFECT_LIGHT_BALL && attacker->species == SPECIES_CCIRNO)
         attack *= 2;
         spAttack *= 2;
     if (defenderHoldEffect == HOLD_EFFECT_ASSIST_BALL && defender->species == SPECIES_DODUO)
@@ -3183,18 +3182,6 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         defense *= 2;
     if (defenderHoldEffect == HOLD_EFFECT_PARASOL)
         defense *= 2;
-#else
-    if (attackerHoldEffect == HOLD_EFFECT_KUSANAGI && attacker->species == SPECIES_CLAMPERL)
-        attack *= 2;
-    if (defenderHoldEffect == HOLD_EFFECT_YATA_MIRROR && defender->species == SPECIES_CLAMPERL)
-        defense *= 2;
-    if (attackerHoldEffect == HOLD_EFFECT_LIGHT_BALL && attacker->species == SPECIES_PIKACHU)
-        spAttack *= 2;
-    if (defenderHoldEffect == HOLD_EFFECT_ASSIST_BALL && defender->species == SPECIES_DITTO)
-        defense *= 2;
-    if (attackerHoldEffect == HOLD_EFFECT_THICK_CLUB && (attacker->species == SPECIES_CUBONE || attacker->species == SPECIES_MAROWAK))
-        attack *= 2;
-#endif
 
     // Apply abilities / field sports
     if (defender->ability == ABILITY_WALL_OF_ICE && (type == TYPE_FIRE || type == TYPE_ICE))
@@ -3209,7 +3196,6 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         attack = (150 * attack) / 100;
     if (defender->ability == ABILITY_SPRING_CHARM && defender->status1)
         defense = (150 * defense) / 100;
-#ifdef WLD_BATTLE
     if (attacker->ability == ABILITY_FRETFUL)
         gBattleMovePower = (120 * gBattleMovePower) / 100;
     if (attacker->ability == ABILITY_TOXIC_BOOST && (attacker->status1 & STATUS1_PSN_ANY))
@@ -3220,7 +3206,6 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         gBattleMovePower = (150 * gBattleMovePower) / 100;
     if (attacker->ability == ABILITY_UNWAVERING && attacker->status1)
         spAttack = (150 * spAttack) / 100;
-#endif
     
 
     if (type == TYPE_WIND && AbilityBattleEffects(ABILITYEFFECT_FIELD_SPORT, 0, 0, ABILITYEFFECT_MUD_SPORT, 0))
@@ -3235,10 +3220,8 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         gBattleMovePower = (150 * gBattleMovePower) / 100;
     if (type == TYPE_DREAM && attacker->ability == ABILITY_INNER_POWER && attacker->hp <= (attacker->maxHP / 3))
         gBattleMovePower = (150 * gBattleMovePower) / 100;
-#ifdef WLD_BATTLE
     if (type == TYPE_ICE && attacker->ability == ABILITY_COLD_HEART && attacker->hp <= (attacker->maxHP / 3))
         gBattleMovePower = (150 * gBattleMovePower) / 100;
-#endif
 
     // Self-destruct / Explosion cut defense in half
     if (gBattleMoves[gCurrentMove].effect == EFFECT_EXPLOSION)
@@ -5671,117 +5654,6 @@ u16 HoennToNationalOrder(u16 hoennNum)
     return sHoennToNationalOrder[hoennNum - 1];
 }
 
-u16 SpeciesToCryId(u16 species)
-{
-    if (species <= SPECIES_CELEBI - 1)
-        return species;
-
-    if (species < SPECIES_TREECKO - 1)
-        return SPECIES_UNOWN - 1;
-
-    return gSpeciesIdToCryId[species - (SPECIES_TREECKO - 1)];
-}
-
-// Spots can be drawn on Spinda's color indexes 1, 2, or 3
-#define FIRST_SPOT_COLOR 1
-#define LAST_SPOT_COLOR  3
-
-// To draw a spot pixel, add 4 to the color index
-#define SPOT_COLOR_ADJUSTMENT 4
-/*
-    The macro below handles drawing the randomly-placed spots on Spinda's front sprite.
-    Spinda has 4 spots, each with an entry in gSpindaSpotGraphics. Each entry contains
-    a base x and y coordinate for the spot and a 16x16 binary image. Each bit in the image
-    determines whether that pixel should be considered part of the spot.
-
-    The position of each spot is randomized using the Spinda's personality. The entire 32 bit
-    personality value is used, 4 bits for each coordinate of the 4 spots. If the personality
-    value is 0x87654321, then 0x1 will be used for the 1st spot's x coord, 0x2 will be used for
-    the 1st spot's y coord, 0x3 will be used for the 2nd spot's x coord, and so on. Each
-    coordinate is calculated as (baseCoord + (given 4 bits of personality) - 8). In effect this
-    means each spot can start at any position -8 to +7 off of its base coordinates (256 possibilities).
-
-    The macro then loops over the 16x16 spot image. For each bit in the spot's binary image, if
-    the bit is set then it's part of the spot; try to draw it. A pixel is drawn on Spinda if the
-    pixel on Spinda satisfies the following formula: ((u8)(colorIndex - 1) <= 2). The -1 excludes
-    transparent pixels, as these are index 0. Therefore only colors 1, 2, or 3 on Spinda will
-    allow a spot to be drawn. These color indexes are Spinda's light brown body colors. To create
-    the spot it adds 4 to the color index, so Spinda's spots will be colors 5, 6, and 7.
-
-    The above is done two different ways in the macro: one with << 4, and one without. This
-    is because Spinda's sprite is a 4 bits per pixel image, but the pointer to Spinda's pixels
-    (destPixels) is an 8 bit pointer, so it addresses two pixels. Shifting by 4 accesses the 2nd
-    of these pixels, so this is done every other time.
-*/
-#define DRAW_SPINDA_SPOTS(personality, dest)                                    \
-{                                                                               \
-    s32 i;                                                                      \
-    for (i = 0; i < (s32)ARRAY_COUNT(gSpindaSpotGraphics); i++)                 \
-    {                                                                           \
-        s32 row;                                                                \
-        u8 x = gSpindaSpotGraphics[i].x + ((personality & 0x0F) - 8);           \
-        u8 y = gSpindaSpotGraphics[i].y + (((personality & 0xF0) >> 4) - 8);    \
-                                                                                \
-        for (row = 0; row < SPINDA_SPOT_HEIGHT; row++)                          \
-        {                                                                       \
-            s32 column;                                                         \
-            s32 spotPixelRow = gSpindaSpotGraphics[i].image[row];               \
-                                                                                \
-            for (column = x; column < x + SPINDA_SPOT_WIDTH; column++)          \
-            {                                                                   \
-                /* Get target pixels on Spinda's sprite */                      \
-                u8 *destPixels = dest + ((column / 8) * TILE_SIZE_4BPP) +       \
-                                        ((column % 8) / 2) +                    \
-                                             ((y / 8) * TILE_SIZE_4BPP * 8) +   \
-                                             ((y % 8) * 4);                     \
-                                                                                \
-                /* Is this pixel in the 16x16 spot image part of the spot? */   \
-                if (spotPixelRow & 1)                                           \
-                {                                                               \
-                    /* destPixels addressess two pixels, alternate which */     \
-                    /* of the two pixels is being considered for drawing */     \
-                    if (column & 1)                                             \
-                    {                                                           \
-                        /* Draw spot pixel if this is Spinda's body color */    \
-                        if ((u8)((*destPixels & 0xF0) - (FIRST_SPOT_COLOR << 4))\
-                                 <= ((LAST_SPOT_COLOR - FIRST_SPOT_COLOR) << 4))\
-                            *destPixels += (SPOT_COLOR_ADJUSTMENT << 4);        \
-                    }                                                           \
-                    else                                                        \
-                    {                                                           \
-                        /* Draw spot pixel if this is Spinda's body color */    \
-                        if ((u8)((*destPixels & 0xF) - FIRST_SPOT_COLOR)        \
-                                 <= (LAST_SPOT_COLOR - FIRST_SPOT_COLOR))       \
-                            *destPixels += SPOT_COLOR_ADJUSTMENT;               \
-                    }                                                           \
-                }                                                               \
-                                                                                \
-                spotPixelRow >>= 1;                                             \
-            }                                                                   \
-                                                                                \
-            y++;                                                                \
-        }                                                                       \
-                                                                                \
-        personality >>= 8;                                                      \
-    }                                                                           \
-}
-
-// Same as DrawSpindaSpots but attempts to discern for itself whether or
-// not it's the front pic.
-static void DrawSpindaSpotsUnused(u16 species, u32 personality, u8 *dest)
-{
-    if (species == SPECIES_SPINDA
-        && dest != gMonSpritesGfxPtr->sprites.ptr[B_POSITION_PLAYER_LEFT]
-        && dest != gMonSpritesGfxPtr->sprites.ptr[B_POSITION_PLAYER_RIGHT])
-        DRAW_SPINDA_SPOTS(personality, dest);
-}
-
-void DrawSpindaSpots(u16 species, u32 personality, u8 *dest, bool8 isFrontPic)
-{
-    if (species == SPECIES_SPINDA && isFrontPic)
-        DRAW_SPINDA_SPOTS(personality, dest);
-}
-
 void EvolutionRenameMon(struct Pokemon *mon, u16 oldSpecies, u16 newSpecies)
 {
     u8 language;
@@ -6745,18 +6617,6 @@ void DoMonFrontSpriteAnimation(struct Sprite* sprite, u16 species, bool8 noCry, 
     if (!noCry)
         PlayCry_Normal(species, pan);
     sprite->callback = SpriteCallbackDummy;
-}
-
-void PokemonSummaryDoMonAnimation(struct Sprite* sprite, u16 species, bool8 oneFrame)
-{
-    sprite->callback = SpriteCallbackDummy;
-}
-
-void StopPokemonAnimationDelayTask(void)
-{
-    u8 delayTaskId = FindTaskIdByFunc(Task_PokemonSummaryAnimateAfterDelay);
-    if (delayTaskId != TASK_NONE)
-        DestroyTask(delayTaskId);
 }
 
 // Unused, identical to GetOpposingLinkMultiBattlerId but for the player

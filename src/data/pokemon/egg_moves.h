@@ -33,14 +33,14 @@ const u16 gEggMoves[] = {
               MOVE_EARTH_POWER,
               MOVE_YAWN),
 
-    egg_moves(PIDGEY,
+    egg_moves(MEDICINE,
               MOVE_PURSUIT,
               MOVE_FAINT_ATTACK,
               MOVE_FORESIGHT,
               MOVE_STEEL_WING,
               MOVE_AIR_SLASH),
 
-    egg_moves(RATTATA,
+    egg_moves(CNAZRIN,
               MOVE_SCREECH,
               MOVE_FLAME_WHEEL,
               MOVE_FURY_SWIPES,
@@ -50,7 +50,7 @@ const u16 gEggMoves[] = {
               MOVE_PERFORMANCE,
               MOVE_SWAGGER),
 
-    egg_moves(SPEAROW,
+    egg_moves(CTOKIKO,
               MOVE_FAINT_ATTACK,
               MOVE_FALSE_SWIPE,
               MOVE_SCARY_FACE,
@@ -59,7 +59,7 @@ const u16 gEggMoves[] = {
               MOVE_ASTONISH,
               MOVE_SKY_ATTACK),
 
-    egg_moves(EKANS,
+    egg_moves(CREMILIA,
               MOVE_PURSUIT,
               MOVE_POWER_WHIP,
               MOVE_SPITE,

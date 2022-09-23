@@ -428,14 +428,14 @@ static const struct PokemonJumpMons sPokeJumpMons[] =
 {
     { .species = SPECIES_CSANAE,  .jumpType = JUMP_TYPE_SLOW, },
     { .species = SPECIES_ALICE, .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SQUIRTLE,   .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_CATERPIE,   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_METAPOD,    .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_WEEDLE,     .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_KAKUNA,     .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_RATTATA,    .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_RATICATE,   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_PIKACHU,    .jumpType = JUMP_TYPE_NORMAL, },
+    { .species = SPECIES_CLILYWHITE,   .jumpType = JUMP_TYPE_NORMAL, },
+    { .species = SPECIES_LILYBLACK,   .jumpType = JUMP_TYPE_FAST, },
+    { .species = SPECIES_CMOMIJI,    .jumpType = JUMP_TYPE_FAST, },
+    { .species = SPECIES_CSHIZUHA,     .jumpType = JUMP_TYPE_FAST, },
+    { .species = SPECIES_SHIZUHA,     .jumpType = JUMP_TYPE_FAST, },
+    { .species = SPECIES_CNAZRIN,    .jumpType = JUMP_TYPE_FAST, },
+    { .species = SPECIES_NAZRIN,   .jumpType = JUMP_TYPE_FAST, },
+    { .species = SPECIES_CCIRNO,    .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_SANDSHREW,  .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_NIDORAN_F,  .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_NIDORAN_M,  .jumpType = JUMP_TYPE_NORMAL, },
@@ -2724,7 +2724,7 @@ static void CreateJumpMonSprite(struct PokemonJumpGfx *jumpGfx, struct PokemonJu
     if (buffer && unusedBuffer)
     {
         HandleLoadSpecialPokePic(
-            &gMonStillFrontPicTable[monInfo->species],
+            &gMonFrontPicTable[monInfo->species],
             buffer,
             monInfo->species,
             monInfo->personality);
