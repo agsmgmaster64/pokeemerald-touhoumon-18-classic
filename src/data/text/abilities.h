@@ -89,6 +89,7 @@ static const u8 sUnwaveringDescription[] = _("Ups Sp. Atk if suffering.");
 static const u8 sFascinateDescription[] = _("Lowers the foe's Sp. Atk.");
 static const u8 sImposterDescription[] = _("Transforms into the foe.");
 static const u8 sColdHeartDescription[] = _("Ups Ice moves in a pinch.");
+static const u8 sCursedBodyDescription[] = _("Disables moves on contact.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -183,6 +184,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FASCINATE] = _("Fascinate"),
     [ABILITY_IMPOSTER] = _("Imposter"),
     [ABILITY_COLD_HEART] = _("Cold Heart"),
+    [ABILITY_CURSED_BODY] = _("Cursed Body"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -278,4 +280,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_FASCINATE] = sFascinateDescription,
     [ABILITY_IMPOSTER] = sImposterDescription,
     [ABILITY_COLD_HEART] = sColdHeartDescription,
+    [ABILITY_CURSED_BODY] = sCursedBodyDescription,
 };

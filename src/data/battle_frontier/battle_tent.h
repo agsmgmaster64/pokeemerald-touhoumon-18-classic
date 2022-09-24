@@ -1141,7 +1141,7 @@ const struct FacilityMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     [SLATEPORT_TENT_MON_GOLBAT_2] = {
         .species = SPECIES_GOLBAT,
         .moves = {MOVE_BITE, MOVE_TORMENT, MOVE_SCREECH, MOVE_CROSS_POISON},
-        .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
+        .itemTableId = BATTLE_FRONTIER_ITEM_BENTO_BOX,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
         .nature = NATURE_HARDY
     },
@@ -1900,7 +1900,7 @@ const struct FacilityMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     [VERDANTURF_TENT_MON_BALTOY] = {
         .species = SPECIES_BALTOY,
         .moves = {MOVE_SANDSTORM, MOVE_FLASH, MOVE_SELF_DESTRUCT, MOVE_HARDEN},
-        .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
+        .itemTableId = BATTLE_FRONTIER_ITEM_BENTO_BOX,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_ATTACK,
         .nature = NATURE_NAUGHTY
     },
@@ -2054,7 +2054,7 @@ const struct FacilityMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     [VERDANTURF_TENT_MON_LOUDRED] = {
         .species = SPECIES_LOUDRED,
         .moves = {MOVE_HOWL, MOVE_PERFORMANCE, MOVE_REST, MOVE_SCREECH},
-        .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
+        .itemTableId = BATTLE_FRONTIER_ITEM_BENTO_BOX,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_CALM
     },
@@ -2984,7 +2984,7 @@ const struct FacilityMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     [FALLARBOR_TENT_MON_LOMBRE] = {
         .species = SPECIES_LOMBRE,
         .moves = {MOVE_ROCK_BULLET, MOVE_WATER_GUN, MOVE_RAIN_DANCE, MOVE_FLASH},
-        .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
+        .itemTableId = BATTLE_FRONTIER_ITEM_BENTO_BOX,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_BASHFUL
     },

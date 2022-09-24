@@ -1146,24 +1146,24 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
+// Evolution stones
+
     [ITEM_CHROME_SHARD] =
     {
         .name = _("Chrome Shard"),
         .itemId = ITEM_CHROME_SHARD,
-        .price = 0,
+        .price = 5000,
         .description = sChromeShardDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
-
-// Evolution stones
 
     [ITEM_SOLAR_SHARD] =
     {
         .name = _("Solar Shard"),
         .itemId = ITEM_SOLAR_SHARD,
-        .price = 2100,
+        .price = 5000,
         .description = sSunStoneDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1174,7 +1174,7 @@ const struct Item gItems[] =
     {
         .name = _("Power Shard"),
         .itemId = ITEM_POWER_SHARD,
-        .price = 0,
+        .price = 5000,
         .description = sMoonStoneDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1185,7 +1185,7 @@ const struct Item gItems[] =
     {
         .name = _("DefenseShard"),
         .itemId = ITEM_DEFENSE_SHARD,
-        .price = 2100,
+        .price = 5000,
         .description = sFireStoneDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1196,7 +1196,7 @@ const struct Item gItems[] =
     {
         .name = _("Swift Shard"),
         .itemId = ITEM_SWIFT_SHARD,
-        .price = 2100,
+        .price = 5000,
         .description = sThunderStoneDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1207,7 +1207,7 @@ const struct Item gItems[] =
     {
         .name = _("Tech Shard"),
         .itemId = ITEM_TECH_SHARD,
-        .price = 2100,
+        .price = 5000,
         .description = sWaterStoneDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1218,22 +1218,22 @@ const struct Item gItems[] =
     {
         .name = _("Helper Shard"),
         .itemId = ITEM_HELPER_SHARD,
-        .price = 2100,
+        .price = 5000,
         .description = sLeafStoneDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
 
-    [ITEM_063] =
+    [ITEM_FESTIVE_SHARD] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
+        .name = _("FestiveShard"),
+        .itemId = ITEM_FESTIVE_SHARD,
+        .price = 5000,
         .description = sDummyDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
 
     [ITEM_064] =
@@ -2442,12 +2442,12 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_LEFTOVERS] =
+    [ITEM_BENTO_BOX] =
     {
-        .name = _("Leftovers"),
-        .itemId = ITEM_LEFTOVERS,
+        .name = _("Bento Box"),
+        .itemId = ITEM_BENTO_BOX,
         .price = 200,
-        .holdEffect = HOLD_EFFECT_LEFTOVERS,
+        .holdEffect = HOLD_EFFECT_BENTO_BOX,
         .holdEffectParam = 10,
         .description = sLeftoversDesc,
         .pocket = POCKET_ITEMS,
@@ -2473,7 +2473,7 @@ const struct Item gItems[] =
         .name = _("Ice Ball"),
         .itemId = ITEM_ICE_BALL,
         .price = 100,
-        .holdEffect = HOLD_EFFECT_LIGHT_BALL,
+        .holdEffect = HOLD_EFFECT_ICE_BALL,
         .description = sLightBallDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -2675,10 +2675,10 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_UP_GRADE] =
+    [ITEM_CURSED_LUNCH] =
     {
-        .name = _("Up-Grade"),
-        .itemId = ITEM_UP_GRADE,
+        .name = _("Cursed Lunch"),
+        .itemId = ITEM_CURSED_LUNCH,
         .price = 2100,
         .holdEffect = HOLD_EFFECT_CURSED_LUNCH,
         .description = sUpGradeDesc,
@@ -2740,7 +2740,7 @@ const struct Item gItems[] =
 
     [ITEM_METAL_POWDER] =
     {
-        .name = _("Metal Powder"),
+        .name = _("Assist Ball"),
         .itemId = ITEM_METAL_POWDER,
         .price = 10,
         .holdEffect = HOLD_EFFECT_ASSIST_BALL,
@@ -2767,7 +2767,7 @@ const struct Item gItems[] =
         .name = _("Bloomers"),
         .itemId = ITEM_BLOOMERS,
         .price = 200,
-        .holdEffect = HOLD_EFFECT_STICK,
+        .holdEffect = HOLD_EFFECT_BLOOMERS,
         .description = sStickDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4195,10 +4195,10 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_POKE_FLUTE] =
+    [ITEM_TOHO_FLUTE] =
     {
         .name = _("Toho Flute"),
-        .itemId = ITEM_POKE_FLUTE,
+        .itemId = ITEM_TOHO_FLUTE,
         .price = 0,
         .description = sPokeFluteDesc,
         .importance = 1,
@@ -4379,8 +4379,7 @@ const struct Item gItems[] =
         .registrability = TRUE,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_TmCase,
-        .secondaryId = 0,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
     [ITEM_BERRY_POUCH] =

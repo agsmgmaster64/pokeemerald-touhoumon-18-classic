@@ -227,5 +227,7 @@ extern const u8 BattleScript_FascinateActivates[];
 extern const u8 BattleScript_MoveStatDrain_PPLoss[];
 extern const u8 BattleScript_MoveStatDrain[];
 extern const u8 BattleScript_SnowWarningActivates[];
+extern const u8 BattleScript_CursedBodyActivates[];
+extern const u8 BattleScript_ItemCursedLunchEnd2[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H
