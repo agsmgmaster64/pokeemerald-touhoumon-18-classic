@@ -1822,3 +1822,10 @@ const u8 gText_Answer[] = _("ANSWER");
 const u8 gText_PokeBalls[] = _("Toho Orbs");
 const u8 gText_Berry[] = _("Berry");
 const u8 gText_Berries[] = _("Berries");
+
+// fr_tm_case_port
+const u8 gText_TMCase[] = _("TM Case");
+const u8 gText_Close[] = _("Close");
+const u8 gText_TMCaseWillBePutAway[] = _("The TM Case will be\nput away.");
+const u8 gText_FontSize0[] = _("{SIZE 0}");
+const u8 gText_FontSize2[] = _("{SIZE 2}");

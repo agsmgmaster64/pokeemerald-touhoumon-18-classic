@@ -276,31 +276,27 @@ const u8 gItemEffect_ChromeShard[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
-const u8 gItemEffect_SolarShard[6] = {
+const u8 gItemEffect_SunStone[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
-const u8 gItemEffect_PowerShard[6] = {
+const u8 gItemEffect_MoonStone[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
-const u8 gItemEffect_DefenseShard[6] = {
+const u8 gItemEffect_FireStone[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
-const u8 gItemEffect_SwiftShard[6] = {
+const u8 gItemEffect_ThunderStone[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
-const u8 gItemEffect_TechShard[6] = {
+const u8 gItemEffect_WaterStone[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
-const u8 gItemEffect_HelperShard[6] = {
-    [4] = ITEM4_EVO_STONE,
-};
-
-const u8 gItemEffect_FestiveShard[6] = {
+const u8 gItemEffect_LeafStone[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
@@ -440,13 +436,12 @@ const u8 *const gItemEffectTable[] =
     [ITEM_X_ACCURACY - ITEM_POTION]    = gItemEffect_XAccuracy,
     [ITEM_X_SPECIAL - ITEM_POTION]     = gItemEffect_XSpecial,
     [ITEM_CHROME_SHARD - ITEM_POTION]  = gItemEffect_ChromeShard,
-    [ITEM_SOLAR_SHARD - ITEM_POTION]   = gItemEffect_SolarShard,
-    [ITEM_POWER_SHARD - ITEM_POTION]   = gItemEffect_PowerShard,
-    [ITEM_DEFENSE_SHARD - ITEM_POTION] = gItemEffect_DefenseShard,
-    [ITEM_SWIFT_SHARD - ITEM_POTION]   = gItemEffect_SwiftShard,
-    [ITEM_TECH_SHARD - ITEM_POTION]    = gItemEffect_TechShard,
-    [ITEM_HELPER_SHARD - ITEM_POTION]  = gItemEffect_HelperShard,
-    [ITEM_FESTIVE_SHARD - ITEM_POTION] = gItemEffect_FestiveShard,
+    [ITEM_SOLAR_SHARD - ITEM_POTION]   = gItemEffect_SunStone,
+    [ITEM_POWER_SHARD - ITEM_POTION]   = gItemEffect_MoonStone,
+    [ITEM_DEFENSE_SHARD - ITEM_POTION] = gItemEffect_FireStone,
+    [ITEM_SWIFT_SHARD - ITEM_POTION]   = gItemEffect_ThunderStone,
+    [ITEM_TECH_SHARD - ITEM_POTION]    = gItemEffect_WaterStone,
+    [ITEM_HELPER_SHARD - ITEM_POTION]  = gItemEffect_LeafStone,
     [ITEM_CHERI_BERRY - ITEM_POTION]   = gItemEffect_CheriBerry,
     [ITEM_CHESTO_BERRY - ITEM_POTION]  = gItemEffect_ChestoBerry,
     [ITEM_PECHA_BERRY - ITEM_POTION]   = gItemEffect_PechaBerry,

@@ -1819,8 +1819,8 @@ AI_CV_Thief_EncourageItemsToSteal:
     .byte HOLD_EFFECT_CURE_STATUS
     .byte HOLD_EFFECT_RESTORE_HP
     .byte HOLD_EFFECT_EVASION_UP
-    .byte HOLD_EFFECT_BENTO_BOX
-    .byte HOLD_EFFECT_ICE_BALL
+    .byte HOLD_EFFECT_LEFTOVERS
+    .byte HOLD_EFFECT_LIGHT_BALL
     .byte HOLD_EFFECT_THICK_CLUB
     .byte -1
 

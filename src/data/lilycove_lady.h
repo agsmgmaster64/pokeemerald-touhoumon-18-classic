@@ -389,7 +389,7 @@ static const u16 sFavorLadyAcceptedItems_Sticky[] =
     ITEM_X_ACCURACY,
     ITEM_GUARD_SPEC,
     ITEM_WATMEL_BERRY,
-    ITEM_BENTO_BOX,
+    ITEM_LEFTOVERS,
     ITEM_GREEN_UFO,
     ITEM_BLUE_UFO,
     ITEM_NONE

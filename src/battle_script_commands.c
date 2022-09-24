@@ -680,6 +680,13 @@ static const struct WindowTemplate sUnusedWinTemplate = {
 static const u16 sLevelUpBanner_Pal[] = INCBIN_U16("graphics/battle_interface/level_up_banner.gbapal");
 static const u32 sLevelUpBanner_Gfx[] = INCBIN_U32("graphics/battle_interface/level_up_banner.4bpp.lz");
 
+// unused
+static const u8 sRubyLevelUpStatBoxStats[] =
+{
+    MON_DATA_MAX_HP, MON_DATA_SPATK, MON_DATA_ATK,
+    MON_DATA_SPDEF, MON_DATA_DEF, MON_DATA_SPEED
+};
+
 static const struct OamData sOamData_MonIconOnLvlUpBanner =
 {
     .y = 0,
@@ -805,7 +812,7 @@ static const u16 sRarePickupItems[] =
     ITEM_TM44_REST,
     ITEM_ELIXIR,
     ITEM_TM01_FOCUS_PUNCH,
-    ITEM_BENTO_BOX,
+    ITEM_LEFTOVERS,
     ITEM_TM26_EARTHQUAKE,
 };
 
@@ -1269,7 +1276,7 @@ static void Cmd_critcalc(void)
                 + (gBattleMoves[gCurrentMove].effect == EFFECT_POISON_TAIL)
                 + (holdEffect == HOLD_EFFECT_SCOPE_LENS)
                 + 2 * (holdEffect == HOLD_EFFECT_LUCKY_PUNCH && gBattleMons[gBattlerAttacker].species == SPECIES_CHANSEY)
-                + 2 * (holdEffect == HOLD_EFFECT_BLOOMERS && gBattleMons[gBattlerAttacker].species == SPECIES_FARFETCHD);
+                + 2 * (holdEffect == HOLD_EFFECT_STICK && gBattleMons[gBattlerAttacker].species == SPECIES_FARFETCHD);
 
     if (critChance >= ARRAY_COUNT(sCriticalHitChance))
         critChance = ARRAY_COUNT(sCriticalHitChance) - 1;
@@ -4250,7 +4257,7 @@ static void Cmd_moveend(void)
             break;
         case MOVEEND_CHOICE_MOVE: // update choice band move
             if (gHitMarker & HITMARKER_OBEYS
-             && holdEffectAtk == (HOLD_EFFECT_CHOICE_BAND || HOLD_EFFECT_CHOICE_SPECS || HOLD_EFFECT_CHOICE_SCARF)
+             && holdEffectAtk == HOLD_EFFECT_CHOICE_BAND
              && gChosenMove != MOVE_STRUGGLE
              && (*choicedMoveAtk == 0 || *choicedMoveAtk == 0xFFFF))
             {
@@ -7948,7 +7955,7 @@ static void Cmd_disablelastusedattack(void)
         PREPARE_MOVE_BUFFER(gBattleTextBuff1, gBattleMons[gBattlerTarget].moves[i])
 
         gDisableStructs[gBattlerTarget].disabledMove = gBattleMons[gBattlerTarget].moves[i];
-        gDisableStructs[gBattlerTarget].disableTimer = 4;
+        gDisableStructs[gBattlerTarget].disableTimer = (Random() & 3) + 2;
         gDisableStructs[gBattlerTarget].disableTimerStartValue = gDisableStructs[gBattlerTarget].disableTimer; // used to save the random amount of turns?
         gBattlescriptCurrInstr += 5;
     }
@@ -9526,7 +9533,11 @@ static void Cmd_pickup(void)
     u16 species, heldItem;
     u8 ability;
 
-    if (InBattlePyramid())
+    if (InBattlePike())
+    {
+
+    }
+    else if (InBattlePyramid())
     {
         for (i = 0; i < PARTY_SIZE; i++)
         {
@@ -9551,19 +9562,13 @@ static void Cmd_pickup(void)
                 && species != SPECIES_NONE
                 && species != SPECIES_EGG
                 && heldItem >= FIRST_BERRY_INDEX
-                && heldItem <= LAST_BERRY_INDEX
-                && (Random() % 8) == 0)
+                && heldItem <= LAST_BERRY_INDEX)
             {
-                heldItem = ITEM_BERRY_JUICE;
-                SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
-            }
-            else if (ability == ABILITY_CURSED_BODY
-                && species != SPECIES_NONE
-                && species != SPECIES_EGG
-                && heldItem == ITEM_BENTO_BOX)
-            {
-                heldItem = ITEM_CURSED_LUNCH;
-                SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
+                if (!(Random() % 16))
+                {
+                    heldItem = ITEM_BERRY_JUICE;
+                    SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
+                }
             }
         }
     }
@@ -9609,19 +9614,13 @@ static void Cmd_pickup(void)
                 && species != SPECIES_NONE
                 && species != SPECIES_EGG
                 && heldItem >= FIRST_BERRY_INDEX
-                && heldItem <= LAST_BERRY_INDEX
-                && (Random() % 8) == 0)
+                && heldItem <= LAST_BERRY_INDEX)
             {
-                heldItem = ITEM_BERRY_JUICE;
-                SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
-            }
-            else if (ability == ABILITY_CURSED_BODY
-                && species != SPECIES_NONE
-                && species != SPECIES_EGG
-                && heldItem == ITEM_BENTO_BOX)
-            {
-                heldItem = ITEM_CURSED_LUNCH;
-                SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
+                if (!(Random() % 16))
+                {
+                    heldItem = ITEM_BERRY_JUICE;
+                    SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
+                }
             }
         }
     }
