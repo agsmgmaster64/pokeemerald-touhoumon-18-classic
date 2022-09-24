@@ -3166,7 +3166,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         defense *= 2;
     if (defenderHoldEffect == HOLD_EFFECT_YATA_MIRROR && defender->species == SPECIES_GOREBYSS)
         spDefense *= 2;
-    if (attackerHoldEffect == HOLD_EFFECT_LIGHT_BALL && attacker->species == SPECIES_CCIRNO)
+    if (attackerHoldEffect == HOLD_EFFECT_ICE_BALL && attacker->species == SPECIES_CCIRNO)
         attack *= 2;
         spAttack *= 2;
     if (defenderHoldEffect == HOLD_EFFECT_ASSIST_BALL && defender->species == SPECIES_DODUO)

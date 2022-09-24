@@ -4633,3 +4633,23 @@ BattleScript_SnowWarningActivates::
 	playanimation BS_BATTLER_0, B_ANIM_HAIL_CONTINUES
 	call BattleScript_WeatherFormChanges
 	end3
+
+BattleScript_CursedBodyActivates::
+	printstring STRINGID_CUSEDBODYDISABLED
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_ItemCursedLunchEnd2::
+	playanimation BS_ATTACKER, B_ANIM_CURSED_LUNCH, sB_ANIM_ARG1
+	waitanimation
+	call BattleScript_ItemHurtRet
+	end2
+
+BattleScript_ItemHurtRet:
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	printstring STRINGID_HURTBYITEM
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_ATTACKER
+	return

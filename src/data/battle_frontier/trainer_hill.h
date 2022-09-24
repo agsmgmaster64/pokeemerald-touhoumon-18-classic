@@ -1016,7 +1016,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     [4] =
                     {
                         .species = SPECIES_SLOWBRO,
-                        .heldItem = ITEM_LEFTOVERS,
+                        .heldItem = ITEM_BENTO_BOX,
                         .moves = {MOVE_BELLY_DRUM, MOVE_MUD_SLAP, MOVE_SWAGGER, MOVE_AMNESIA},
                         .hpEV = 250,
                         .defenseEV = 130,
@@ -1233,7 +1233,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     [1] =
                     {
                         .species = SPECIES_BLISSEY,
-                        .heldItem = ITEM_LEFTOVERS,
+                        .heldItem = ITEM_BENTO_BOX,
                         .moves = {MOVE_SKILL_SWAP, MOVE_MIND_BOMB, MOVE_THUNDERBOLT, MOVE_SING},
                         .defenseEV = 255,
                         .spAttackEV = 155,
@@ -2657,7 +2657,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                     [2] =
                                         {
                                             .species = SPECIES_CALICE,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_SOLAR_BEAM, MOVE_EARTHQUAKE, MOVE_SYNTHESIS, MOVE_SUNNY_DAY},
                                             .hpEV = 100,
                                             .attackEV = 110,
@@ -2970,7 +2970,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                     [4] =
                                         {
                                             .species = SPECIES_SMEARGLE,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_TOXIC, MOVE_PROTECT, MOVE_WILL_O_WISP, MOVE_IMPRISON},
                                             .hpEV = 252,
                                             .defenseEV = 6,
@@ -3022,7 +3022,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                     [0] =
                                         {
                                             .species = SPECIES_STARYU,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_CAMOUFLAGE, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .hpEV = 252,
                                             .speedEV = 252,
@@ -3379,7 +3379,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                     [4] =
                                         {
                                             .species = SPECIES_WYNAUT,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_ENCORE, MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_DESTINY_BOND},
                                             .hpEV = 250,
                                             .defenseEV = 130,
@@ -3523,7 +3523,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                     [4] =
                                         {
                                             .species = SPECIES_MANTINE,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_SURF, MOVE_CONFUSE_RAY, MOVE_ATTRACT, MOVE_BLADE_FLASH},
                                             .hpEV = 255,
                                             .defenseEV = 255,
@@ -3649,7 +3649,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                     [4] =
                                         {
                                             .species = SPECIES_STANTLER,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_CONFUSE_RAY, MOVE_SWAGGER, MOVE_PSYCH_UP, MOVE_HEAD_SMASH},
                                             .attackEV = 255,
                                             .speedEV = 255,
@@ -3745,7 +3745,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                     [1] =
                                         {
                                             .species = SPECIES_MILTANK,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_DOUBLE_EDGE, MOVE_SHADOW_BALL, MOVE_ATTRACT, MOVE_MILK_DRINK},
                                             .hpEV = 6,
                                             .attackEV = 252,
@@ -3805,7 +3805,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                     [4] =
                                         {
                                             .species = SPECIES_KANGASKHAN,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_GIGA_IMPACT, MOVE_SHADOW_BALL, MOVE_ATTRACT, MOVE_FAKE_OUT},
                                             .hpEV = 6,
                                             .attackEV = 252,
@@ -3857,7 +3857,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                     [0] =
                                         {
                                             .species = SPECIES_SLOWKING,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_MANA_BURST, MOVE_SURF, MOVE_ICE_BEAM, MOVE_SKILL_SWAP},
                                             .hpEV = 200,
                                             .defenseEV = 110,
@@ -4004,7 +4004,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                     [0] =
                                         {
                                             .species = SPECIES_SWELLOW,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_BLADE_FLASH, MOVE_AGILITY, MOVE_FACADE, MOVE_ATTRACT},
                                             .hpEV = 252,
                                             .attackEV = 252,
@@ -4024,7 +4024,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                     [1] =
                                         {
                                             .species = SPECIES_MACHAMP,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_LOW_KICK, MOVE_ROCK_SLIDE, MOVE_FACADE, MOVE_ATTRACT},
                                             .hpEV = 252,
                                             .attackEV = 252,
@@ -4044,7 +4044,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                     [2] =
                                         {
                                             .species = SPECIES_URSARING,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_PROTECT, MOVE_ROCK_SLIDE, MOVE_FACADE, MOVE_ATTRACT},
                                             .hpEV = 252,
                                             .attackEV = 252,
@@ -4196,7 +4196,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                     [3] =
                                         {
                                             .species = SPECIES_DUSCLOPS,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_PURSUIT, MOVE_PROTECT, MOVE_ATTRACT, MOVE_WILL_O_WISP},
                                             .hpEV = 252,
                                             .defenseEV = 252,
@@ -4283,7 +4283,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                     [0] =
                                         {
                                             .species = SPECIES_WOBBUFFET,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_MIRROR_COAT, MOVE_COUNTER, MOVE_SAFEGUARD, MOVE_ENCORE},
                                             .hpEV = 250,
                                             .defenseEV = 130,
@@ -4620,7 +4620,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                     [3] =
                                         {
                                             .species = SPECIES_DUSCLOPS,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_IMPRISON, MOVE_PROTECT, MOVE_ICE_BEAM, MOVE_EARTHQUAKE},
                                             .hpEV = 110,
                                             .defenseEV = 200,
@@ -4766,7 +4766,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                     [4] =
                                         {
                                             .species = SPECIES_DUSCLOPS,
-                                            .heldItem = ITEM_LEFTOVERS,
+                                            .heldItem = ITEM_BENTO_BOX,
                                             .moves = {MOVE_CHARMING_LOOK, MOVE_CONFUSE_RAY, MOVE_WILL_O_WISP, MOVE_SHADOW_BALL},
                                             .hpEV = 110,
                                             .defenseEV = 200,
