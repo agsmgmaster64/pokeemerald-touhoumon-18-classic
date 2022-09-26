@@ -6704,6 +6704,16 @@ static void Cmd_trymirrormove(void)
 
 static void Cmd_setrain(void)
 {
+    u8 holdEffect;
+    u16 item;
+
+    item = gBattleMons[gBattlerAttacker].item;
+
+    if (item == ITEM_ENIGMA_BERRY)
+        holdEffect = gEnigmaBerries[gBattlerAttacker].holdEffect;
+    else
+        holdEffect = ItemId_GetHoldEffect(item);
+
     if (gBattleWeather & B_WEATHER_RAIN)
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
@@ -6713,13 +6723,26 @@ static void Cmd_setrain(void)
     {
         gBattleWeather = B_WEATHER_RAIN_TEMPORARY;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_RAIN;
-        gWishFutureKnock.weatherDuration = 5;
+        if (holdEffect = HOLD_EFFECT_SCARLET_ROCK)
+            gWishFutureKnock.weatherDuration = 8;
+        else
+            gWishFutureKnock.weatherDuration = 5;
     }
     gBattlescriptCurrInstr++;
 }
 
 static void Cmd_setreflect(void)
 {
+    u8 holdEffect;
+    u16 item;
+
+    item = gBattleMons[gBattlerAttacker].item;
+
+    if (item == ITEM_ENIGMA_BERRY)
+        holdEffect = gEnigmaBerries[gBattlerAttacker].holdEffect;
+    else
+        holdEffect = ItemId_GetHoldEffect(item);
+
     if (gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] & SIDE_STATUS_REFLECT)
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
@@ -6728,7 +6751,10 @@ static void Cmd_setreflect(void)
     else
     {
         gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] |= SIDE_STATUS_REFLECT;
-        gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].reflectTimer = 5;
+        if (holdEffect = HOLD_EFFECT_LIGHT_CLAY)
+            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].reflectTimer = 8;
+        else
+            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].reflectTimer = 5;
         gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].reflectBattlerId = gBattlerAttacker;
 
         if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && CountAliveMonsInBattle(BATTLE_ALIVE_ATK_SIDE) == 2)
@@ -7369,7 +7395,7 @@ static void Cmd_forcerandomswitch(void)
     }
 }
 
-static void Cmd_tryconversiontypechange(void) // randomly changes user's type to one of its moves' type
+static void Cmd_tryconversiontypechange(void) // changes user's type to its first move's type
 {
     u8 moveType;
 
@@ -7409,6 +7435,16 @@ static void Cmd_givepaydaymoney(void)
 
 static void Cmd_setlightscreen(void)
 {
+    u8 holdEffect;
+    u16 item;
+
+    item = gBattleMons[gBattlerAttacker].item;
+
+    if (item == ITEM_ENIGMA_BERRY)
+        holdEffect = gEnigmaBerries[gBattlerAttacker].holdEffect;
+    else
+        holdEffect = ItemId_GetHoldEffect(item);
+
     if (gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] & SIDE_STATUS_LIGHTSCREEN)
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
@@ -7417,7 +7453,10 @@ static void Cmd_setlightscreen(void)
     else
     {
         gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] |= SIDE_STATUS_LIGHTSCREEN;
-        gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].lightscreenTimer = 5;
+        if (holdEffect = HOLD_EFFECT_LIGHT_CLAY)
+            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].lightscreenTimer = 8;
+        else
+            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].lightscreenTimer = 5;
         gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].lightscreenBattlerId = gBattlerAttacker;
 
         if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && CountAliveMonsInBattle(BATTLE_ALIVE_ATK_SIDE) == 2)
@@ -7526,6 +7565,16 @@ static void Cmd_damagetohalftargethp(void) // super fang
 
 static void Cmd_setsandstorm(void)
 {
+    u8 holdEffect;
+    u16 item;
+
+    item = gBattleMons[gBattlerAttacker].item;
+
+    if (item == ITEM_ENIGMA_BERRY)
+        holdEffect = gEnigmaBerries[gBattlerAttacker].holdEffect;
+    else
+        holdEffect = ItemId_GetHoldEffect(item);
+
     if (gBattleWeather & B_WEATHER_SANDSTORM)
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
@@ -7535,7 +7584,10 @@ static void Cmd_setsandstorm(void)
     {
         gBattleWeather = B_WEATHER_SANDSTORM_TEMPORARY;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_SANDSTORM;
-        gWishFutureKnock.weatherDuration = 5;
+        if (holdEffect = HOLD_EFFECT_SCARLET_ROCK)
+            gWishFutureKnock.weatherDuration = 8;
+        else
+            gWishFutureKnock.weatherDuration = 5;
     }
     gBattlescriptCurrInstr++;
 }
@@ -8695,6 +8747,16 @@ static void Cmd_jumpifnopursuitswitchdmg(void)
 
 static void Cmd_setsunny(void)
 {
+    u8 holdEffect;
+    u16 item;
+
+    item = gBattleMons[gBattlerAttacker].item;
+
+    if (item == ITEM_ENIGMA_BERRY)
+        holdEffect = gEnigmaBerries[gBattlerAttacker].holdEffect;
+    else
+        holdEffect = ItemId_GetHoldEffect(item);
+
     if (gBattleWeather & B_WEATHER_SUN)
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
@@ -8704,7 +8766,10 @@ static void Cmd_setsunny(void)
     {
         gBattleWeather = B_WEATHER_SUN_TEMPORARY;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_SUNLIGHT;
-        gWishFutureKnock.weatherDuration = 5;
+        if (holdEffect = HOLD_EFFECT_SCARLET_ROCK)
+            gWishFutureKnock.weatherDuration = 8;
+        else
+            gWishFutureKnock.weatherDuration = 5;
     }
 
     gBattlescriptCurrInstr++;
@@ -8976,6 +9041,16 @@ static void Cmd_setminimize(void)
 
 static void Cmd_sethail(void)
 {
+    u8 holdEffect;
+    u16 item;
+
+    item = gBattleMons[gBattlerAttacker].item;
+
+    if (item == ITEM_ENIGMA_BERRY)
+        holdEffect = gEnigmaBerries[gBattlerAttacker].holdEffect;
+    else
+        holdEffect = ItemId_GetHoldEffect(item);
+
     if (gBattleWeather & B_WEATHER_HAIL)
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
@@ -8985,7 +9060,10 @@ static void Cmd_sethail(void)
     {
         gBattleWeather = B_WEATHER_HAIL_TEMPORARY;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_HAIL;
-        gWishFutureKnock.weatherDuration = 5;
+        if (holdEffect = HOLD_EFFECT_SCARLET_ROCK)
+            gWishFutureKnock.weatherDuration = 8;
+        else
+            gWishFutureKnock.weatherDuration = 5;
     }
 
     gBattlescriptCurrInstr++;
