@@ -463,7 +463,8 @@ void FieldCB_ReturnToFieldNoScript(void)
 void FieldCB_ReturnToFieldNoScriptCheckMusic(void)
 {
     ScriptContext2_Enable();
-    Overworld_PlaySpecialMapMusic();
+    if (!FlagGet(FLAG_SYS_NO_MUSIC_INTERRUPTION))
+        Overworld_PlaySpecialMapMusic();
     FadeInFromBlack();
     CreateTask(Task_ReturnToFieldNoScript, 10);
 }

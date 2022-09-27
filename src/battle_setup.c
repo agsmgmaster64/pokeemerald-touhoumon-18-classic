@@ -73,6 +73,7 @@ struct TrainerBattleParameter
 // this file's functions
 static void DoBattlePikeWildBattle(void);
 static void DoSafariBattle(void);
+static void DoWildBattleNoPuppets(void);
 static void DoStandardWildBattle(void);
 static void CB2_EndWildBattle(void);
 static void CB2_EndScriptedWildBattle(void);
@@ -379,7 +380,9 @@ static void CreateBattleStartTask(u8 transition, u16 song)
     u8 taskId = CreateTask(Task_BattleStart, 1);
 
     gTasks[taskId].tTransition = transition;
-    PlayMapChosenOrBattleBGM(song);
+
+    if (!FlagGet(FLAG_SYS_NO_MUSIC_INTERRUPTION))
+        PlayMapChosenOrBattleBGM(song);
 }
 
 #undef tState
@@ -389,6 +392,8 @@ void BattleSetup_StartWildBattle(void)
 {
     if (GetSafariZoneFlag())
         DoSafariBattle();
+    else if (!FlagGet(FLAG_SYS_POKEMON_GET))
+        DoWildBattleNoPuppets();
     else
         DoStandardWildBattle();
 }
@@ -437,6 +442,16 @@ void BattleSetup_StartRoamerBattle(void)
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
     TryUpdateGymLeaderRematchFromWild();
+}
+
+static void DoWildBattleNoPuppets(void)
+{
+    ScriptContext2_Enable();
+    FreezeObjectEvents();
+    StopPlayerAvatar();
+    gMain.savedCallback = CB2_EndWildBattle;
+    gBattleTypeFlags = 0;
+    CreateBattleStartTask(GetWildBattleTransition(), 0);
 }
 
 static void DoSafariBattle(void)
